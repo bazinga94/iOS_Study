@@ -16,5 +16,6 @@ class ViewController: UIViewController {
 	@IBAction func setNeedsDisplayTest(_ sender: Any) {
 		let storyBoard: UIStoryboard! = UIStoryboard(name: "Main", bundle: nil)
 		let destinationViewController = storyBoard.instantiateViewController(withIdentifier: "ViewLayoutTestViewController") as! ViewLayoutTestViewController
+		self.navigationController?.pushViewController(destinationViewController, animated: true)
 	}
 }
