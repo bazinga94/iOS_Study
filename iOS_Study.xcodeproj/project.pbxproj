@@ -16,6 +16,7 @@
 		436846CB263AE02100967143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 436846C9263AE02100967143 /* LaunchScreen.storyboard */; };
 		436846D6263AE02100967143 /* iOS_StudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436846D5263AE02100967143 /* iOS_StudyTests.swift */; };
 		436846E1263AE02100967143 /* iOS_StudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436846E0263AE02100967143 /* iOS_StudyUITests.swift */; };
+		43684705263AE27600967143 /* ViewLayoutTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43684704263AE27600967143 /* ViewLayoutTestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		436846DC263AE02100967143 /* iOS_StudyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_StudyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		436846E0263AE02100967143 /* iOS_StudyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_StudyUITests.swift; sourceTree = "<group>"; };
 		436846E2263AE02100967143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43684704263AE27600967143 /* ViewLayoutTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLayoutTestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		436846BA263AE01D00967143 /* iOS_Study */ = {
 			isa = PBXGroup;
 			children = (
+				43684703263AE23B00967143 /* View Layout Test */,
 				436846BB263AE01D00967143 /* AppDelegate.swift */,
 				436846BD263AE01D00967143 /* SceneDelegate.swift */,
 				436846BF263AE01D00967143 /* ViewController.swift */,
@@ -129,6 +132,14 @@
 				436846E2263AE02100967143 /* Info.plist */,
 			);
 			path = iOS_StudyUITests;
+			sourceTree = "<group>";
+		};
+		43684703263AE23B00967143 /* View Layout Test */ = {
+			isa = PBXGroup;
+			children = (
+				43684704263AE27600967143 /* ViewLayoutTestViewController.swift */,
+			);
+			path = "View Layout Test";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +275,7 @@
 				436846C0263AE01D00967143 /* ViewController.swift in Sources */,
 				436846C6263AE01D00967143 /* iOS_Study.xcdatamodeld in Sources */,
 				436846BC263AE01D00967143 /* AppDelegate.swift in Sources */,
+				43684705263AE27600967143 /* ViewLayoutTestViewController.swift in Sources */,
 				436846BE263AE01D00967143 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
