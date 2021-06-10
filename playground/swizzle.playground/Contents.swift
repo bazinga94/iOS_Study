@@ -33,3 +33,25 @@ beforeAfter()
 // https://forums.swift.org/t/dynamic-method-replacement/16619
 // https://jcsoohwancho.github.io/2020-02-02-Selector%EC%99%80-Method-Swizzling/
 // https://zeddios.tistory.com/554
+
+extension UIViewController {
+
+	static let swizzleMethod: Void = {
+		let originalSelector = #selector(viewWillAppear)
+		let swizzledSelector = #selector(swizzleViewWillAppear)
+		let originalMethod = class_getInstanceMethod(UIViewController.self, originalSelector)
+		let swizzledMethod = class_getInstanceMethod(UIViewController.self, swizzledSelector)
+		let originalImplementation = class_getMethodImplementation(UIViewController.self, originalSelector)
+		let swizzledImplementation = class_getMethodImplementation(UIViewController.self, swizzledSelector)
+		if let origin = originalMethod, let swizzle = swizzledMethod, let originImp = originalImplementation, let swizzledImp = swizzledImplementation {
+			method_setImplementation(origin, swizzledImp)
+			method_setImplementation(swizzle, originImp)
+			//			method_exchangeImplementations(origin, swizzle)
+		}
+	}()
+
+	@objc
+	func swizzleViewWillAppear() {
+		print("swizzleViewWillAppear")
+	}
+}
