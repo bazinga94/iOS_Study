@@ -17,6 +17,7 @@
 		436846D6263AE02100967143 /* iOS_StudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436846D5263AE02100967143 /* iOS_StudyTests.swift */; };
 		436846E1263AE02100967143 /* iOS_StudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436846E0263AE02100967143 /* iOS_StudyUITests.swift */; };
 		43684705263AE27600967143 /* ViewLayoutTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43684704263AE27600967143 /* ViewLayoutTestViewController.swift */; };
+		B24B93912671F7450037D750 /* CustomLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B93902671F7450037D750 /* CustomLogger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		436846E0263AE02100967143 /* iOS_StudyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_StudyUITests.swift; sourceTree = "<group>"; };
 		436846E2263AE02100967143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43684704263AE27600967143 /* ViewLayoutTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLayoutTestViewController.swift; sourceTree = "<group>"; };
+		B24B93902671F7450037D750 /* CustomLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLogger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		436846BA263AE01D00967143 /* iOS_Study */ = {
 			isa = PBXGroup;
 			children = (
+				B24B938F2671F7370037D750 /* Logger */,
 				43684703263AE23B00967143 /* View Layout Test */,
 				436846BB263AE01D00967143 /* AppDelegate.swift */,
 				436846BD263AE01D00967143 /* SceneDelegate.swift */,
@@ -140,6 +143,14 @@
 				43684704263AE27600967143 /* ViewLayoutTestViewController.swift */,
 			);
 			path = "View Layout Test";
+			sourceTree = "<group>";
+		};
+		B24B938F2671F7370037D750 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				B24B93902671F7450037D750 /* CustomLogger.swift */,
+			);
+			path = Logger;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +285,7 @@
 			files = (
 				436846C0263AE01D00967143 /* ViewController.swift in Sources */,
 				436846C6263AE01D00967143 /* iOS_Study.xcdatamodeld in Sources */,
+				B24B93912671F7450037D750 /* CustomLogger.swift in Sources */,
 				436846BC263AE01D00967143 /* AppDelegate.swift in Sources */,
 				43684705263AE27600967143 /* ViewLayoutTestViewController.swift in Sources */,
 				436846BE263AE01D00967143 /* SceneDelegate.swift in Sources */,
