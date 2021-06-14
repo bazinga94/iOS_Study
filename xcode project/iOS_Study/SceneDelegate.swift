@@ -16,6 +16,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		// Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
 		// If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
 		// This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+
+//		window = UIWindow(windowScene: scene as! UIWindowScene)
+//
+//		if let activity = connectionOptions.userActivities.first {
+//			configure(window: window, with: activity)
+//		}	// 개발자가 원하는데로 화면 세팅?! 여기 까지 끝나면 화면이 등장한다.
+//		Scene Delegate에서 Scene에 대한 stateRestorationActivity를 구현한 뒤 현재 창에서 가장 활동적인 사용자 활동을 찾는 메서드(fetchCurrentUserActivity)를 호출한다 그리고 이를 반환한다.
+
 		guard let _ = (scene as? UIWindowScene) else { return }
 	}
 
@@ -50,6 +58,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		(UIApplication.shared.delegate as? AppDelegate)?.saveContext()
 	}
 
-
+	/// called on scene background
+	/// Encode state via NSUserActivity
+	/// Data Protection
+	/// scene based 상태 복원 API, 상태를 인코딩하여 창을 다시 만들 수 있다.
+//	func stateRestorationActivity(for scene: UIScene) -> NSUserActivity? {
+//		let currentActivity = fetchCurrentUserActivity(for: self.window)
+//		return currentActivity
+//	}
 }
 
