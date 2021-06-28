@@ -35,6 +35,9 @@ class ViewController: UIViewController {
 //		CustomLogger.error(tag: nil, message: "error 로그")
 		CustomLogger.debug(tag: nil, message: "debug 로그")
 		CustomLogger.verbose(tag: nil, message: "verbose 로그")
+
+//		let customView = CustomView(frame: CGRect(x: 100, y: 100, width: 300, height: 300))
+//		self.view.addSubview(customView)	// code로 추가
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
