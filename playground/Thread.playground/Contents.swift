@@ -9,20 +9,20 @@ print("\n\n=============== sync ===============\n\n")
 // sync: 단일 작업에 대해 내가 보낸 응답을 받을 때 까지 기다림, 내 작업이 끝나야 다음 작업을 수행한다. ex) 우리가 보통 써내려 가는 코드가 sync임 위에서 수행한 작업이 종료되기 전에 다음 코드가 실행되지 않음!!
 
 // 예시
-print("시작")
-sleep(3)
-print("sync 작업")
+//print("시작")
+//sleep(3)
+//print("sync 작업")
 
 // MARK: - async
 print("\n\n=============== async ===============\n\n")
 // async: 단일 작업에 대해 내가 보낸 응담을 받을 때 까지 기다리지 않음(!), 내 작업이 끝나기 전에 다음 작업 수행 가능. ex) URLSession 통신 요청, callback을 받기 전까지 다른 작업을 수행 할 수 있다.
 
 // 예시
-print("시작")
-DispatchQueue.global().async {
-	sleep(3)
-}
-print("async 작업")
+//print("시작")
+//DispatchQueue.global().async {
+//	sleep(3)
+//}
+//print("async 작업")
 
 // MARK: - serial
 print("\n\n=============== serial ===============\n\n")
@@ -39,17 +39,18 @@ print("\n\n=============== serial ===============\n\n")
 //				-> 33333(sync)
 
 // 예시
-//print("start")	// serial queue, sync
-//DispatchQueue.main.async {	// serial queue, async
-//	for _ in 0...10 {
-//		print("async") // (#2) 이 작업을 시작 할 수 있다.
-//	}
-//}
-//for _ in 0...10 {	// serial queue, sync
-//	print("sync")	// (#1) 따라서 이 작업이 전부 끝나야
-//}
-//print("end")	// serial queue, sync
-
+print("start")	// serial queue, sync
+DispatchQueue.main.async {	// serial queue, async
+	for _ in 0...10 {
+		print("async") // (#2) 이 작업을 시작 할 수 있다.
+	}
+}
+for _ in 0...10 {	// serial queue, sync
+	print("sync")	// (#1) 따라서 이 작업 + 아래 작업들이 전부 끝나야
+}
+print("before sleep")	// serial queue, sync
+sleep(3)
+print("after sleep")
 
 // MARK: - concurrent
 print("\n\n=============== concurrent ===============\n\n")
