@@ -39,18 +39,49 @@ print("\n\n=============== serial ===============\n\n")
 //				-> 33333(sync)
 
 // 예시
-print("start")	// serial queue, sync
-DispatchQueue.main.async {	// serial queue, async
-	for _ in 0...10 {
-		print("async") // (#2) 이 작업을 시작 할 수 있다.
-	}
-}
-for _ in 0...10 {	// serial queue, sync
-	print("sync")	// (#1) 따라서 이 작업 + 아래 작업들이 전부 끝나야
-}
-print("before sleep")	// serial queue, sync
-sleep(3)
-print("after sleep")
+//let serialQueue = DispatchQueue(label: "serial")
+//
+//serialQueue.async {
+//	sleep(2)
+//	print("A")
+//}
+//print("B")
+//
+//DispatchQueue.global().async {
+//	sleep(2)
+//	print("A")
+//}
+//print("B")
+//
+//func asyncFunc() {
+//	print("func start")
+//	DispatchQueue.global().async {
+//		sleep(3)
+//	}
+//	print("func end")
+//}
+//
+//
+//print("start")	// serial queue, sync
+//DispatchQueue.main.async {	// serial queue, async
+//	asyncFunc()
+//}
+//DispatchQueue.main.async {
+//	for _ in 0...10 {
+//		print("async") // (#2) 이 작업을 시작 할 수 있다.
+//	}
+//}
+//for _ in 0...10 {	// serial queue, sync
+//	print("sync")	// (#1) 따라서 이 작업 + 아래 작업들이 전부 끝나야
+//}
+//print("before sleep")	// serial queue, sync
+//sleep(3)
+//print("after sleep")
+//
+//DispatchQueue.main.async {
+//	sleep(3)
+//	print("async after sleep")
+//}
 
 // MARK: - concurrent
 print("\n\n=============== concurrent ===============\n\n")
@@ -65,11 +96,11 @@ print("\n\n=============== concurrent ===============\n\n")
 //	-> 33333
 
 // 예시
-let concurrentQueue = DispatchQueue.init(label: "concurrent queue", attributes: .concurrent)
-concurrentQueue.sync  { print("start") }	// (#1) sync 인 start가 먼저 찍힘
-concurrentQueue.async { for _ in 0...5 { print("async") }}	// (#2) 그 다음 sync 와 async print 함수들이 동시에 수행된다 (concurrent 큐 안에 있기 때문에)
-concurrentQueue.sync  { for _ in 0...5 { print("sync") } }
-concurrentQueue.sync  { print("end") }
+//let concurrentQueue = DispatchQueue.init(label: "concurrent queue", attributes: .concurrent)
+//concurrentQueue.sync  { print("start") }	// (#1) sync 인 start가 먼저 찍힘
+//concurrentQueue.async { for _ in 0...5 { print("async") }}	// (#2) 그 다음 sync 와 async print 함수들이 동시에 수행된다 (concurrent 큐 안에 있기 때문에)
+//concurrentQueue.sync  { for _ in 0...5 { print("sync") } }
+//concurrentQueue.sync  { print("end") }
 
 
 // sync: queue에 작업을 넣어두면 다음 queue는 이전 queue의 작업이 끝날 때 까지 대기
@@ -86,11 +117,10 @@ let serialQueue2 = DispatchQueue(label: "serial2")
 let concurrentQueue1 = DispatchQueue(label: "concurrent1", attributes: .concurrent)
 let concurrentQueue2 = DispatchQueue(label: "concurrent2", attributes: .concurrent)
 
-serialQueue1.sync {
+concurrentQueue1.sync {
 	for i in 0..<5 {
 		print("main async \(i) 😍")
 	}
-
 	//	serialQueue1.sync {
 	//		for i in 0..<5 {
 	//			print("main async \(i) 👻")
@@ -98,11 +128,11 @@ serialQueue1.sync {
 	//	} main.async 를 했던것 처럼 앱이 죽는다.
 }
 
-//serialQueue1.sync {
-//	for i in 0..<5 {
-//		print("main async \(i) 👻")
-//	}
-//}
+concurrentQueue1.async {
+	for i in 0..<5 {
+		print("main async \(i) 👻")
+	}
+}
 
 for i in 0..<5 {
 	print("main async \(i) 🐶")
