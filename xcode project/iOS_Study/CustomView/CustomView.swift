@@ -10,6 +10,8 @@ import UIKit
 @IBDesignable
 class CustomView: UIView {
 
+	// 참고: https://medium.com/a-day-of-a-programmer/xib%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-uiview-custom-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-348a9b789496
+
 	// MARK: - 방식 1
 //	override init(frame: CGRect) {
 //		super.init(frame: frame)
