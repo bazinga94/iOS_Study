@@ -6,7 +6,7 @@ extension String {
 	}
 
 	func base64Decoded() -> String? {
-		guard let data = Data(base64Encoded: self) else { return nil }
+		guard let data = Data(base64Encoded: self, options: .) else { return nil }
 		return String(data: data, encoding: .utf8)
 	}
 }
@@ -15,6 +15,7 @@ extension String {
 "aGVyb2Vz".base64Decoded() // It will return: heroes
 
 
+"VYy8x4TVYG2Byzz9AY7CSQ==".base64Decoded()
 "A8zAw8H+juvYQzZ5wWwNzA==".base64Decoded()
 
 // yh8JNPApG5n4qblZQsSQMQ==
