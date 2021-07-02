@@ -38,7 +38,7 @@ class SomeTaskManager: ObserverManager, TaskManagerDelegate {
 		print("All task start!")
 
 		for observer in observers {
-			DispatchQueue.global().async {
+			DispatchQueue.global().async {		// 비동기적으로 수행
 				observer.delegate = self
 				observer.taskStart()
 			}
@@ -80,10 +80,10 @@ class Task1: Observer {
 				print("\(String(describing: self)) fail end")
 				return
 			}
-			if i == 2 {
-				delegate?.oneTaskFailed()
-				return
-			}	// Task 실패 케이스
+//			if i == 2 {
+//				delegate?.oneTaskFailed()
+//				return
+//			}	// Task 실패 케이스
 		}
 		print("\(String(describing: self)) success end")
 		delegate?.oneTaskCompleted(by: self)
