@@ -35,9 +35,12 @@ class SomeTaskManager: ObserverManager, TaskManagerDelegate {
 	/// 전체 task process 시작
 	func allTaskStart() {
 		print("All task start!")
-		observers.forEach {
-			$0.delegate = self
-			$0.taskStart()
+
+		DispatchQueue.global().async {
+			self.observers.forEach {
+				$0.delegate = self
+				$0.taskStart()
+			}
 		}
 	}
 
