@@ -36,10 +36,10 @@ class SomeTaskManager: ObserverManager, TaskManagerDelegate {
 	func allTaskStart() {
 		print("All task start!")
 
-		DispatchQueue.global().async {
-			self.observers.forEach {
-				$0.delegate = self
-				$0.taskStart()
+		for observer in observers {
+			DispatchQueue.global().async {
+				observer.delegate = self
+				observer.taskStart()
 			}
 		}
 	}
@@ -54,7 +54,7 @@ class SomeTaskManager: ObserverManager, TaskManagerDelegate {
 
 	/// 모든 task 완료
 	private func allTaskCompleted() {
-		print("All task completed!")
+		print("All task completed! :)")
 	}
 
 	/// 하나의 task라도 실패하면 실패
@@ -62,7 +62,7 @@ class SomeTaskManager: ObserverManager, TaskManagerDelegate {
 		observers.forEach {
 			$0.notifyFail()
 		}
-		print("Some task failed")
+		print("Task failed! :(")
 	}
 }
 
@@ -74,10 +74,13 @@ class Task1: Observer {
 		for i in (1...10) {
 			print("\(String(describing: self)) progressing \(10 * i)/100")
 			sleep(1)
+//			if i == 2 {
+//				delegate?.oneTaskFailed()
+//				return
+//			}	// Task 실패 케이스
 		}
 		print("\(String(describing: self)) end")
 		delegate?.oneTaskCompleted(by: self)
-//		delegate?.oneTaskFailed()
 	}
 
 	func notifyFail() {
@@ -95,7 +98,6 @@ class Task2: Observer {
 		}
 		print("\(String(describing: self)) end")
 		delegate?.oneTaskCompleted(by: self)
-		//		delegate?.oneTaskFailed()
 	}
 
 	func notifyFail() {
@@ -113,7 +115,6 @@ class Task3: Observer {
 		}
 		print("\(String(describing: self)) end")
 		delegate?.oneTaskCompleted(by: self)
-		//		delegate?.oneTaskFailed()
 	}
 
 	func notifyFail() {
