@@ -8,6 +8,7 @@ protocol Observable {
 
 /// Observer protocol
 protocol Observer: class {
+	var isTaskFailed: Bool { get set }
 	var delegate: TaskManagerDelegate? { get set }
 	func taskStart()
 	func notifyFail()
@@ -67,6 +68,7 @@ class SomeTaskManager: ObserverManager, TaskManagerDelegate {
 }
 
 class Task1: Observer {
+	var isTaskFailed: Bool = false
 	weak var delegate: TaskManagerDelegate?
 
 	func taskStart() {
@@ -74,20 +76,26 @@ class Task1: Observer {
 		for i in (1...10) {
 			print("\(String(describing: self)) progressing \(10 * i)/100")
 			sleep(1)
-//			if i == 2 {
-//				delegate?.oneTaskFailed()
-//				return
-//			}	// Task 실패 케이스
+			if isTaskFailed {
+				print("\(String(describing: self)) fail end")
+				return
+			}
+			if i == 2 {
+				delegate?.oneTaskFailed()
+				return
+			}	// Task 실패 케이스
 		}
-		print("\(String(describing: self)) end")
+		print("\(String(describing: self)) success end")
 		delegate?.oneTaskCompleted(by: self)
 	}
 
 	func notifyFail() {
+		isTaskFailed = true
 	}
 }
 
 class Task2: Observer {
+	var isTaskFailed: Bool = false
 	weak var delegate: TaskManagerDelegate?
 
 	func taskStart() {
@@ -95,16 +103,22 @@ class Task2: Observer {
 		for i in (1...5) {
 			print("\(String(describing: self)) progressing \(20 * i)/100")
 			sleep(1)
+			if isTaskFailed {
+				print("\(String(describing: self)) fail end")
+				return
+			}
 		}
-		print("\(String(describing: self)) end")
+		print("\(String(describing: self)) success end")
 		delegate?.oneTaskCompleted(by: self)
 	}
 
 	func notifyFail() {
+		isTaskFailed = true
 	}
 }
 
 class Task3: Observer {
+	var isTaskFailed: Bool = false
 	weak var delegate: TaskManagerDelegate?
 
 	func taskStart() {
@@ -112,12 +126,17 @@ class Task3: Observer {
 		for i in (1...4) {
 			print("\(String(describing: self)) progressing \(25 * i)/100")
 			sleep(1)
+			if isTaskFailed {
+				print("\(String(describing: self)) fail end")
+				return
+			}
 		}
-		print("\(String(describing: self)) end")
+		print("\(String(describing: self)) success end")
 		delegate?.oneTaskCompleted(by: self)
 	}
 
 	func notifyFail() {
+		isTaskFailed = true
 	}
 }
 
