@@ -38,7 +38,7 @@ class SomeTaskManager: ObserverManager, TaskManagerDelegate {
 		print("All task start!")
 
 		for observer in observers {
-			DispatchQueue.global().async {		// 비동기적으로 수행
+			DispatchQueue.global(qos: .utility).async {		// 비동기적으로 수행
 				observer.delegate = self
 				observer.taskStart()
 			}
