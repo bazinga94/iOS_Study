@@ -111,32 +111,32 @@ print("\n\n=============== concurrent ===============\n\n")
 // MARK: - 예제 1
 print("\n\n=============== 예제 1 ===============\n\n")
 
-let serialQueue1 = DispatchQueue(label: "serial1")
-let serialQueue2 = DispatchQueue(label: "serial2")
-
-let concurrentQueue1 = DispatchQueue(label: "concurrent1", attributes: .concurrent)
-let concurrentQueue2 = DispatchQueue(label: "concurrent2", attributes: .concurrent)
-
-concurrentQueue1.sync {
-	for i in 0..<5 {
-		print("main async \(i) 😍")
-	}
-	//	serialQueue1.sync {
-	//		for i in 0..<5 {
-	//			print("main async \(i) 👻")
-	//		}
-	//	} main.async 를 했던것 처럼 앱이 죽는다.
-}
-
-concurrentQueue1.async {
-	for i in 0..<5 {
-		print("main async \(i) 👻")
-	}
-}
-
-for i in 0..<5 {
-	print("main async \(i) 🐶")
-}
+//let serialQueue1 = DispatchQueue(label: "serial1")
+//let serialQueue2 = DispatchQueue(label: "serial2")
+//
+//let concurrentQueue1 = DispatchQueue(label: "concurrent1", attributes: .concurrent)
+//let concurrentQueue2 = DispatchQueue(label: "concurrent2", attributes: .concurrent)
+//
+//concurrentQueue1.sync {
+//	for i in 0..<5 {
+//		print("main async \(i) 😍")
+//	}
+//	//	serialQueue1.sync {
+//	//		for i in 0..<5 {
+//	//			print("main async \(i) 👻")
+//	//		}
+//	//	} main.async 를 했던것 처럼 앱이 죽는다.
+//}
+//
+//concurrentQueue1.async {
+//	for i in 0..<5 {
+//		print("main async \(i) 👻")
+//	}
+//}
+//
+//for i in 0..<5 {
+//	print("main async \(i) 🐶")
+//}
 
 // MARK: - 예제 2
 print("\n\n=============== 예제 2 ===============\n\n")
@@ -198,23 +198,23 @@ safe  - 전체 0
 // MARK: - 예제 4
 print("\n\n=============== 예제 4 ===============\n\n")
 
-func writeContent(txtFileUrl: URL, savedContent: String, newContent: String) {
-	let text = savedContent + newContent
-	try? text.write(to: txtFileUrl, atomically: true, encoding: .utf8)
-}
-
-let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-let txtFileUrl = documentsDirectoryURL.appendingPathComponent("sample.txt")
-writeContent(txtFileUrl: txtFileUrl, savedContent: "", newContent: "")
-
-let task: (String) -> Void = { suffix in
-	(1...100).forEach { content in
-		let str = "\(content)" + suffix
-		if let savedContent = try? String(contentsOf: txtFileUrl, encoding: .utf8) {
-			writeContent(txtFileUrl: txtFileUrl, savedContent: savedContent, newContent: str)
-		}
-	}
-}
+//func writeContent(txtFileUrl: URL, savedContent: String, newContent: String) {
+//	let text = savedContent + newContent
+//	try? text.write(to: txtFileUrl, atomically: true, encoding: .utf8)
+//}
+//
+//let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+//let txtFileUrl = documentsDirectoryURL.appendingPathComponent("sample.txt")
+//writeContent(txtFileUrl: txtFileUrl, savedContent: "", newContent: "")
+//
+//let task: (String) -> Void = { suffix in
+//	(1...100).forEach { content in
+//		let str = "\(content)" + suffix
+//		if let savedContent = try? String(contentsOf: txtFileUrl, encoding: .utf8) {
+//			writeContent(txtFileUrl: txtFileUrl, savedContent: savedContent, newContent: str)
+//		}
+//	}
+//}
 
 //let serialQueue1 = DispatchQueue(label: "serial1")
 //let serialQueue2 = DispatchQueue(label: "serial2")
@@ -238,14 +238,14 @@ let task: (String) -> Void = { suffix in
 //	task("👻 ")
 //}
 
-task("😍 ")
-task("👻 ")
-
-sleep(1)
-do {
-	let text2 = try String(contentsOf: txtFileUrl, encoding: .utf8)
-	print(text2)
-} catch {/* error handling here */}
+//task("😍 ")
+//task("👻 ")
+//
+//sleep(1)
+//do {
+//	let text2 = try String(contentsOf: txtFileUrl, encoding: .utf8)
+//	print(text2)
+//} catch {/* error handling here */}
 
 // 원하는 결과 1a 2a 3a ... 100a 1b 2b 3b ... 100b
 /* 예시 결과 -  결과는 조금씩 다릅니다.
@@ -260,32 +260,48 @@ result 1a 2a 3a 4a 5a 6a 7a 8a 9a 10a 11a 12a 13a 14a 15a 16a 15b 16b 17b 18b 19
 // MARK: - 예제 5
 print("\n\n=============== 예제 5 ===============\n\n")
 
-// (#1) DispatchSemaphore 초기값 0으로 설정
-let semaphore = DispatchSemaphore(value: 0)		// value 가 음수가 되면 자원을 받기 전까지 기다려야 한다.
-print("task A가 끝나길 기다림")
-// 다른 스레드에서 task A 실행
-DispatchQueue.global(qos: .background).async {
-
-	//임계 구역(critical section)
-	print("공유 자원 접근 시작 🌹")
-	sleep(2)
-
-	//task A
-	print("task A 시작!")
-	print("task A 진행중..")
-	print("task A 끝!")		// (#4)
-
-	//task A 끝났다고 알려줌
-	print("공유 자원 접근 종료 🥀")
-	semaphore.signal()
-}
-// task A 끝날때까지는 value 가 0이라, task A 종료까지 block
-semaphore.wait()		// (#2) DispatchQueue가 global에서 background로 실행되기 때문에 여기서 먼저 value 를 -1로 변경
-print("task A 완료됨")	// (#3) value가 -1(음수) 이기 때문에 자원을 얻지 못하고 기다린다.
-
+//// (#1) DispatchSemaphore 초기값 0으로 설정
+//let semaphore = DispatchSemaphore(value: 0)		// value 가 음수가 되면 자원을 받기 전까지 기다려야 한다.
+//print("task A가 끝나길 기다림")
+//// 다른 스레드에서 task A 실행
+//DispatchQueue.global(qos: .background).async {
+//
+//	//임계 구역(critical section)
+//	print("공유 자원 접근 시작 🌹")
+//	sleep(2)
+//
+//	//task A
+//	print("task A 시작!")
+//	print("task A 진행중..")
+//	print("task A 끝!")		// (#4)
+//
+//	//task A 끝났다고 알려줌
+//	print("공유 자원 접근 종료 🥀")
+//	semaphore.signal()
+//}
+//// task A 끝날때까지는 value 가 0이라, task A 종료까지 block
+//semaphore.wait()		// (#2) DispatchQueue가 global에서 background로 실행되기 때문에 여기서 먼저 value 를 -1로 변경
+//print("task A 완료됨")	// (#3) value가 -1(음수) 이기 때문에 자원을 얻지 못하고 기다린다.
 
 // MARK: - 예제 6
 print("\n\n=============== 예제 6 ===============\n\n")
+
+// 공유 자원에 접근 가능한 작업 수를 2개로 제한
+//let semaphore = DispatchSemaphore(value: 2)
+//
+//for i in 1...5 {
+//	semaphore.wait() //semaphore 감소
+//	DispatchQueue.global().async() {
+//		//임계 구역(critical section)
+//		print("공유 자원 접근 시작 \(i) 🌹")
+//		sleep(3)
+//		print("공유 자원 접근 종료 \(i) 🥀")
+//		semaphore.signal() //semaphore 증가
+//	}
+//}
+
+// MARK: - 예제 7
+print("\n\n=============== 예제 7 ===============\n\n")
 
 class Account {
 	var lock = DispatchSemaphore(value: 1)
@@ -301,9 +317,9 @@ func solution(_ accountNumber1:String, _ accountNumber2:String, _ count:Int) -> 
 	for i in 1...count {
 		dispatchQueue.async {
 			if i%2 == 0 {
-				transfer(account1, account2, 1)	// 그 다음 수행
+				transfer(account1, account2, i)	// 그 다음 수행
 			} else {
-				transfer(account2, account1, 1)	// 먼저 수행
+				transfer(account2, account1, i)	// 먼저 수행
 			}
 		}
 	}
@@ -324,4 +340,7 @@ func transfer(_ from: Account, _ to: Account, _ money: Int) {
 	}
 }
 
-solution("123", "456", 5)
+
+if solution("123", "456", 5) {
+	print("프로세스 종료 확인")
+}
