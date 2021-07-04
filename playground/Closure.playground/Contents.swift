@@ -27,8 +27,6 @@ func demo1() {
 	print("bye")
 }
 
-//demo1()
-
 func demo2() {
 	var pokemon = Pokemon(name: "Pikachu")
 	print("before closure: \(pokemon.name)")
@@ -39,8 +37,6 @@ func demo2() {
 	print("after closure: \(pokemon.name)")
 }
 
-//demo2()
-
 func demo3() {
 	var pokemon = Pokemon(name: "Pikachu")
 	print("before closure: \(pokemon.name)")
@@ -50,8 +46,6 @@ func demo3() {
 	pokemon = Pokemon(name: "Mewtwo")
 	print("after closure: \(pokemon.name)")
 }
-
-//demo3()
 
 // ----- struct vs class
 
@@ -72,8 +66,6 @@ func demo4() {
 	print("after closure: \(pokemon.name)")
 }
 
-demo4()
-
 func demo5() {
 	let pokemon = Pokemon(name: "Pikachu")
 	print("before closure: \(pokemon.name)")
@@ -84,4 +76,9 @@ func demo5() {
 	print("after closure: \(pokemon.name)")
 }
 
+
+//demo1()
+//demo2()
+//demo3()
+demo4()
 //demo5()
