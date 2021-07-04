@@ -134,6 +134,15 @@ DispatchQueue.main.async { // outer
 //하지만 outer가 끝나려면 inner가 끝나야합니다. inner는 sync로(순차적으로) 실행되기 때문에 outer가 끝나야 시작됩니다.
 //따라서 서로 끝나기를 기다리는 무한 대기 상태(데드락)에 빠집니다.
 
+/// main.sync 가 쓰이는 케이스
+DispatchQueue.global().async {
+	// UI 업데이트 전 실행되어야만 하는 코드
+	DispatchQueue.main.sync {
+		// UI 업데이트
+	}
+	// UI 업데이트 후에 실행되어야만 하는 코드
+}
+
 // MARK: - 예제 1
 print("\n\n=============== 예제 1 ===============\n\n")
 
