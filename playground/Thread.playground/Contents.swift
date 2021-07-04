@@ -108,6 +108,32 @@ print("\n\n=============== concurrent ===============\n\n")
 
 // Swift는 Thread-Safe를 고려하고 디자인한 언어가 아니기 때문에 모든 property는 nonatomic이며 별도로 atomic도 지정할 수 없다.(GCD를 통해 적절히 컨트롤 해야한다.)
 
+// MARK: - 왜 DispatchQueue.main.sync를 사용하지 않아야 하는가?
+
+let serialQueue = DispatchQueue(label: "serial")
+
+//serialQueue.async { // outer
+//	print("outer start")
+//	serialQueue.sync { // inner
+//		print("inner")
+//	}
+//	print("outer end")
+//}
+
+/// iOS에서는 기본적으로 Thread를 지정하지 않으면 main thread에서 실행
+DispatchQueue.main.async { // outer
+	print("outer start")
+	DispatchQueue.main.sync { // inner
+		print("inner")		// Deadlock 상태에 빠진다.
+	}
+	print("outer end")
+}
+
+//여기서 outer가 sync, async인지 보다 inner가 sync인게 중요합니다.
+//outer가 sync로 실행하든 async로 실행하든 일단 실행하면 끝나야 합니다.
+//하지만 outer가 끝나려면 inner가 끝나야합니다. inner는 sync로(순차적으로) 실행되기 때문에 outer가 끝나야 시작됩니다.
+//따라서 서로 끝나기를 기다리는 무한 대기 상태(데드락)에 빠집니다.
+
 // MARK: - 예제 1
 print("\n\n=============== 예제 1 ===============\n\n")
 
