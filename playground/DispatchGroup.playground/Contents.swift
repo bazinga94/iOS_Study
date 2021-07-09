@@ -43,3 +43,40 @@ myQueue.async(group: myGroup) {
 myGroup.notify(queue: myQueue) {
 	print("end...")
 }
+myQueue.async(group: myGroup) {
+	for i in 1000...1005 {
+		print("\(i)")
+	}
+}
+
+//let semaphore = DispatchSemaphore(value: 0)
+//let group = DispatchGroup()
+//let queue = DispatchQueue(label: "map-reduce", qos: .userInitiated, attributes: .concurrent)
+//let stopAtFirst = true // false for all results to be appended into one array
+//let values: [U] = <some input values>
+//let mapper: (U) throws -> T? = <closure>
+//var result: [T?] = []
+//
+//for value in values {
+//	queue.async(group: group) {
+//		do {
+//			let res = try mapper(value)
+//			// appending must always be thread-safe, otherwise you end up with race condition and unstable results
+//			DispatchQueue.global().sync {
+//				result.append(res)
+//			}
+//			if stopAtFirst && res != nil {
+//				semaphore.signal()
+//			}
+//		} catch let error {
+//			print("Could not map value \"\(value)\" to mapper \(mapper): \(error)")
+//		}
+//	}
+//}
+//group.notify(queue: queue) { // this must be declared exactly after submitting all tasks, otherwise notification fires instantly
+//	semaphore.signal()
+//}
+//if semaphore.wait(timeout: .init(uptimeNanoseconds: 5)) == .timedOut {
+//	print("MapReduce timed out on values \(values)")
+//}
+
