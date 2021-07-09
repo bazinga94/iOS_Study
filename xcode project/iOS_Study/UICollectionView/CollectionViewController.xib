@@ -32,7 +32,7 @@
                 </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="hML-g7-ruc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="EDl-Zd-xmE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hML-g7-ruc" secondAttribute="trailing" constant="30" id="INs-Z4-qwH"/>

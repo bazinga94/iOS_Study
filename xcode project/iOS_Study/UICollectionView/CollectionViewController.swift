@@ -78,7 +78,8 @@ extension CollectionViewController: UICollectionViewDelegateFlowLayout {
 	}
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-		let inset = self.view.frame.width * 0.1
+//		let inset = self.view.frame.width * 0.1
+		let inset = CGFloat(10)
 		return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
 	}
 
