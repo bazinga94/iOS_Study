@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,8 @@
 		B24B93912671F7450037D750 /* CustomLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B93902671F7450037D750 /* CustomLogger.swift */; };
 		B2A5D80C2689AE5600462F70 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A5D80B2689AE5600462F70 /* CustomView.swift */; };
 		B2A5D8142689AE8A00462F70 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A5D8132689AE8A00462F70 /* CustomView.xib */; };
+		B2B8327526A552D2009006F1 /* RxStudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B8327326A552D2009006F1 /* RxStudyViewController.swift */; };
+		B2B8327626A552D2009006F1 /* RxStudyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B8327426A552D2009006F1 /* RxStudyViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		B24B93902671F7450037D750 /* CustomLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLogger.swift; sourceTree = "<group>"; };
 		B2A5D80B2689AE5600462F70 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		B2A5D8132689AE8A00462F70 /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
+		B2B8327326A552D2009006F1 /* RxStudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxStudyViewController.swift; sourceTree = "<group>"; };
+		B2B8327426A552D2009006F1 /* RxStudyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxStudyViewController.xib; sourceTree = "<group>"; };
 		D78F7FE5992AF0085F91D64D /* Pods_iOS_StudyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_StudyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04337CD572DA9F858C6189E /* Pods-iOS_Study.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Study.debug.xcconfig"; path = "Target Support Files/Pods-iOS_Study/Pods-iOS_Study.debug.xcconfig"; sourceTree = "<group>"; };
 		E9AFA0207E1148D9D9563108 /* Pods_iOS_Study_iOS_StudyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Study_iOS_StudyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,7 +129,6 @@
 				0430646F550F7E1A6F29A44D /* Pods-iOS_StudyTests.debug.xcconfig */,
 				0816B7B2EC34CC32D6E5BAA6 /* Pods-iOS_StudyTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -154,6 +157,7 @@
 		436846BA263AE01D00967143 /* iOS_Study */ = {
 			isa = PBXGroup;
 			children = (
+				B2B8327226A552AF009006F1 /* RxSwift */,
 				43A0BAC52697FE4000E4A8A4 /* UICollectionView */,
 				B2A5D80A2689ADFD00462F70 /* CustomView */,
 				B24B938F2671F7370037D750 /* Logger */,
@@ -220,6 +224,15 @@
 				B2A5D8132689AE8A00462F70 /* CustomView.xib */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		B2B8327226A552AF009006F1 /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				B2B8327326A552D2009006F1 /* RxStudyViewController.swift */,
+				B2B8327426A552D2009006F1 /* RxStudyViewController.xib */,
+			);
+			path = RxSwift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +347,7 @@
 				43A0BAC92697FE5D00E4A8A4 /* CollectionViewController.xib in Resources */,
 				B2A5D8142689AE8A00462F70 /* CustomView.xib in Resources */,
 				436846C8263AE02100967143 /* Assets.xcassets in Resources */,
+				B2B8327626A552D2009006F1 /* RxStudyViewController.xib in Resources */,
 				436846C3263AE01D00967143 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +481,7 @@
 				B24B93912671F7450037D750 /* CustomLogger.swift in Sources */,
 				B2A5D80C2689AE5600462F70 /* CustomView.swift in Sources */,
 				43A0BAC82697FE5D00E4A8A4 /* CollectionViewController.swift in Sources */,
+				B2B8327526A552D2009006F1 /* RxStudyViewController.swift in Sources */,
 				436846BC263AE01D00967143 /* AppDelegate.swift in Sources */,
 				43684705263AE27600967143 /* ViewLayoutTestViewController.swift in Sources */,
 				436846BE263AE01D00967143 /* SceneDelegate.swift in Sources */,

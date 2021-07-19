@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2pZ-sX-OZ8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2pZ-sX-OZ8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -39,6 +39,13 @@
                                     <action selector="collectionViewTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NMV-Ja-FYQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKf-wP-czy">
+                                <rect key="frame" x="164.5" y="238" width="85" height="30"/>
+                                <state key="normal" title="RxSwift Test"/>
+                                <connections>
+                                    <action selector="rxswiftTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qLc-Wh-pLC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -49,6 +56,8 @@
                             <constraint firstItem="qkg-bp-d07" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="V5p-6n-9z7"/>
                             <constraint firstItem="Hna-Z2-Xzf" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="auE-gX-z4t"/>
                             <constraint firstItem="It1-Vt-lsR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eD9-PC-dTF"/>
+                            <constraint firstItem="MKf-wP-czy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kSZ-A8-BH4"/>
+                            <constraint firstItem="MKf-wP-czy" firstAttribute="top" secondItem="Hna-Z2-Xzf" secondAttribute="bottom" constant="30" id="qTD-xf-2Hb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0DC-wz-IwF"/>
