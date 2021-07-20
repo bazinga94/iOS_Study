@@ -21,7 +21,7 @@ extension UIViewController {
 	}
 
 	@objc public func swizzleViewWillAppear(animated: Bool) {
-		print("swizzleViewWillAppear at \(String(describing: self))")
+//		print("swizzleViewWillAppear at \(String(describing: self))")
 	}
 }
 
