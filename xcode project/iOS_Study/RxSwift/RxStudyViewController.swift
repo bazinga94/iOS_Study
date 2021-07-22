@@ -30,9 +30,14 @@ class RxStudyViewController: UIViewController {
 
 //		let intObservable = Observable<Int>.of(1,2,3,4,5)
 		let intObservable = Observable<Int>.from([1,2,3,4,5])
-		intObservable.subscribe { event in
-			print(event)
-		}
+		intObservable.subscribe(onNext: { int in
+			print(int)
+		})
+		.disposed(by: disposeBag)
+
+		intObservable.subscribe(onNext: { int in
+			print(int + 100)
+		})
 		.disposed(by: disposeBag)
 
 //		intObservable.subscribe(onNext: { int in
@@ -59,6 +64,7 @@ class RxStudyViewController: UIViewController {
 		// - 다른 옵져버가 subscribe한 순간 아무것도 주지 않지만 데이터가 발생하면 다 준다
 
 		let publishSubject = PublishSubject<String>()	// 생성자에 별 다른 인자를 전달하지 않음
+
 		publishSubject.onNext("publish subject 첫번째")	// 구독 전에 전달 한 이벤트는 전달하지 않음
 		publishSubject.subscribe(onNext: { emitter in
 			print(emitter)
@@ -66,6 +72,28 @@ class RxStudyViewController: UIViewController {
 		.disposed(by: disposeBag)
 
 		publishSubject.onNext("publish subject 두번째")
+
+		publishSubject.subscribe(onNext: { emitter in
+			print(emitter + "!!!!")
+		})
+		.disposed(by: disposeBag)
+
+		publishSubject.onNext("publish subject 세번째")
+
+		let publishSubjectCreated = PublishSubject<String>.create { (emitter) -> Disposable in
+			emitter.onNext("요호")
+			return Disposables.create()
+		}
+
+		publishSubjectCreated.subscribe(onNext: { emitter in
+			print(emitter)
+		})
+		.disposed(by: disposeBag)
+
+		publishSubjectCreated.subscribe(onNext: { emitter in
+			print(emitter)
+		})
+		.disposed(by: disposeBag)
 
 		// MARK: - BehaviorSubject
 		// - default(초기값) 을 넣어주어야한다
