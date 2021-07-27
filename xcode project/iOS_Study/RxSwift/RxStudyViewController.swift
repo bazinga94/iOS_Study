@@ -50,13 +50,22 @@ class RxStudyViewController: UIViewController {
 
 		let subject = PublishSubject<String>()
 
+		subject.onNext("0")
+
 		subject.subscribe(onNext: { string in
-			print(string)
+			print("첫 번째 구독" + string)
 		})
 		.disposed(by: disposeBag)
 
 		subject.on(.next("1"))
 		subject.onNext("2")
+
+		subject.subscribe(onNext: { string in
+			print("두 번째 구독" + string)
+		})
+		.disposed(by: disposeBag)
+
+		subject.onNext("3")
 
 		// MARK: - PublishSubject
 		// Subject는 Observable 인 동시에 Observer 이다.
