@@ -30,6 +30,31 @@ class RxStudyViewController: UIViewController {
 
 //		let intObservable = Observable<Int>.of(1,2,3,4,5)
 		let intObservable = Observable<Int>.from([1,2,3,4,5])
+		intObservable
+			.do(onNext: { int in	// 스트림에 변화를 안주고 이벤트 실행하는게 "do" operator!
+				print("do onNext \(int)")
+			}, afterNext: { _ in
+				print("do afterNext")
+			}, onError: { _ in
+				print("do onError")
+			}, afterError: { _ in
+				print("do afterError")
+			}, onCompleted: {
+				print("do onCompleted")
+			}, afterCompleted: {
+				print("do afterCompleted")
+			}, onSubscribe: {
+				print("do onSubscribe")
+			}, onSubscribed: {
+				print("do onSubscribed")
+			}, onDispose: {
+				print("do onDisposed")
+			})
+			.subscribe(onNext: { int in
+				print("subscribe after do \(int)")
+			})
+			.disposed(by: disposeBag)
+
 		intObservable.subscribe(onNext: { int in
 			print(int)
 		})
