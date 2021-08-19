@@ -68,7 +68,7 @@ class ViewController: UIViewController {
 
 	@IBAction func swinjectTest(_ sender: Any) {
 		self.registerDependencies()
-		let destinationViewController = SwinjectSampleViewController(worker: container.resolve(WorkProtocol.self, argument: "이종호")!)
+		let destinationViewController = SwinjectSampleViewController(worker: container.resolve(WorkProtocol.self, argument: "이종호")!)	// resolve로 반환하는 instance는 optional이다. DI 단계에서 optional로 인한 에러 처리를 어떻게 하지??
 		self.navigationController?.pushViewController(destinationViewController, animated: true)
 	}
 
