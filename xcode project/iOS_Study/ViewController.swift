@@ -68,13 +68,13 @@ class ViewController: UIViewController {
 
 	@IBAction func swinjectTest(_ sender: Any) {
 		self.registerDependencies()
-		let destinationViewController = SwinjectSampleViewController(worker: container.resolve(WorkProtocol.self)!)
+		let destinationViewController = SwinjectSampleViewController(worker: container.resolve(WorkProtocol.self, argument: "이종호")!)
 		self.navigationController?.pushViewController(destinationViewController, animated: true)
 	}
 
 	private func registerDependencies() {
-		self.container.register(WorkProtocol.self) { _ in
-			HardWorker()
+		self.container.register(WorkProtocol.self) { (_, name: String) in
+			HardWorker(name: name)
 		}
 	}
 }

@@ -12,8 +12,14 @@ protocol WorkProtocol {
 }
 
 class HardWorker: WorkProtocol {
+	let name: String
+
+	init(name: String) {
+		self.name = name
+	}
+
 	func workHard() {
-		print("I work hard !!")
+		print("\(self.name) work hard !!")
 	}
 }
 
