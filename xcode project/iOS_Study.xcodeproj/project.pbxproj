@@ -27,6 +27,8 @@
 		B2A5D8142689AE8A00462F70 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A5D8132689AE8A00462F70 /* CustomView.xib */; };
 		B2B8327526A552D2009006F1 /* RxStudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B8327326A552D2009006F1 /* RxStudyViewController.swift */; };
 		B2B8327626A552D2009006F1 /* RxStudyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B8327426A552D2009006F1 /* RxStudyViewController.xib */; };
+		B2EBA24D26CDE37E00A40782 /* SwinjectSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA24B26CDE37E00A40782 /* SwinjectSampleViewController.swift */; };
+		B2EBA24E26CDE37E00A40782 /* SwinjectSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2EBA24C26CDE37E00A40782 /* SwinjectSampleViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		B2A5D8132689AE8A00462F70 /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		B2B8327326A552D2009006F1 /* RxStudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxStudyViewController.swift; sourceTree = "<group>"; };
 		B2B8327426A552D2009006F1 /* RxStudyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxStudyViewController.xib; sourceTree = "<group>"; };
+		B2EBA24B26CDE37E00A40782 /* SwinjectSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectSampleViewController.swift; sourceTree = "<group>"; };
+		B2EBA24C26CDE37E00A40782 /* SwinjectSampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwinjectSampleViewController.xib; sourceTree = "<group>"; };
 		D78F7FE5992AF0085F91D64D /* Pods_iOS_StudyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_StudyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04337CD572DA9F858C6189E /* Pods-iOS_Study.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Study.debug.xcconfig"; path = "Target Support Files/Pods-iOS_Study/Pods-iOS_Study.debug.xcconfig"; sourceTree = "<group>"; };
 		E9AFA0207E1148D9D9563108 /* Pods_iOS_Study_iOS_StudyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Study_iOS_StudyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +161,7 @@
 		436846BA263AE01D00967143 /* iOS_Study */ = {
 			isa = PBXGroup;
 			children = (
+				B2EBA24726CDE14100A40782 /* Swinject */,
 				B2B8327226A552AF009006F1 /* RxSwift */,
 				43A0BAC52697FE4000E4A8A4 /* UICollectionView */,
 				B2A5D80A2689ADFD00462F70 /* CustomView */,
@@ -233,6 +238,15 @@
 				B2B8327426A552D2009006F1 /* RxStudyViewController.xib */,
 			);
 			path = RxSwift;
+			sourceTree = "<group>";
+		};
+		B2EBA24726CDE14100A40782 /* Swinject */ = {
+			isa = PBXGroup;
+			children = (
+				B2EBA24B26CDE37E00A40782 /* SwinjectSampleViewController.swift */,
+				B2EBA24C26CDE37E00A40782 /* SwinjectSampleViewController.xib */,
+			);
+			path = Swinject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2EBA24E26CDE37E00A40782 /* SwinjectSampleViewController.xib in Resources */,
 				436846CB263AE02100967143 /* LaunchScreen.storyboard in Resources */,
 				43A0BAC92697FE5D00E4A8A4 /* CollectionViewController.xib in Resources */,
 				B2A5D8142689AE8A00462F70 /* CustomView.xib in Resources */,
@@ -477,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				436846C0263AE01D00967143 /* ViewController.swift in Sources */,
+				B2EBA24D26CDE37E00A40782 /* SwinjectSampleViewController.swift in Sources */,
 				436846C6263AE01D00967143 /* iOS_Study.xcdatamodeld in Sources */,
 				B24B93912671F7450037D750 /* CustomLogger.swift in Sources */,
 				B2A5D80C2689AE5600462F70 /* CustomView.swift in Sources */,

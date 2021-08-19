@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Swinject
 
 extension UIViewController {
 	class func swizzleMethod() {
@@ -26,6 +27,8 @@ extension UIViewController {
 }
 
 class ViewController: UIViewController {
+
+	var container = Container()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -61,5 +64,17 @@ class ViewController: UIViewController {
 	@IBAction func rxswiftTest(_ sender: Any) {
 		let destinationViewController = RxStudyViewController()
 		self.navigationController?.pushViewController(destinationViewController, animated: true)
+	}
+
+	@IBAction func swinjectTest(_ sender: Any) {
+		self.registerDependencies()
+		let destinationViewController = SwinjectSampleViewController(worker: container.resolve(WorkProtocol.self)!)
+		self.navigationController?.pushViewController(destinationViewController, animated: true)
+	}
+
+	private func registerDependencies() {
+		self.container.register(WorkProtocol.self) { _ in
+			HardWorker()
+		}
 	}
 }

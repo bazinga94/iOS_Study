@@ -46,11 +46,20 @@
                                     <action selector="rxswiftTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qLc-Wh-pLC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EmE-c2-QTL">
+                                <rect key="frame" x="177.5" y="298" width="59" height="30"/>
+                                <state key="normal" title="Swinject"/>
+                                <connections>
+                                    <action selector="swinjectTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6pi-2O-dJk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="EmE-c2-QTL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0JC-KX-k4x"/>
                             <constraint firstItem="It1-Vt-lsR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="3bs-SR-sAx"/>
+                            <constraint firstItem="EmE-c2-QTL" firstAttribute="top" secondItem="MKf-wP-czy" secondAttribute="bottom" constant="30" id="84E-ej-DFF"/>
                             <constraint firstItem="qkg-bp-d07" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="98Q-wm-a5W"/>
                             <constraint firstItem="Hna-Z2-Xzf" firstAttribute="top" secondItem="It1-Vt-lsR" secondAttribute="bottom" constant="30" id="QgX-Qd-5PH"/>
                             <constraint firstItem="qkg-bp-d07" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="V5p-6n-9z7"/>
