@@ -8,6 +8,7 @@ target 'iOS_Study' do
   # Pods for iOS_Study
     pod 'RxSwift', '~> 6.0.0'
     pod 'RxCocoa', '~> 6.0.0'
+    pod 'Swinject'
 
   target 'iOS_StudyTests' do
     inherit! :search_paths
