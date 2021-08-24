@@ -28,6 +28,9 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sC2-1B-yHq">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="1121"/>
                                     <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="WZf-Hs-Ta9">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="1121"/>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="뱅킹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELV-BG-pt8">
                                             <rect key="frame" x="192.5" y="100" width="29.5" height="21"/>
                                             <constraints>
@@ -41,8 +44,12 @@
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="ELV-BG-pt8" firstAttribute="top" secondItem="sC2-1B-yHq" secondAttribute="top" constant="100" id="0kJ-9e-v6H"/>
+                                        <constraint firstItem="WZf-Hs-Ta9" firstAttribute="leading" secondItem="sC2-1B-yHq" secondAttribute="leading" id="5Jc-TR-lWf"/>
+                                        <constraint firstItem="WZf-Hs-Ta9" firstAttribute="top" secondItem="sC2-1B-yHq" secondAttribute="top" id="CN7-ek-oHm"/>
                                         <constraint firstAttribute="bottom" secondItem="ELV-BG-pt8" secondAttribute="bottom" constant="1000" id="fjQ-50-FfV"/>
                                         <constraint firstItem="ELV-BG-pt8" firstAttribute="centerX" secondItem="sC2-1B-yHq" secondAttribute="centerX" id="pWB-k3-ldR"/>
+                                        <constraint firstAttribute="trailing" secondItem="WZf-Hs-Ta9" secondAttribute="trailing" id="xyL-UA-YnI"/>
+                                        <constraint firstAttribute="bottom" secondItem="WZf-Hs-Ta9" secondAttribute="bottom" id="yrM-HG-N7h"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -76,6 +83,7 @@
         </view>
     </objects>
     <resources>
+        <image name="sample" width="500" height="750"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
