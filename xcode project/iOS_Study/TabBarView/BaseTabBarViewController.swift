@@ -19,9 +19,7 @@ class BaseTabBarViewController: UITabBarController {
 	private func loadTabBar() {
 		let tabBarItems: [TabBarItem] = [BankingTab(), AssetTab(), BenefitTab()]
 
-		self.setupCustomTabMenu(tabBarItems) { (viewControllers) in
-			self.viewControllers = viewControllers
-		}
+		self.setupCustomTabMenu(tabBarItems)
 
 		self.selectedIndex = 0	// 초기 index는 0
 
@@ -38,8 +36,7 @@ class BaseTabBarViewController: UITabBarController {
 //		tabBar.isHidden = true
 	}
 
-	private func setupCustomTabMenu(_ menuItems: [TabBarItem], completion: @escaping ([UIViewController]) -> Void) {
-		// handle creation of the tab bar and attach touch event listeners
+	private func setupCustomTabMenu(_ menuItems: [TabBarItem]) {
 		let frame = tabBar.frame
 		var viewControllers = [UIViewController]()
 
@@ -60,8 +57,8 @@ class BaseTabBarViewController: UITabBarController {
 		])
 
 		menuItems.forEach { viewControllers.append($0.viewController) }
+		self.viewControllers = viewControllers
 		self.view.layoutIfNeeded()
-		completion(viewControllers)
 	}
 
 	func changeTab(tabIndex: Int) {
