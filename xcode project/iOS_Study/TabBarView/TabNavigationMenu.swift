@@ -112,6 +112,7 @@ class TabNavigationMenu: UIView {
 			label?.textColor = .black
 		}
 		self.activeItem = tab
+		self.itemTapped?(tab)
 	}
 
 	func deactivateTab(tab: Int) {
