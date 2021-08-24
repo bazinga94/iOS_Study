@@ -72,6 +72,11 @@ class ViewController: UIViewController {
 		self.navigationController?.pushViewController(destinationViewController, animated: true)
 	}
 
+	@IBAction func tabBarViewTest(_ sender: Any) {
+		let destinationViewController = TabBarViewController()
+		self.navigationController?.pushViewController(destinationViewController, animated: true)
+	}
+
 	private func registerDependencies() {
 		self.container.register(WorkProtocol.self) { (_, name: String) in
 			HardWorker(name: name)
