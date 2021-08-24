@@ -7,10 +7,15 @@
 
 import UIKit
 
+protocol TabNavigationMenuDelegate: class {
+	func itemTapped(tabIndex: Int)
+}
+
 class TabNavigationMenu: UIView {
-	var itemTapped: ((_ tab: Int) -> Void)?
+//	var itemTapped: ((_ tab: Int) -> Void)?
 	var activeItem: Int = 0
 	let iconViewHeight: CGFloat = 30
+	weak var delegate: TabNavigationMenuDelegate?
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -42,7 +47,7 @@ class TabNavigationMenu: UIView {
 			])
 
 			self.setNeedsLayout()
-			self.activateTab(tab: 0)	// 첫번째 tab
+			self.activateTab(index: 0)	// 첫번째 tab
 		}
 
 //		backgroundColor = .clear
@@ -100,23 +105,24 @@ class TabNavigationMenu: UIView {
 	}
 
 	func switchTab(from: Int, to: Int) {
-		self.deactivateTab(tab: from)
-		self.activateTab(tab: to)
+		self.deactivateTab(index: from)
+		self.activateTab(index: to)
 	}
 
-	func activateTab(tab: Int) {
-		let activateTabView = self.subviews[tab]
+	func activateTab(index: Int) {
+		let activateTabView = self.subviews[index]
 		let label = activateTabView.viewWithTag(12) as? UILabel
 
 		DispatchQueue.main.async {
 			label?.textColor = .black
 		}
-		self.activeItem = tab
-		self.itemTapped?(tab)
+		self.activeItem = index
+//		self.itemTapped?(tab)
+		self.delegate?.itemTapped(tabIndex: index)
 	}
 
-	func deactivateTab(tab: Int) {
-		let activateTabView = self.subviews[tab]
+	func deactivateTab(index: Int) {
+		let activateTabView = self.subviews[index]
 		let label = activateTabView.viewWithTag(12) as? UILabel
 
 		DispatchQueue.main.async {

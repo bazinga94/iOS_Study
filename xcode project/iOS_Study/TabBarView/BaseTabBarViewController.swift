@@ -44,7 +44,8 @@ class BaseTabBarViewController: UITabBarController {
 		self.customTabBar = TabNavigationMenu(menuItems: menuItems, frame: frame)
 		self.customTabBar.translatesAutoresizingMaskIntoConstraints = false
 		self.customTabBar.clipsToBounds = true
-		self.customTabBar.itemTapped = self.changeTab(tabIndex:)
+		self.customTabBar.delegate = self
+//		self.customTabBar.itemTapped = self.changeTab(tabIndex:)
 
 		self.view.addSubview(customTabBar)
 
@@ -61,8 +62,14 @@ class BaseTabBarViewController: UITabBarController {
 		self.view.layoutIfNeeded()
 	}
 
-	func changeTab(tabIndex: Int) {
-		self.selectedIndex = tabIndex
+	func changeTab(index: Int) {
+		self.selectedIndex = index
+	}
+}
+
+extension BaseTabBarViewController: TabNavigationMenuDelegate {
+	func itemTapped(tabIndex: Int) {
+		changeTab(index: tabIndex)
 	}
 }
 
