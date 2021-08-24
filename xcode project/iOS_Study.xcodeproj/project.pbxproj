@@ -31,6 +31,13 @@
 		B2EBA24E26CDE37E00A40782 /* SwinjectSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2EBA24C26CDE37E00A40782 /* SwinjectSampleViewController.xib */; };
 		B2EBA29726D48E9A00A40782 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA29526D48E9A00A40782 /* TabBarViewController.swift */; };
 		B2EBA29826D48E9A00A40782 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2EBA29626D48E9A00A40782 /* TabBarViewController.xib */; };
+		B2EBA2A126D4911400A40782 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA2A026D4911400A40782 /* TabBarItem.swift */; };
+		B2EBA2AF26D4ACDC00A40782 /* BankingTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA2AD26D4ACDC00A40782 /* BankingTabViewController.swift */; };
+		B2EBA2B026D4ACDC00A40782 /* BankingTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2EBA2AE26D4ACDC00A40782 /* BankingTabViewController.xib */; };
+		B2EBA2B626D4ACED00A40782 /* AssetTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA2B426D4ACED00A40782 /* AssetTabViewController.swift */; };
+		B2EBA2B726D4ACED00A40782 /* AssetTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2EBA2B526D4ACED00A40782 /* AssetTabViewController.xib */; };
+		B2EBA2BD26D4ACFE00A40782 /* BenefitTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA2BB26D4ACFE00A40782 /* BenefitTabViewController.swift */; };
+		B2EBA2BE26D4ACFE00A40782 /* BenefitTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2EBA2BC26D4ACFE00A40782 /* BenefitTabViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +91,13 @@
 		B2EBA24C26CDE37E00A40782 /* SwinjectSampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwinjectSampleViewController.xib; sourceTree = "<group>"; };
 		B2EBA29526D48E9A00A40782 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		B2EBA29626D48E9A00A40782 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
+		B2EBA2A026D4911400A40782 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		B2EBA2AD26D4ACDC00A40782 /* BankingTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingTabViewController.swift; sourceTree = "<group>"; };
+		B2EBA2AE26D4ACDC00A40782 /* BankingTabViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankingTabViewController.xib; sourceTree = "<group>"; };
+		B2EBA2B426D4ACED00A40782 /* AssetTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTabViewController.swift; sourceTree = "<group>"; };
+		B2EBA2B526D4ACED00A40782 /* AssetTabViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssetTabViewController.xib; sourceTree = "<group>"; };
+		B2EBA2BB26D4ACFE00A40782 /* BenefitTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitTabViewController.swift; sourceTree = "<group>"; };
+		B2EBA2BC26D4ACFE00A40782 /* BenefitTabViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BenefitTabViewController.xib; sourceTree = "<group>"; };
 		D78F7FE5992AF0085F91D64D /* Pods_iOS_StudyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_StudyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04337CD572DA9F858C6189E /* Pods-iOS_Study.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Study.debug.xcconfig"; path = "Target Support Files/Pods-iOS_Study/Pods-iOS_Study.debug.xcconfig"; sourceTree = "<group>"; };
 		E9AFA0207E1148D9D9563108 /* Pods_iOS_Study_iOS_StudyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Study_iOS_StudyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,6 +273,13 @@
 			children = (
 				B2EBA29526D48E9A00A40782 /* TabBarViewController.swift */,
 				B2EBA29626D48E9A00A40782 /* TabBarViewController.xib */,
+				B2EBA2A026D4911400A40782 /* TabBarItem.swift */,
+				B2EBA2AD26D4ACDC00A40782 /* BankingTabViewController.swift */,
+				B2EBA2AE26D4ACDC00A40782 /* BankingTabViewController.xib */,
+				B2EBA2B426D4ACED00A40782 /* AssetTabViewController.swift */,
+				B2EBA2B526D4ACED00A40782 /* AssetTabViewController.xib */,
+				B2EBA2BB26D4ACFE00A40782 /* BenefitTabViewController.swift */,
+				B2EBA2BC26D4ACFE00A40782 /* BenefitTabViewController.xib */,
 			);
 			path = TabBarView;
 			sourceTree = "<group>";
@@ -374,7 +395,10 @@
 				B2EBA24E26CDE37E00A40782 /* SwinjectSampleViewController.xib in Resources */,
 				436846CB263AE02100967143 /* LaunchScreen.storyboard in Resources */,
 				43A0BAC92697FE5D00E4A8A4 /* CollectionViewController.xib in Resources */,
+				B2EBA2B726D4ACED00A40782 /* AssetTabViewController.xib in Resources */,
+				B2EBA2B026D4ACDC00A40782 /* BankingTabViewController.xib in Resources */,
 				B2A5D8142689AE8A00462F70 /* CustomView.xib in Resources */,
+				B2EBA2BE26D4ACFE00A40782 /* BenefitTabViewController.xib in Resources */,
 				B2EBA29826D48E9A00A40782 /* TabBarViewController.xib in Resources */,
 				436846C8263AE02100967143 /* Assets.xcassets in Resources */,
 				B2B8327626A552D2009006F1 /* RxStudyViewController.xib in Resources */,
@@ -506,12 +530,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2EBA2AF26D4ACDC00A40782 /* BankingTabViewController.swift in Sources */,
+				B2EBA2B626D4ACED00A40782 /* AssetTabViewController.swift in Sources */,
 				436846C0263AE01D00967143 /* ViewController.swift in Sources */,
 				B2EBA24D26CDE37E00A40782 /* SwinjectSampleViewController.swift in Sources */,
 				B2EBA29726D48E9A00A40782 /* TabBarViewController.swift in Sources */,
 				436846C6263AE01D00967143 /* iOS_Study.xcdatamodeld in Sources */,
 				B24B93912671F7450037D750 /* CustomLogger.swift in Sources */,
 				B2A5D80C2689AE5600462F70 /* CustomView.swift in Sources */,
+				B2EBA2BD26D4ACFE00A40782 /* BenefitTabViewController.swift in Sources */,
+				B2EBA2A126D4911400A40782 /* TabBarItem.swift in Sources */,
 				43A0BAC82697FE5D00E4A8A4 /* CollectionViewController.swift in Sources */,
 				B2B8327526A552D2009006F1 /* RxStudyViewController.swift in Sources */,
 				436846BC263AE01D00967143 /* AppDelegate.swift in Sources */,
