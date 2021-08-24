@@ -165,7 +165,7 @@
         <!--Base Tab Bar View Controller-->
         <scene sceneID="6WT-ip-kdq">
             <objects>
-                <tabBarController id="kJ5-j7-IUh" customClass="BaseTabBarViewController" customModule="iOS_Study" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="BaseTabBarViewController" id="kJ5-j7-IUh" customClass="BaseTabBarViewController" customModule="iOS_Study" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hfM-a2-hfX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

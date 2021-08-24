@@ -73,7 +73,8 @@ class ViewController: UIViewController {
 	}
 
 	@IBAction func tabBarViewTest(_ sender: Any) {
-		let destinationViewController = TabBarViewController()
+		let storyBoard: UIStoryboard! = UIStoryboard(name: "Main", bundle: nil)
+		let destinationViewController = storyBoard.instantiateViewController(withIdentifier: "BaseTabBarViewController") as! BaseTabBarViewController
 		self.navigationController?.pushViewController(destinationViewController, animated: true)
 	}
 

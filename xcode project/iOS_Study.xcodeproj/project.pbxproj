@@ -37,6 +37,7 @@
 		B2EBA2BD26D4ACFE00A40782 /* BenefitTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA2BB26D4ACFE00A40782 /* BenefitTabViewController.swift */; };
 		B2EBA2BE26D4ACFE00A40782 /* BenefitTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2EBA2BC26D4ACFE00A40782 /* BenefitTabViewController.xib */; };
 		B2EBA2C626D4AE7500A40782 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA2C526D4AE7500A40782 /* BaseTabBarViewController.swift */; };
+		B2EBA2CE26D4B06200A40782 /* TabNavigationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA2CD26D4B06200A40782 /* TabNavigationMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		B2EBA2BB26D4ACFE00A40782 /* BenefitTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitTabViewController.swift; sourceTree = "<group>"; };
 		B2EBA2BC26D4ACFE00A40782 /* BenefitTabViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BenefitTabViewController.xib; sourceTree = "<group>"; };
 		B2EBA2C526D4AE7500A40782 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
+		B2EBA2CD26D4B06200A40782 /* TabNavigationMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNavigationMenu.swift; sourceTree = "<group>"; };
 		D78F7FE5992AF0085F91D64D /* Pods_iOS_StudyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_StudyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04337CD572DA9F858C6189E /* Pods-iOS_Study.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Study.debug.xcconfig"; path = "Target Support Files/Pods-iOS_Study/Pods-iOS_Study.debug.xcconfig"; sourceTree = "<group>"; };
 		E9AFA0207E1148D9D9563108 /* Pods_iOS_Study_iOS_StudyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Study_iOS_StudyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				B2EBA2A026D4911400A40782 /* TabBarItem.swift */,
+				B2EBA2CD26D4B06200A40782 /* TabNavigationMenu.swift */,
 				B2EBA2C526D4AE7500A40782 /* BaseTabBarViewController.swift */,
 				B2EBA2AD26D4ACDC00A40782 /* BankingTabViewController.swift */,
 				B2EBA2AE26D4ACDC00A40782 /* BankingTabViewController.xib */,
@@ -540,6 +543,7 @@
 				B2B8327526A552D2009006F1 /* RxStudyViewController.swift in Sources */,
 				436846BC263AE01D00967143 /* AppDelegate.swift in Sources */,
 				43684705263AE27600967143 /* ViewLayoutTestViewController.swift in Sources */,
+				B2EBA2CE26D4B06200A40782 /* TabNavigationMenu.swift in Sources */,
 				436846BE263AE01D00967143 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
