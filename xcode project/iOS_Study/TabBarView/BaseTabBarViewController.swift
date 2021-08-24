@@ -18,22 +18,8 @@ class BaseTabBarViewController: UITabBarController {
 
 	private func loadTabBar() {
 		let tabBarItems: [TabBarItem] = [BankingTab(), AssetTab(), BenefitTab()]
-
 		self.setupCustomTabMenu(tabBarItems)
-
 		self.selectedIndex = 0	// 초기 index는 0
-
-//		let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.extraLight)
-//		let blurEffectView = UIVisualEffectView(effect: blurEffect)
-//		blurEffectView.frame = tabBar.bounds //view.bounds
-//		blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//		self.view.addSubview(blurEffectView)
-//		blurEffectView.frame = tabBar.frame
-//		tabBar.backgroundColor = .clear
-//		tabBar.isTranslucent = false
-//		tabBar.barTintColor = .clear
-//		tabBar.backgroundImage = UIImage()
-//		tabBar.isHidden = true
 	}
 
 	private func setupCustomTabMenu(_ menuItems: [TabBarItem]) {
@@ -45,7 +31,6 @@ class BaseTabBarViewController: UITabBarController {
 		self.customTabBar.translatesAutoresizingMaskIntoConstraints = false
 		self.customTabBar.clipsToBounds = true
 		self.customTabBar.delegate = self
-//		self.customTabBar.itemTapped = self.changeTab(tabIndex:)
 
 		self.view.addSubview(customTabBar)
 
@@ -72,7 +57,3 @@ extension BaseTabBarViewController: TabNavigationMenuDelegate {
 		changeTab(index: tabIndex)
 	}
 }
-
-//extension BaseTabBarViewController: UITabBarControllerDelegate {
-//	func tabbarcontroller
-//}

@@ -12,7 +12,6 @@ protocol TabNavigationMenuDelegate: class {
 }
 
 class TabNavigationMenu: UIView {
-//	var itemTapped: ((_ tab: Int) -> Void)?
 	var activeItem: Int = 0
 	let iconViewHeight: CGFloat = 30
 	weak var delegate: TabNavigationMenuDelegate?
@@ -117,7 +116,6 @@ class TabNavigationMenu: UIView {
 			label?.textColor = .black
 		}
 		self.activeItem = index
-//		self.itemTapped?(tab)
 		self.delegate?.itemTapped(tabIndex: index)
 	}
 
