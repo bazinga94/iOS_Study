@@ -17,7 +17,7 @@ class BaseTabBarViewController: UITabBarController {
 	}
 
 	private func loadTabBar() {
-		let tabBarItems: [TabBarItem] = [BankingTab(), AssetTab(), BenefitTab()]
+		let tabBarItems: [TabBarItem] = [BankingTab(), AssetTab(), BenefitTab()]		// tab을 추가하고 싶으면 여기에 Item을 추가하면 된다.
 		self.setupCustomTabMenu(tabBarItems)
 		self.selectedIndex = 0	// 초기 index는 0
 	}
