@@ -38,6 +38,8 @@
 		B2EBA2BE26D4ACFE00A40782 /* BenefitTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2EBA2BC26D4ACFE00A40782 /* BenefitTabViewController.xib */; };
 		B2EBA2C626D4AE7500A40782 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA2C526D4AE7500A40782 /* BaseTabBarViewController.swift */; };
 		B2EBA2CE26D4B06200A40782 /* TabNavigationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA2CD26D4B06200A40782 /* TabNavigationMenu.swift */; };
+		B2EBA2D726D5DBB800A40782 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA2D626D5DBB800A40782 /* FloatingButton.swift */; };
+		B2EBA2DF26D5DD8700A40782 /* FloatingButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2EBA2DE26D5DD8700A40782 /* FloatingButton.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		B2EBA2BC26D4ACFE00A40782 /* BenefitTabViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BenefitTabViewController.xib; sourceTree = "<group>"; };
 		B2EBA2C526D4AE7500A40782 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		B2EBA2CD26D4B06200A40782 /* TabNavigationMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNavigationMenu.swift; sourceTree = "<group>"; };
+		B2EBA2D626D5DBB800A40782 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
+		B2EBA2DE26D5DD8700A40782 /* FloatingButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FloatingButton.xib; sourceTree = "<group>"; };
 		D78F7FE5992AF0085F91D64D /* Pods_iOS_StudyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_StudyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04337CD572DA9F858C6189E /* Pods-iOS_Study.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Study.debug.xcconfig"; path = "Target Support Files/Pods-iOS_Study/Pods-iOS_Study.debug.xcconfig"; sourceTree = "<group>"; };
 		E9AFA0207E1148D9D9563108 /* Pods_iOS_Study_iOS_StudyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Study_iOS_StudyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +183,7 @@
 		436846BA263AE01D00967143 /* iOS_Study */ = {
 			isa = PBXGroup;
 			children = (
+				B2EBA2D526D5D7F700A40782 /* FloatingButton */,
 				B2EBA29426D4814300A40782 /* TabBarView */,
 				B2EBA24726CDE14100A40782 /* Swinject */,
 				B2B8327226A552AF009006F1 /* RxSwift */,
@@ -282,6 +287,15 @@
 				B2EBA2BC26D4ACFE00A40782 /* BenefitTabViewController.xib */,
 			);
 			path = TabBarView;
+			sourceTree = "<group>";
+		};
+		B2EBA2D526D5D7F700A40782 /* FloatingButton */ = {
+			isa = PBXGroup;
+			children = (
+				B2EBA2D626D5DBB800A40782 /* FloatingButton.swift */,
+				B2EBA2DE26D5DD8700A40782 /* FloatingButton.xib */,
+			);
+			path = FloatingButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,6 +406,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2EBA2DF26D5DD8700A40782 /* FloatingButton.xib in Resources */,
 				B2EBA24E26CDE37E00A40782 /* SwinjectSampleViewController.xib in Resources */,
 				436846CB263AE02100967143 /* LaunchScreen.storyboard in Resources */,
 				43A0BAC92697FE5D00E4A8A4 /* CollectionViewController.xib in Resources */,
@@ -530,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2EBA2AF26D4ACDC00A40782 /* BankingTabViewController.swift in Sources */,
+				B2EBA2D726D5DBB800A40782 /* FloatingButton.swift in Sources */,
 				B2EBA2B626D4ACED00A40782 /* AssetTabViewController.swift in Sources */,
 				436846C0263AE01D00967143 /* ViewController.swift in Sources */,
 				B2EBA24D26CDE37E00A40782 /* SwinjectSampleViewController.swift in Sources */,
