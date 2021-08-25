@@ -19,6 +19,13 @@ class BaseTabBarViewController: UITabBarController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.loadTabBar()
+		self.loadFloatingButton()
+	}
+
+	private func loadFloatingButton() {
+		let floatingButton = FloatingButton(frame: CGRect(x: 330, y: 660, width: 30, height: 30))
+		floatingButton.backgroundColor = .red
+		self.view.addSubview(floatingButton)
 	}
 
 	private func loadTabBar() {
