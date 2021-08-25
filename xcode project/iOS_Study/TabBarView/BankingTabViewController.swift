@@ -29,7 +29,9 @@ extension BankingTabViewController: UIScrollViewDelegate {
 	}
 
 	func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-		guard let tabBarController = tabBarController as? TabBarAnimatable else { return }
-		tabBarController.animateTabBar(hidden: false)
+		if !decelerate {
+			guard let tabBarController = tabBarController as? TabBarAnimatable else { return }
+			tabBarController.animateTabBar(hidden: false)
+		}
 	}
 }
