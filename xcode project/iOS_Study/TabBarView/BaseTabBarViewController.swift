@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol TabBarAnimatable {
+	func animateTabBar(hidden: Bool)
+}
+
 class BaseTabBarViewController: UITabBarController {
 	var customTabBar: TabNavigationMenu!
+	var topConstraint: NSLayoutConstraint = NSLayoutConstraint.init()
 	var tabBarHeight: CGFloat = 120.0
 
 	override func viewDidLoad() {
@@ -18,9 +23,9 @@ class BaseTabBarViewController: UITabBarController {
 
 	private func loadTabBar() {
 		tabBar.isHidden = true
-		self.setupBlurEffectView()
 		let tabBarItems: [TabBarItem] = [BankingTab(), AssetTab(), BenefitTab()]		// tab을 추가하고 싶으면 여기에 Item을 추가하면 된다.
 		self.setupCustomTabMenu(tabBarItems)
+		self.setupBlurEffectView()
 		self.selectedIndex = 0	// 초기 index는 0
 	}
 
@@ -30,12 +35,12 @@ class BaseTabBarViewController: UITabBarController {
 		blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 		blurEffectView.translatesAutoresizingMaskIntoConstraints = false
 		blurEffectView.clipsToBounds = true
-		self.view.addSubview(blurEffectView)
+		self.view.insertSubview(blurEffectView, belowSubview: customTabBar)
 
 		NSLayoutConstraint.activate([
 			blurEffectView.leadingAnchor.constraint(equalTo: tabBar.leadingAnchor),
 			blurEffectView.trailingAnchor.constraint(equalTo: tabBar.trailingAnchor),
-			blurEffectView.bottomAnchor.constraint(equalTo: tabBar.bottomAnchor),
+			blurEffectView.topAnchor.constraint(equalTo: self.customTabBar.topAnchor),
 			blurEffectView.heightAnchor.constraint(equalToConstant: self.tabBarHeight)
 		])
 	}
@@ -50,10 +55,12 @@ class BaseTabBarViewController: UITabBarController {
 		self.customTabBar.delegate = self
 		self.view.addSubview(customTabBar)
 
+		self.topConstraint = self.customTabBar.topAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -self.tabBarHeight)
+
 		NSLayoutConstraint.activate([
 			self.customTabBar.leadingAnchor.constraint(equalTo: tabBar.leadingAnchor),
 			self.customTabBar.trailingAnchor.constraint(equalTo: tabBar.trailingAnchor),
-			self.customTabBar.bottomAnchor.constraint(equalTo: tabBar.bottomAnchor),
+			self.topConstraint,
 			self.customTabBar.heightAnchor.constraint(equalToConstant: self.tabBarHeight)
 		])
 
@@ -70,5 +77,15 @@ class BaseTabBarViewController: UITabBarController {
 extension BaseTabBarViewController: TabNavigationMenuDelegate {
 	func itemTapped(tabIndex: Int) {
 		changeTab(index: tabIndex)
+	}
+}
+
+extension BaseTabBarViewController: TabBarAnimatable {
+	func animateTabBar(hidden: Bool) {
+		self.topConstraint.constant = (hidden) ? 0 : -self.tabBarHeight
+
+		UIView.animate(withDuration: 0.3) {
+			self.view.layoutIfNeeded()
+		}
 	}
 }
