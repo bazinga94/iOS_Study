@@ -49,12 +49,7 @@ class TabNavigationMenu: UIView {
 			self.activateTab(index: 0)	// 첫번째 tab
 		}
 
-//		backgroundColor = .clear
-//		let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.extraLight)
-//		let blurEffectView = UIVisualEffectView(effect: blurEffect)
-//		blurEffectView.frame = self.bounds
-//		blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//		self.addSubview(blurEffectView)
+		backgroundColor = .clear
 	}
 
 	private func createTabItemView(item: TabBarItem) -> UIView {
