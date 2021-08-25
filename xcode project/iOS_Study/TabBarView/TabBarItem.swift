@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 enum TabBarType: String {
 	case banking = "뱅킹"
@@ -20,6 +21,7 @@ protocol TabBarItem {
 	var title: String { get }
 	var viewController: UIViewController { get }
 	var iconImage: UIImage { get }
+	var lottieView: AnimationView { get }
 }
 
 struct BankingTab: TabBarItem {
@@ -27,6 +29,7 @@ struct BankingTab: TabBarItem {
 	var title: String = TabBarType.banking.rawValue
 	var viewController: UIViewController = BankingTabViewController()
 	var iconImage: UIImage = UIImage(named: "icon_home")!
+	var lottieView: AnimationView = AnimationView(name: "lottie-1")
 }
 
 struct AssetTab: TabBarItem {
@@ -34,6 +37,7 @@ struct AssetTab: TabBarItem {
 	var title: String = TabBarType.asset.rawValue
 	var viewController: UIViewController = AssetTabViewController()
 	var iconImage: UIImage = UIImage(named: "icon_calender")!
+	var lottieView: AnimationView = AnimationView(name: "lottie-2")
 }
 
 struct BenefitTab: TabBarItem {
@@ -41,4 +45,5 @@ struct BenefitTab: TabBarItem {
 	var title: String = TabBarType.benefit.rawValue
 	var viewController: UIViewController = BenefitTabViewController()
 	var iconImage: UIImage = UIImage(named: "icon_profile")!
+	var lottieView: AnimationView = AnimationView(name: "lottie-3")
 }

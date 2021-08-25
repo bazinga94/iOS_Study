@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 protocol TabNavigationMenuDelegate: class {
 	func itemTapped(tabIndex: Int)
@@ -13,7 +14,7 @@ protocol TabNavigationMenuDelegate: class {
 
 class TabNavigationMenu: UIView {
 	var activeItem: Int = 0
-	let iconViewHeight: CGFloat = 30
+	let iconViewHeight: CGFloat = 40
 	weak var delegate: TabNavigationMenuDelegate?
 
 	override init(frame: CGRect) {
@@ -55,7 +56,8 @@ class TabNavigationMenu: UIView {
 	private func createTabItemView(item: TabBarItem) -> UIView {
 		let tabItemView = UIView(frame: .zero)
 		let tabItemLabel = UILabel(frame: .zero)
-		let tabItemIconView = UIImageView(frame: .zero)
+//		let tabItemIconView = UIImageView(frame: .zero)
+		let tabItemIconView = item.lottieView
 
 		tabItemView.tag = 11
 		tabItemLabel.tag = 12
@@ -68,7 +70,10 @@ class TabNavigationMenu: UIView {
 		tabItemLabel.clipsToBounds = true
 
 //		tabItemIconView.image = item.iconImage.withRenderingMode(.automatic)	// 이거 머지??
-		tabItemIconView.image = item.iconImage
+//		tabItemIconView.image = item.iconImage
+		tabItemIconView.loopMode = .playOnce
+		tabItemIconView.contentMode = .scaleAspectFill
+//		tabItemIconView.frame = .init()
 		tabItemIconView.translatesAutoresizingMaskIntoConstraints = false
 		tabItemIconView.clipsToBounds = true
 
@@ -106,9 +111,11 @@ class TabNavigationMenu: UIView {
 	func activateTab(index: Int) {
 		let activateTabView = self.subviews[index]
 		let label = activateTabView.viewWithTag(12) as? UILabel
+		let lottie = activateTabView.viewWithTag(13) as? AnimationView
 
 		DispatchQueue.main.async {
 			label?.textColor = .black
+			lottie?.play()
 		}
 		self.activeItem = index
 		self.delegate?.itemTapped(tabIndex: index)
@@ -117,9 +124,11 @@ class TabNavigationMenu: UIView {
 	func deactivateTab(index: Int) {
 		let activateTabView = self.subviews[index]
 		let label = activateTabView.viewWithTag(12) as? UILabel
+		let lottie = activateTabView.viewWithTag(13) as? AnimationView
 
 		DispatchQueue.main.async {
 			label?.textColor = .lightGray
+			lottie?.stop()
 		}
 	}
 }
