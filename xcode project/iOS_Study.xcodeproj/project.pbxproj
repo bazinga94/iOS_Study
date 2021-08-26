@@ -199,8 +199,7 @@
 			children = (
 				B2AFA79526D61B8400D5ED18 /* Resource */,
 				B2EBA2D526D5D7F700A40782 /* FloatingButton */,
-				B2AFA7A826D7288C00D5ED18 /* TopTabBar */,
-				B2EBA29426D4814300A40782 /* BottomTabBar */,
+				B2EBA29426D4814300A40782 /* TabBar */,
 				B2EBA24726CDE14100A40782 /* Swinject */,
 				B2B8327226A552AF009006F1 /* RxSwift */,
 				43A0BAC52697FE4000E4A8A4 /* UICollectionView */,
@@ -281,15 +280,6 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		B2AFA7A826D7288C00D5ED18 /* TopTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				B2AFA7AF26D7296F00D5ED18 /* TopTabBarItem.swift */,
-				B2AFA7D026D75C1200D5ED18 /* TopTabNavigationMenu.swift */,
-			);
-			path = TopTabBar;
-			sourceTree = "<group>";
-		};
 		B2AFA7C526D7576C00D5ED18 /* Banking */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,18 +326,20 @@
 			path = Swinject;
 			sourceTree = "<group>";
 		};
-		B2EBA29426D4814300A40782 /* BottomTabBar */ = {
+		B2EBA29426D4814300A40782 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
 				B2AFA7C526D7576C00D5ED18 /* Banking */,
 				B2AFA7C626D7577300D5ED18 /* Asset */,
 				B2AFA7C726D7577900D5ED18 /* Benefit */,
 				B2AFA7C026D753DB00D5ED18 /* TabBar.storyboard */,
+				B2AFA7AF26D7296F00D5ED18 /* TopTabBarItem.swift */,
 				B2EBA2A026D4911400A40782 /* BottomTabBarItem.swift */,
+				B2AFA7D026D75C1200D5ED18 /* TopTabNavigationMenu.swift */,
 				B2EBA2CD26D4B06200A40782 /* BottomTabNavigationMenu.swift */,
 				B2EBA2C526D4AE7500A40782 /* BaseTabBarViewController.swift */,
 			);
-			path = BottomTabBar;
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		B2EBA2D526D5D7F700A40782 /* FloatingButton */ = {
