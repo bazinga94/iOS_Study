@@ -29,6 +29,7 @@
 		B2AFA79A26D61BA400D5ED18 /* lottie-1.json in Resources */ = {isa = PBXBuildFile; fileRef = B2AFA79726D61BA400D5ED18 /* lottie-1.json */; };
 		B2AFA79B26D61BA400D5ED18 /* lottie-2.json in Resources */ = {isa = PBXBuildFile; fileRef = B2AFA79826D61BA400D5ED18 /* lottie-2.json */; };
 		B2AFA7B026D7296F00D5ED18 /* TopTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AFA7AF26D7296F00D5ED18 /* TopTabBarItem.swift */; };
+		B2AFA7C126D753DB00D5ED18 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2AFA7C026D753DB00D5ED18 /* TabBar.storyboard */; };
 		B2B8327526A552D2009006F1 /* RxStudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B8327326A552D2009006F1 /* RxStudyViewController.swift */; };
 		B2B8327626A552D2009006F1 /* RxStudyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B8327426A552D2009006F1 /* RxStudyViewController.xib */; };
 		B2EBA24D26CDE37E00A40782 /* SwinjectSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA24B26CDE37E00A40782 /* SwinjectSampleViewController.swift */; };
@@ -95,6 +96,7 @@
 		B2AFA79726D61BA400D5ED18 /* lottie-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-1.json"; sourceTree = "<group>"; };
 		B2AFA79826D61BA400D5ED18 /* lottie-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-2.json"; sourceTree = "<group>"; };
 		B2AFA7AF26D7296F00D5ED18 /* TopTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarItem.swift; sourceTree = "<group>"; };
+		B2AFA7C026D753DB00D5ED18 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		B2B8327326A552D2009006F1 /* RxStudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxStudyViewController.swift; sourceTree = "<group>"; };
 		B2B8327426A552D2009006F1 /* RxStudyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxStudyViewController.xib; sourceTree = "<group>"; };
 		B2EBA24B26CDE37E00A40782 /* SwinjectSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectSampleViewController.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 		B2EBA29426D4814300A40782 /* BottomTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				B2AFA7C026D753DB00D5ED18 /* TabBar.storyboard */,
 				B2EBA2A026D4911400A40782 /* TabBarItem.swift */,
 				B2EBA2CD26D4B06200A40782 /* TabNavigationMenu.swift */,
 				B2EBA2C526D4AE7500A40782 /* BaseTabBarViewController.swift */,
@@ -444,6 +447,7 @@
 				B2EBA2B026D4ACDC00A40782 /* BankingTabViewController.xib in Resources */,
 				B2A5D8142689AE8A00462F70 /* CustomView.xib in Resources */,
 				B2EBA2BE26D4ACFE00A40782 /* BenefitTabViewController.xib in Resources */,
+				B2AFA7C126D753DB00D5ED18 /* TabBar.storyboard in Resources */,
 				436846C8263AE02100967143 /* Assets.xcassets in Resources */,
 				B2AFA79B26D61BA400D5ED18 /* lottie-2.json in Resources */,
 				B2B8327626A552D2009006F1 /* RxStudyViewController.xib in Resources */,

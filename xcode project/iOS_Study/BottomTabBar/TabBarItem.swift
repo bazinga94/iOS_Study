@@ -27,7 +27,9 @@ protocol TabBarItem {
 struct BankingTab: TabBarItem {
 	var type: TabBarType = .banking
 	var title: String = TabBarType.banking.rawValue
-	var viewController: UIViewController = BankingTabViewController()
+	var viewController: UIViewController = {
+		return BankingTabViewController()
+	}()
 	var iconImage: UIImage = UIImage(named: "icon_home")!
 	var lottieView: AnimationView = AnimationView(name: "lottie-1")
 }
@@ -35,7 +37,11 @@ struct BankingTab: TabBarItem {
 struct AssetTab: TabBarItem {
 	var type: TabBarType = .asset
 	var title: String = TabBarType.asset.rawValue
-	var viewController: UIViewController = AssetTabViewController()
+	var viewController: UIViewController = {
+		let storyBoard: UIStoryboard! = UIStoryboard(name: "TabBar", bundle: nil)
+		let viewController = storyBoard.instantiateViewController(withIdentifier: "AssetTabViewController") as! AssetTabViewController
+		return viewController
+	}()
 	var iconImage: UIImage = UIImage(named: "icon_calender")!
 	var lottieView: AnimationView = AnimationView(name: "lottie-2")
 }
@@ -43,7 +49,11 @@ struct AssetTab: TabBarItem {
 struct BenefitTab: TabBarItem {
 	var type: TabBarType = .benefit
 	var title: String = TabBarType.benefit.rawValue
-	var viewController: UIViewController = BenefitTabViewController()
+	var viewController: UIViewController = {
+		let storyBoard: UIStoryboard! = UIStoryboard(name: "TabBar", bundle: nil)
+		let viewController = storyBoard.instantiateViewController(withIdentifier: "BenefitTabViewController") as! BenefitTabViewController
+		return viewController
+	}()
 	var iconImage: UIImage = UIImage(named: "icon_profile")!
 	var lottieView: AnimationView = AnimationView(name: "lottie-3")
 }
