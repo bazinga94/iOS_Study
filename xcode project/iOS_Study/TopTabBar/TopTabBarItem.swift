@@ -5,4 +5,9 @@
 //  Created by Jongho Lee on 2021/08/26.
 //
 
-import Foundation
+import UIKit
+
+enum TopTabBarType {
+	case view
+	case viewController
+}
