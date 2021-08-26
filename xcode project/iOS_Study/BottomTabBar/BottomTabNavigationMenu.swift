@@ -1,5 +1,5 @@
 //
-//  TabNavigationMenu.swift
+//  BottomTabNavigationMenu.swift
 //  iOS_Study
 //
 //  Created by Jongho Lee on 2021/08/24.
@@ -8,14 +8,14 @@
 import UIKit
 import Lottie
 
-protocol TabNavigationMenuDelegate: class {
+protocol BottomTabNavigationMenuDelegate: class {
 	func itemTapped(tabIndex: Int)
 }
 
-class TabNavigationMenu: UIView {
+class BottomTabNavigationMenu: UIView {
 	var activeItem: Int = 0
 	let iconViewHeight: CGFloat = 40
-	weak var delegate: TabNavigationMenuDelegate?
+	weak var delegate: BottomTabNavigationMenuDelegate?
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -25,7 +25,7 @@ class TabNavigationMenu: UIView {
 		super.init(coder: aDecoder)
 	}
 
-	convenience init(menuItems: [TabBarItem], frame: CGRect) {
+	convenience init(menuItems: [BottomTabBarItem], frame: CGRect) {
 		self.init(frame: frame)
 
 		let itemWidth = self.frame.width / CGFloat(menuItems.count)
@@ -54,7 +54,7 @@ class TabNavigationMenu: UIView {
 		backgroundColor = .clear
 	}
 
-	private func createTabItemView(item: TabBarItem) -> UIView {
+	private func createTabItemView(item: BottomTabBarItem) -> UIView {
 		let tabItemView = UIView(frame: .zero)
 		let tabItemLabel = UILabel(frame: .zero)
 //		let tabItemIconView = UIImageView(frame: .zero)

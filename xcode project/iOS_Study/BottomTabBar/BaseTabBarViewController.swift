@@ -12,7 +12,7 @@ protocol TabBarAnimatable {
 }
 
 class BaseTabBarViewController: UITabBarController {
-	var customTabBar: TabNavigationMenu!
+	var customTabBar: BottomTabNavigationMenu!
 	var topConstraint: NSLayoutConstraint = NSLayoutConstraint.init()
 	var tabBarHeight: CGFloat = 120.0
 
@@ -30,7 +30,7 @@ class BaseTabBarViewController: UITabBarController {
 
 	private func loadTabBar() {
 		tabBar.isHidden = true
-		let tabBarItems: [TabBarItem] = [BankingTab(), AssetTab(), BenefitTab()]		// tab을 추가하고 싶으면 여기에 Item을 추가하면 된다.
+		let tabBarItems: [BottomTabBarItem] = [BankingTab(), AssetTab(), BenefitTab()]		// tab을 추가하고 싶으면 여기에 Item을 추가하면 된다.
 		self.setupCustomTabMenu(tabBarItems)
 		self.setupBlurEffectView()
 		self.selectedIndex = 0	// 초기 index는 0
@@ -52,11 +52,11 @@ class BaseTabBarViewController: UITabBarController {
 		])
 	}
 
-	private func setupCustomTabMenu(_ menuItems: [TabBarItem]) {
+	private func setupCustomTabMenu(_ menuItems: [BottomTabBarItem]) {
 		let frame = tabBar.frame
 		var viewControllers = [UIViewController]()
 
-		self.customTabBar = TabNavigationMenu(menuItems: menuItems, frame: frame)
+		self.customTabBar = BottomTabNavigationMenu(menuItems: menuItems, frame: frame)
 		self.customTabBar.translatesAutoresizingMaskIntoConstraints = false
 		self.customTabBar.clipsToBounds = true
 		self.customTabBar.delegate = self
@@ -81,7 +81,7 @@ class BaseTabBarViewController: UITabBarController {
 	}
 }
 
-extension BaseTabBarViewController: TabNavigationMenuDelegate {
+extension BaseTabBarViewController: BottomTabNavigationMenuDelegate {
 	func itemTapped(tabIndex: Int) {
 		changeTab(index: tabIndex)
 	}

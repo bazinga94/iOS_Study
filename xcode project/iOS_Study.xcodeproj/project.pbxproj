@@ -36,7 +36,7 @@
 		B2B8327626A552D2009006F1 /* RxStudyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B8327426A552D2009006F1 /* RxStudyViewController.xib */; };
 		B2EBA24D26CDE37E00A40782 /* SwinjectSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA24B26CDE37E00A40782 /* SwinjectSampleViewController.swift */; };
 		B2EBA24E26CDE37E00A40782 /* SwinjectSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2EBA24C26CDE37E00A40782 /* SwinjectSampleViewController.xib */; };
-		B2EBA2A126D4911400A40782 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA2A026D4911400A40782 /* TabBarItem.swift */; };
+		B2EBA2A126D4911400A40782 /* BottomTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA2A026D4911400A40782 /* BottomTabBarItem.swift */; };
 		B2EBA2AF26D4ACDC00A40782 /* BankingTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA2AD26D4ACDC00A40782 /* BankingTabViewController.swift */; };
 		B2EBA2B026D4ACDC00A40782 /* BankingTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2EBA2AE26D4ACDC00A40782 /* BankingTabViewController.xib */; };
 		B2EBA2B626D4ACED00A40782 /* AssetTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA2B426D4ACED00A40782 /* AssetTabViewController.swift */; };
@@ -44,7 +44,7 @@
 		B2EBA2BD26D4ACFE00A40782 /* BenefitTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA2BB26D4ACFE00A40782 /* BenefitTabViewController.swift */; };
 		B2EBA2BE26D4ACFE00A40782 /* BenefitTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2EBA2BC26D4ACFE00A40782 /* BenefitTabViewController.xib */; };
 		B2EBA2C626D4AE7500A40782 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA2C526D4AE7500A40782 /* BaseTabBarViewController.swift */; };
-		B2EBA2CE26D4B06200A40782 /* TabNavigationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA2CD26D4B06200A40782 /* TabNavigationMenu.swift */; };
+		B2EBA2CE26D4B06200A40782 /* BottomTabNavigationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA2CD26D4B06200A40782 /* BottomTabNavigationMenu.swift */; };
 		B2EBA2D726D5DBB800A40782 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA2D626D5DBB800A40782 /* FloatingButton.swift */; };
 		B2EBA2DF26D5DD8700A40782 /* FloatingButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2EBA2DE26D5DD8700A40782 /* FloatingButton.xib */; };
 /* End PBXBuildFile section */
@@ -105,7 +105,7 @@
 		B2B8327426A552D2009006F1 /* RxStudyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxStudyViewController.xib; sourceTree = "<group>"; };
 		B2EBA24B26CDE37E00A40782 /* SwinjectSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectSampleViewController.swift; sourceTree = "<group>"; };
 		B2EBA24C26CDE37E00A40782 /* SwinjectSampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwinjectSampleViewController.xib; sourceTree = "<group>"; };
-		B2EBA2A026D4911400A40782 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		B2EBA2A026D4911400A40782 /* BottomTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarItem.swift; sourceTree = "<group>"; };
 		B2EBA2AD26D4ACDC00A40782 /* BankingTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingTabViewController.swift; sourceTree = "<group>"; };
 		B2EBA2AE26D4ACDC00A40782 /* BankingTabViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankingTabViewController.xib; sourceTree = "<group>"; };
 		B2EBA2B426D4ACED00A40782 /* AssetTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTabViewController.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 		B2EBA2BB26D4ACFE00A40782 /* BenefitTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitTabViewController.swift; sourceTree = "<group>"; };
 		B2EBA2BC26D4ACFE00A40782 /* BenefitTabViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BenefitTabViewController.xib; sourceTree = "<group>"; };
 		B2EBA2C526D4AE7500A40782 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
-		B2EBA2CD26D4B06200A40782 /* TabNavigationMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNavigationMenu.swift; sourceTree = "<group>"; };
+		B2EBA2CD26D4B06200A40782 /* BottomTabNavigationMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabNavigationMenu.swift; sourceTree = "<group>"; };
 		B2EBA2D626D5DBB800A40782 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		B2EBA2DE26D5DD8700A40782 /* FloatingButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FloatingButton.xib; sourceTree = "<group>"; };
 		D78F7FE5992AF0085F91D64D /* Pods_iOS_StudyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_StudyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -343,8 +343,8 @@
 				B2AFA7C626D7577300D5ED18 /* Asset */,
 				B2AFA7C726D7577900D5ED18 /* Benefit */,
 				B2AFA7C026D753DB00D5ED18 /* TabBar.storyboard */,
-				B2EBA2A026D4911400A40782 /* TabBarItem.swift */,
-				B2EBA2CD26D4B06200A40782 /* TabNavigationMenu.swift */,
+				B2EBA2A026D4911400A40782 /* BottomTabBarItem.swift */,
+				B2EBA2CD26D4B06200A40782 /* BottomTabNavigationMenu.swift */,
 				B2EBA2C526D4AE7500A40782 /* BaseTabBarViewController.swift */,
 			);
 			path = BottomTabBar;
@@ -621,12 +621,12 @@
 				B2EBA2BD26D4ACFE00A40782 /* BenefitTabViewController.swift in Sources */,
 				B2EBA2C626D4AE7500A40782 /* BaseTabBarViewController.swift in Sources */,
 				B2AFA7B026D7296F00D5ED18 /* TopTabBarItem.swift in Sources */,
-				B2EBA2A126D4911400A40782 /* TabBarItem.swift in Sources */,
+				B2EBA2A126D4911400A40782 /* BottomTabBarItem.swift in Sources */,
 				43A0BAC82697FE5D00E4A8A4 /* CollectionViewController.swift in Sources */,
 				B2B8327526A552D2009006F1 /* RxStudyViewController.swift in Sources */,
 				436846BC263AE01D00967143 /* AppDelegate.swift in Sources */,
 				43684705263AE27600967143 /* ViewLayoutTestViewController.swift in Sources */,
-				B2EBA2CE26D4B06200A40782 /* TabNavigationMenu.swift in Sources */,
+				B2EBA2CE26D4B06200A40782 /* BottomTabNavigationMenu.swift in Sources */,
 				436846BE263AE01D00967143 /* SceneDelegate.swift in Sources */,
 				B2AFA7CC26D759E400D5ED18 /* AssetInnerViewController.swift in Sources */,
 			);
