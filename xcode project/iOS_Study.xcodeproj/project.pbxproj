@@ -285,6 +285,33 @@
 			path = TopTabBar;
 			sourceTree = "<group>";
 		};
+		B2AFA7C526D7576C00D5ED18 /* Banking */ = {
+			isa = PBXGroup;
+			children = (
+				B2EBA2AD26D4ACDC00A40782 /* BankingTabViewController.swift */,
+				B2EBA2AE26D4ACDC00A40782 /* BankingTabViewController.xib */,
+			);
+			path = Banking;
+			sourceTree = "<group>";
+		};
+		B2AFA7C626D7577300D5ED18 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				B2EBA2B426D4ACED00A40782 /* AssetTabViewController.swift */,
+				B2EBA2B526D4ACED00A40782 /* AssetTabViewController.xib */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
+		B2AFA7C726D7577900D5ED18 /* Benefit */ = {
+			isa = PBXGroup;
+			children = (
+				B2EBA2BB26D4ACFE00A40782 /* BenefitTabViewController.swift */,
+				B2EBA2BC26D4ACFE00A40782 /* BenefitTabViewController.xib */,
+			);
+			path = Benefit;
+			sourceTree = "<group>";
+		};
 		B2B8327226A552AF009006F1 /* RxSwift */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,16 +333,13 @@
 		B2EBA29426D4814300A40782 /* BottomTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				B2AFA7C526D7576C00D5ED18 /* Banking */,
+				B2AFA7C626D7577300D5ED18 /* Asset */,
+				B2AFA7C726D7577900D5ED18 /* Benefit */,
 				B2AFA7C026D753DB00D5ED18 /* TabBar.storyboard */,
 				B2EBA2A026D4911400A40782 /* TabBarItem.swift */,
 				B2EBA2CD26D4B06200A40782 /* TabNavigationMenu.swift */,
 				B2EBA2C526D4AE7500A40782 /* BaseTabBarViewController.swift */,
-				B2EBA2AD26D4ACDC00A40782 /* BankingTabViewController.swift */,
-				B2EBA2AE26D4ACDC00A40782 /* BankingTabViewController.xib */,
-				B2EBA2B426D4ACED00A40782 /* AssetTabViewController.swift */,
-				B2EBA2B526D4ACED00A40782 /* AssetTabViewController.xib */,
-				B2EBA2BB26D4ACFE00A40782 /* BenefitTabViewController.swift */,
-				B2EBA2BC26D4ACFE00A40782 /* BenefitTabViewController.xib */,
 			);
 			path = BottomTabBar;
 			sourceTree = "<group>";
