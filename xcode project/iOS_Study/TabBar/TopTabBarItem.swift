@@ -30,8 +30,7 @@ struct FirstTopTab: TopTabBarItem {
 struct SecondTopTab: TopTabBarItem {
 	var title: String = "초록 탭"
 	var viewController: UIViewController = {
-		let viewController = UIViewController()
-		viewController.view.backgroundColor = .green
+		let viewController = GreenTabViewController()
 		return viewController
 	}()
 }

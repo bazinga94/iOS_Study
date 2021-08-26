@@ -32,6 +32,8 @@
 		B2AFA7C126D753DB00D5ED18 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2AFA7C026D753DB00D5ED18 /* TabBar.storyboard */; };
 		B2AFA7CC26D759E400D5ED18 /* AssetInnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AFA7CB26D759E400D5ED18 /* AssetInnerViewController.swift */; };
 		B2AFA7D126D75C1200D5ED18 /* TopTabNavigationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AFA7D026D75C1200D5ED18 /* TopTabNavigationMenu.swift */; };
+		B2AFA80326D77D0500D5ED18 /* GreenTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AFA80126D77D0500D5ED18 /* GreenTabViewController.swift */; };
+		B2AFA80426D77D0500D5ED18 /* GreenTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2AFA80226D77D0500D5ED18 /* GreenTabViewController.xib */; };
 		B2B8327526A552D2009006F1 /* RxStudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B8327326A552D2009006F1 /* RxStudyViewController.swift */; };
 		B2B8327626A552D2009006F1 /* RxStudyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B8327426A552D2009006F1 /* RxStudyViewController.xib */; };
 		B2EBA24D26CDE37E00A40782 /* SwinjectSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA24B26CDE37E00A40782 /* SwinjectSampleViewController.swift */; };
@@ -101,6 +103,8 @@
 		B2AFA7C026D753DB00D5ED18 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		B2AFA7CB26D759E400D5ED18 /* AssetInnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetInnerViewController.swift; sourceTree = "<group>"; };
 		B2AFA7D026D75C1200D5ED18 /* TopTabNavigationMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabNavigationMenu.swift; sourceTree = "<group>"; };
+		B2AFA80126D77D0500D5ED18 /* GreenTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenTabViewController.swift; sourceTree = "<group>"; };
+		B2AFA80226D77D0500D5ED18 /* GreenTabViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GreenTabViewController.xib; sourceTree = "<group>"; };
 		B2B8327326A552D2009006F1 /* RxStudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxStudyViewController.swift; sourceTree = "<group>"; };
 		B2B8327426A552D2009006F1 /* RxStudyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxStudyViewController.xib; sourceTree = "<group>"; };
 		B2EBA24B26CDE37E00A40782 /* SwinjectSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectSampleViewController.swift; sourceTree = "<group>"; };
@@ -295,6 +299,8 @@
 				B2EBA2B426D4ACED00A40782 /* AssetTabViewController.swift */,
 				B2EBA2B526D4ACED00A40782 /* AssetTabViewController.xib */,
 				B2AFA7CB26D759E400D5ED18 /* AssetInnerViewController.swift */,
+				B2AFA80126D77D0500D5ED18 /* GreenTabViewController.swift */,
+				B2AFA80226D77D0500D5ED18 /* GreenTabViewController.xib */,
 			);
 			path = Asset;
 			sourceTree = "<group>";
@@ -461,6 +467,7 @@
 			files = (
 				B2EBA2DF26D5DD8700A40782 /* FloatingButton.xib in Resources */,
 				B2EBA24E26CDE37E00A40782 /* SwinjectSampleViewController.xib in Resources */,
+				B2AFA80426D77D0500D5ED18 /* GreenTabViewController.xib in Resources */,
 				B2AFA79926D61BA400D5ED18 /* lottie-3.json in Resources */,
 				436846CB263AE02100967143 /* LaunchScreen.storyboard in Resources */,
 				43A0BAC92697FE5D00E4A8A4 /* CollectionViewController.xib in Resources */,
@@ -606,6 +613,7 @@
 				B2EBA2B626D4ACED00A40782 /* AssetTabViewController.swift in Sources */,
 				436846C0263AE01D00967143 /* ViewController.swift in Sources */,
 				B2AFA7D126D75C1200D5ED18 /* TopTabNavigationMenu.swift in Sources */,
+				B2AFA80326D77D0500D5ED18 /* GreenTabViewController.swift in Sources */,
 				B2EBA24D26CDE37E00A40782 /* SwinjectSampleViewController.swift in Sources */,
 				436846C6263AE01D00967143 /* iOS_Study.xcdatamodeld in Sources */,
 				B24B93912671F7450037D750 /* CustomLogger.swift in Sources */,
