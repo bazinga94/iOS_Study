@@ -28,6 +28,7 @@
 		B2AFA79926D61BA400D5ED18 /* lottie-3.json in Resources */ = {isa = PBXBuildFile; fileRef = B2AFA79626D61BA400D5ED18 /* lottie-3.json */; };
 		B2AFA79A26D61BA400D5ED18 /* lottie-1.json in Resources */ = {isa = PBXBuildFile; fileRef = B2AFA79726D61BA400D5ED18 /* lottie-1.json */; };
 		B2AFA79B26D61BA400D5ED18 /* lottie-2.json in Resources */ = {isa = PBXBuildFile; fileRef = B2AFA79826D61BA400D5ED18 /* lottie-2.json */; };
+		B2AFA7B026D7296F00D5ED18 /* TopTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AFA7AF26D7296F00D5ED18 /* TopTabBarItem.swift */; };
 		B2B8327526A552D2009006F1 /* RxStudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B8327326A552D2009006F1 /* RxStudyViewController.swift */; };
 		B2B8327626A552D2009006F1 /* RxStudyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B8327426A552D2009006F1 /* RxStudyViewController.xib */; };
 		B2EBA24D26CDE37E00A40782 /* SwinjectSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA24B26CDE37E00A40782 /* SwinjectSampleViewController.swift */; };
@@ -93,6 +94,7 @@
 		B2AFA79626D61BA400D5ED18 /* lottie-3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-3.json"; sourceTree = "<group>"; };
 		B2AFA79726D61BA400D5ED18 /* lottie-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-1.json"; sourceTree = "<group>"; };
 		B2AFA79826D61BA400D5ED18 /* lottie-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-2.json"; sourceTree = "<group>"; };
+		B2AFA7AF26D7296F00D5ED18 /* TopTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarItem.swift; sourceTree = "<group>"; };
 		B2B8327326A552D2009006F1 /* RxStudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxStudyViewController.swift; sourceTree = "<group>"; };
 		B2B8327426A552D2009006F1 /* RxStudyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxStudyViewController.xib; sourceTree = "<group>"; };
 		B2EBA24B26CDE37E00A40782 /* SwinjectSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectSampleViewController.swift; sourceTree = "<group>"; };
@@ -191,7 +193,7 @@
 			children = (
 				B2AFA79526D61B8400D5ED18 /* Resource */,
 				B2EBA2D526D5D7F700A40782 /* FloatingButton */,
-				B2AFA7A826D7288C00D5ED18 /* UpperTabBar */,
+				B2AFA7A826D7288C00D5ED18 /* TopTabBar */,
 				B2EBA29426D4814300A40782 /* BottomTabBar */,
 				B2EBA24726CDE14100A40782 /* Swinject */,
 				B2B8327226A552AF009006F1 /* RxSwift */,
@@ -273,11 +275,12 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		B2AFA7A826D7288C00D5ED18 /* UpperTabBar */ = {
+		B2AFA7A826D7288C00D5ED18 /* TopTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				B2AFA7AF26D7296F00D5ED18 /* TopTabBarItem.swift */,
 			);
-			path = UpperTabBar;
+			path = TopTabBar;
 			sourceTree = "<group>";
 		};
 		B2B8327226A552AF009006F1 /* RxSwift */ = {
@@ -582,6 +585,7 @@
 				B2A5D80C2689AE5600462F70 /* CustomView.swift in Sources */,
 				B2EBA2BD26D4ACFE00A40782 /* BenefitTabViewController.swift in Sources */,
 				B2EBA2C626D4AE7500A40782 /* BaseTabBarViewController.swift in Sources */,
+				B2AFA7B026D7296F00D5ED18 /* TopTabBarItem.swift in Sources */,
 				B2EBA2A126D4911400A40782 /* TabBarItem.swift in Sources */,
 				43A0BAC82697FE5D00E4A8A4 /* CollectionViewController.swift in Sources */,
 				B2B8327526A552D2009006F1 /* RxStudyViewController.swift in Sources */,
