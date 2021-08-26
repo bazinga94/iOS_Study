@@ -16,13 +16,27 @@
                     <view key="view" contentMode="scaleToFill" id="Rq3-45-wEP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Glg-5U-FBl">
+                                <rect key="frame" x="20" y="44" width="374" height="418"/>
+                                <connections>
+                                    <segue destination="yak-lx-xOn" kind="embed" id="pmh-SQ-rh8"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="eGB-2n-tGh"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="Glg-5U-FBl" firstAttribute="top" secondItem="eGB-2n-tGh" secondAttribute="top" id="2Ga-Fd-mKS"/>
+                            <constraint firstItem="eGB-2n-tGh" firstAttribute="trailing" secondItem="Glg-5U-FBl" secondAttribute="trailing" constant="20" id="hAt-sK-P6I"/>
+                            <constraint firstItem="Glg-5U-FBl" firstAttribute="leading" secondItem="eGB-2n-tGh" secondAttribute="leading" constant="20" id="jbP-dh-CoA"/>
+                            <constraint firstItem="eGB-2n-tGh" firstAttribute="bottom" secondItem="Glg-5U-FBl" secondAttribute="bottom" constant="400" id="nyE-Na-Usx"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="df1-kS-bxF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="183" y="-137"/>
+            <point key="canvasLocation" x="71" y="-137"/>
         </scene>
         <!--Benefit Tab View Controller-->
         <scene sceneID="kEc-LM-t2P">
@@ -37,10 +51,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="de4-2D-BOq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="941" y="-137"/>
+            <point key="canvasLocation" x="1548" y="-137"/>
+        </scene>
+        <!--Asset Inner View Controller-->
+        <scene sceneID="8BB-2x-cfr">
+            <objects>
+                <viewController storyboardIdentifier="AssetInnerViewController" id="yak-lx-xOn" customClass="AssetInnerViewController" customModule="iOS_Study" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ket-1j-rFm">
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="418"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0uK-eF-kua" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="807" y="-298"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

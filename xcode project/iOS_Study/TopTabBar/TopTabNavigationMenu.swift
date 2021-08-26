@@ -1,21 +1,19 @@
 //
-//  TabNavigationMenu.swift
+//  TopTabNavigationMenu.swift
 //  iOS_Study
 //
-//  Created by Jongho Lee on 2021/08/24.
+//  Created by Jongho Lee on 2021/08/26.
 //
 
 import UIKit
-import Lottie
 
-protocol TabNavigationMenuDelegate: class {
+protocol TopTabNavigationMenuDelegate: class {
 	func itemTapped(tabIndex: Int)
 }
 
-class TabNavigationMenu: UIView {
+class TopTabNavigationMenu: UIView {
 	var activeItem: Int = 0
-	let iconViewHeight: CGFloat = 40
-	weak var delegate: TabNavigationMenuDelegate?
+	weak var delegate: TopTabNavigationMenuDelegate?
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -25,13 +23,16 @@ class TabNavigationMenu: UIView {
 		super.init(coder: aDecoder)
 	}
 
-	convenience init(menuItems: [TabBarItem], frame: CGRect) {
+	convenience init(menuItems: [TopTabBarItem], frame: CGRect) {
 		self.init(frame: frame)
 
-		let itemWidth = self.frame.width / CGFloat(menuItems.count)
-
 		for (idx, menuItem) in menuItems.enumerated() {
-			let itemLeadingAnchor = itemWidth * CGFloat(idx)
+
+			let fontAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)]
+			let labelSize = menuItem.title.size(withAttributes: fontAttributes)
+			let tabWidth = labelSize.width + 10	// 양쪽 간격 10
+
+			let itemLeadingAnchor = tabWidth * CGFloat(idx)
 
 			let itemView = createTabItemView(item: menuItem)
 			itemView.translatesAutoresizingMaskIntoConstraints = false
@@ -42,7 +43,7 @@ class TabNavigationMenu: UIView {
 
 			NSLayoutConstraint.activate([
 				itemView.heightAnchor.constraint(equalTo: self.heightAnchor),
-				itemView.widthAnchor.constraint(equalToConstant: itemWidth),
+				itemView.widthAnchor.constraint(equalToConstant: tabWidth),
 				itemView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: itemLeadingAnchor),
 				itemView.topAnchor.constraint(equalTo: self.topAnchor)
 			])
@@ -51,48 +52,31 @@ class TabNavigationMenu: UIView {
 			self.activateTab(index: 0)	// 첫번째 tab
 		}
 
-		backgroundColor = .clear
+		backgroundColor = .white
 	}
 
-	private func createTabItemView(item: TabBarItem) -> UIView {
+	private func createTabItemView(item: TopTabBarItem) -> UIView {
 		let tabItemView = UIView(frame: .zero)
 		let tabItemLabel = UILabel(frame: .zero)
-//		let tabItemIconView = UIImageView(frame: .zero)
-		let tabItemIconView = item.lottieView
 
 		tabItemView.tag = 11
 		tabItemLabel.tag = 12
-		tabItemIconView.tag = 13
 
-		tabItemLabel.text = item.type.rawValue
+		tabItemLabel.text = item.title
 		tabItemLabel.textColor = .lightGray
 		tabItemLabel.textAlignment = .center
 		tabItemLabel.translatesAutoresizingMaskIntoConstraints = false
 		tabItemLabel.clipsToBounds = true
 
-//		tabItemIconView.image = item.iconImage.withRenderingMode(.automatic)	// 이거 머지??
-//		tabItemIconView.image = item.iconImage
-		tabItemIconView.loopMode = .playOnce
-		tabItemIconView.contentMode = .scaleAspectFill
-//		tabItemIconView.frame = .init()
-		tabItemIconView.translatesAutoresizingMaskIntoConstraints = false
-		tabItemIconView.clipsToBounds = true
-
 		tabItemView.backgroundColor = .clear
 		tabItemView.addSubview(tabItemLabel)
-		tabItemView.addSubview(tabItemIconView)
 		tabItemView.translatesAutoresizingMaskIntoConstraints = false
 		tabItemView.clipsToBounds = true
 
 		NSLayoutConstraint.activate([
-			tabItemIconView.heightAnchor.constraint(equalToConstant: self.iconViewHeight),
-			tabItemIconView.widthAnchor.constraint(equalToConstant: self.iconViewHeight),
-			tabItemIconView.centerXAnchor.constraint(equalTo: tabItemView.centerXAnchor),
-			tabItemIconView.topAnchor.constraint(equalTo: tabItemView.topAnchor, constant: 8),
-
 			tabItemLabel.heightAnchor.constraint(equalToConstant: 15),
 			tabItemLabel.centerXAnchor.constraint(equalTo: tabItemView.centerXAnchor),
-			tabItemLabel.topAnchor.constraint(equalTo: tabItemIconView.bottomAnchor, constant: 4)
+			tabItemLabel.topAnchor.constraint(equalTo: tabItemView.topAnchor, constant: 5)
 		])
 
 		tabItemView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:))))
@@ -112,11 +96,9 @@ class TabNavigationMenu: UIView {
 	func activateTab(index: Int) {
 		let activateTabView = self.subviews[index]
 		let label = activateTabView.viewWithTag(12) as? UILabel
-		let lottie = activateTabView.viewWithTag(13) as? AnimationView
 
 		DispatchQueue.main.async {
 			label?.textColor = .black
-			lottie?.play()
 		}
 		self.activeItem = index
 		self.delegate?.itemTapped(tabIndex: index)
@@ -125,11 +107,9 @@ class TabNavigationMenu: UIView {
 	func deactivateTab(index: Int) {
 		let activateTabView = self.subviews[index]
 		let label = activateTabView.viewWithTag(12) as? UILabel
-		let lottie = activateTabView.viewWithTag(13) as? AnimationView
 
 		DispatchQueue.main.async {
 			label?.textColor = .lightGray
-			lottie?.stop()
 		}
 	}
 }

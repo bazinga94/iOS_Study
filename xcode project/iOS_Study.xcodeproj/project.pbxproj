@@ -30,6 +30,8 @@
 		B2AFA79B26D61BA400D5ED18 /* lottie-2.json in Resources */ = {isa = PBXBuildFile; fileRef = B2AFA79826D61BA400D5ED18 /* lottie-2.json */; };
 		B2AFA7B026D7296F00D5ED18 /* TopTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AFA7AF26D7296F00D5ED18 /* TopTabBarItem.swift */; };
 		B2AFA7C126D753DB00D5ED18 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2AFA7C026D753DB00D5ED18 /* TabBar.storyboard */; };
+		B2AFA7CC26D759E400D5ED18 /* AssetInnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AFA7CB26D759E400D5ED18 /* AssetInnerViewController.swift */; };
+		B2AFA7D126D75C1200D5ED18 /* TopTabNavigationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AFA7D026D75C1200D5ED18 /* TopTabNavigationMenu.swift */; };
 		B2B8327526A552D2009006F1 /* RxStudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B8327326A552D2009006F1 /* RxStudyViewController.swift */; };
 		B2B8327626A552D2009006F1 /* RxStudyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B8327426A552D2009006F1 /* RxStudyViewController.xib */; };
 		B2EBA24D26CDE37E00A40782 /* SwinjectSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA24B26CDE37E00A40782 /* SwinjectSampleViewController.swift */; };
@@ -97,6 +99,8 @@
 		B2AFA79826D61BA400D5ED18 /* lottie-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-2.json"; sourceTree = "<group>"; };
 		B2AFA7AF26D7296F00D5ED18 /* TopTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarItem.swift; sourceTree = "<group>"; };
 		B2AFA7C026D753DB00D5ED18 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		B2AFA7CB26D759E400D5ED18 /* AssetInnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetInnerViewController.swift; sourceTree = "<group>"; };
+		B2AFA7D026D75C1200D5ED18 /* TopTabNavigationMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabNavigationMenu.swift; sourceTree = "<group>"; };
 		B2B8327326A552D2009006F1 /* RxStudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxStudyViewController.swift; sourceTree = "<group>"; };
 		B2B8327426A552D2009006F1 /* RxStudyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxStudyViewController.xib; sourceTree = "<group>"; };
 		B2EBA24B26CDE37E00A40782 /* SwinjectSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectSampleViewController.swift; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				B2AFA7AF26D7296F00D5ED18 /* TopTabBarItem.swift */,
+				B2AFA7D026D75C1200D5ED18 /* TopTabNavigationMenu.swift */,
 			);
 			path = TopTabBar;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 			children = (
 				B2EBA2B426D4ACED00A40782 /* AssetTabViewController.swift */,
 				B2EBA2B526D4ACED00A40782 /* AssetTabViewController.xib */,
+				B2AFA7CB26D759E400D5ED18 /* AssetInnerViewController.swift */,
 			);
 			path = Asset;
 			sourceTree = "<group>";
@@ -607,6 +613,7 @@
 				B2EBA2D726D5DBB800A40782 /* FloatingButton.swift in Sources */,
 				B2EBA2B626D4ACED00A40782 /* AssetTabViewController.swift in Sources */,
 				436846C0263AE01D00967143 /* ViewController.swift in Sources */,
+				B2AFA7D126D75C1200D5ED18 /* TopTabNavigationMenu.swift in Sources */,
 				B2EBA24D26CDE37E00A40782 /* SwinjectSampleViewController.swift in Sources */,
 				436846C6263AE01D00967143 /* iOS_Study.xcdatamodeld in Sources */,
 				B24B93912671F7450037D750 /* CustomLogger.swift in Sources */,
@@ -621,6 +628,7 @@
 				43684705263AE27600967143 /* ViewLayoutTestViewController.swift in Sources */,
 				B2EBA2CE26D4B06200A40782 /* TabNavigationMenu.swift in Sources */,
 				436846BE263AE01D00967143 /* SceneDelegate.swift in Sources */,
+				B2AFA7CC26D759E400D5ED18 /* AssetInnerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
