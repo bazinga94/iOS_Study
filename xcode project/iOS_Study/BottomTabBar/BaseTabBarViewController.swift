@@ -91,7 +91,7 @@ extension BaseTabBarViewController: TabBarAnimatable {
 	func animateTabBar(hidden: Bool) {
 		self.topConstraint.constant = (hidden) ? 0 : -self.tabBarHeight
 
-		UIView.animate(withDuration: 0.3) {
+		UIView.animate(withDuration: 0.2) {
 			self.view.layoutIfNeeded()
 		}
 	}
