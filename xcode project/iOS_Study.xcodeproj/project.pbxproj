@@ -34,6 +34,9 @@
 		B2AFA7D126D75C1200D5ED18 /* TopTabNavigationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AFA7D026D75C1200D5ED18 /* TopTabNavigationMenu.swift */; };
 		B2AFA80326D77D0500D5ED18 /* GreenTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AFA80126D77D0500D5ED18 /* GreenTabViewController.swift */; };
 		B2AFA80426D77D0500D5ED18 /* GreenTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2AFA80226D77D0500D5ED18 /* GreenTabViewController.xib */; };
+		B2AFA81326D8611A00D5ED18 /* CellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AFA81226D8611A00D5ED18 /* CellController.swift */; };
+		B2AFA81926D863B700D5ED18 /* GreenTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AFA81726D863B700D5ED18 /* GreenTabCollectionViewCell.swift */; };
+		B2AFA81A26D863B700D5ED18 /* GreenTabCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2AFA81826D863B700D5ED18 /* GreenTabCollectionViewCell.xib */; };
 		B2B8327526A552D2009006F1 /* RxStudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B8327326A552D2009006F1 /* RxStudyViewController.swift */; };
 		B2B8327626A552D2009006F1 /* RxStudyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B8327426A552D2009006F1 /* RxStudyViewController.xib */; };
 		B2EBA24D26CDE37E00A40782 /* SwinjectSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA24B26CDE37E00A40782 /* SwinjectSampleViewController.swift */; };
@@ -105,6 +108,9 @@
 		B2AFA7D026D75C1200D5ED18 /* TopTabNavigationMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabNavigationMenu.swift; sourceTree = "<group>"; };
 		B2AFA80126D77D0500D5ED18 /* GreenTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenTabViewController.swift; sourceTree = "<group>"; };
 		B2AFA80226D77D0500D5ED18 /* GreenTabViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GreenTabViewController.xib; sourceTree = "<group>"; };
+		B2AFA81226D8611A00D5ED18 /* CellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellController.swift; sourceTree = "<group>"; };
+		B2AFA81726D863B700D5ED18 /* GreenTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenTabCollectionViewCell.swift; sourceTree = "<group>"; };
+		B2AFA81826D863B700D5ED18 /* GreenTabCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GreenTabCollectionViewCell.xib; sourceTree = "<group>"; };
 		B2B8327326A552D2009006F1 /* RxStudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxStudyViewController.swift; sourceTree = "<group>"; };
 		B2B8327426A552D2009006F1 /* RxStudyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxStudyViewController.xib; sourceTree = "<group>"; };
 		B2EBA24B26CDE37E00A40782 /* SwinjectSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectSampleViewController.swift; sourceTree = "<group>"; };
@@ -301,6 +307,9 @@
 				B2AFA7CB26D759E400D5ED18 /* AssetInnerViewController.swift */,
 				B2AFA80126D77D0500D5ED18 /* GreenTabViewController.swift */,
 				B2AFA80226D77D0500D5ED18 /* GreenTabViewController.xib */,
+				B2AFA81726D863B700D5ED18 /* GreenTabCollectionViewCell.swift */,
+				B2AFA81826D863B700D5ED18 /* GreenTabCollectionViewCell.xib */,
+				B2AFA81226D8611A00D5ED18 /* CellController.swift */,
 			);
 			path = Asset;
 			sourceTree = "<group>";
@@ -475,6 +484,7 @@
 				B2EBA2B726D4ACED00A40782 /* AssetTabViewController.xib in Resources */,
 				B2EBA2B026D4ACDC00A40782 /* BankingTabViewController.xib in Resources */,
 				B2A5D8142689AE8A00462F70 /* CustomView.xib in Resources */,
+				B2AFA81A26D863B700D5ED18 /* GreenTabCollectionViewCell.xib in Resources */,
 				B2EBA2BE26D4ACFE00A40782 /* BenefitTabViewController.xib in Resources */,
 				B2AFA7C126D753DB00D5ED18 /* TabBar.storyboard in Resources */,
 				436846C8263AE02100967143 /* Assets.xcassets in Resources */,
@@ -615,6 +625,7 @@
 				B2AFA7D126D75C1200D5ED18 /* TopTabNavigationMenu.swift in Sources */,
 				B2AFA80326D77D0500D5ED18 /* GreenTabViewController.swift in Sources */,
 				B2EBA24D26CDE37E00A40782 /* SwinjectSampleViewController.swift in Sources */,
+				B2AFA81326D8611A00D5ED18 /* CellController.swift in Sources */,
 				436846C6263AE01D00967143 /* iOS_Study.xcdatamodeld in Sources */,
 				B24B93912671F7450037D750 /* CustomLogger.swift in Sources */,
 				B2A5D80C2689AE5600462F70 /* CustomView.swift in Sources */,
@@ -625,6 +636,7 @@
 				43A0BAC82697FE5D00E4A8A4 /* CollectionViewController.swift in Sources */,
 				B2B8327526A552D2009006F1 /* RxStudyViewController.swift in Sources */,
 				436846BC263AE01D00967143 /* AppDelegate.swift in Sources */,
+				B2AFA81926D863B700D5ED18 /* GreenTabCollectionViewCell.swift in Sources */,
 				43684705263AE27600967143 /* ViewLayoutTestViewController.swift in Sources */,
 				B2EBA2CE26D4B06200A40782 /* BottomTabNavigationMenu.swift in Sources */,
 				436846BE263AE01D00967143 /* SceneDelegate.swift in Sources */,
