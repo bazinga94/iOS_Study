@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="OHv-fa-UNe">
-                    <rect key="frame" x="20" y="144" width="374" height="200"/>
+                    <rect key="frame" x="0.0" y="144" width="414" height="200"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="ZZR-NM-QMP"/>
@@ -37,9 +37,9 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemGreenColor"/>
             <constraints>
-                <constraint firstItem="OHv-fa-UNe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="L34-4z-dRt"/>
+                <constraint firstItem="OHv-fa-UNe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="L34-4z-dRt"/>
                 <constraint firstItem="OHv-fa-UNe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="dfa-JQ-bte"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OHv-fa-UNe" secondAttribute="trailing" constant="20" id="fCd-oo-4WH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OHv-fa-UNe" secondAttribute="trailing" id="fCd-oo-4WH"/>
             </constraints>
             <point key="canvasLocation" x="122" y="154"/>
         </view>

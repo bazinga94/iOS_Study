@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Glg-5U-FBl">
-                                <rect key="frame" x="20" y="44" width="374" height="418"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="418"/>
                                 <connections>
                                     <segue destination="yak-lx-xOn" kind="embed" id="pmh-SQ-rh8"/>
                                 </connections>
@@ -28,8 +28,8 @@
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
                             <constraint firstItem="Glg-5U-FBl" firstAttribute="top" secondItem="eGB-2n-tGh" secondAttribute="top" id="2Ga-Fd-mKS"/>
-                            <constraint firstItem="eGB-2n-tGh" firstAttribute="trailing" secondItem="Glg-5U-FBl" secondAttribute="trailing" constant="20" id="hAt-sK-P6I"/>
-                            <constraint firstItem="Glg-5U-FBl" firstAttribute="leading" secondItem="eGB-2n-tGh" secondAttribute="leading" constant="20" id="jbP-dh-CoA"/>
+                            <constraint firstItem="eGB-2n-tGh" firstAttribute="trailing" secondItem="Glg-5U-FBl" secondAttribute="trailing" id="hAt-sK-P6I"/>
+                            <constraint firstItem="Glg-5U-FBl" firstAttribute="leading" secondItem="eGB-2n-tGh" secondAttribute="leading" id="jbP-dh-CoA"/>
                             <constraint firstItem="eGB-2n-tGh" firstAttribute="bottom" secondItem="Glg-5U-FBl" secondAttribute="bottom" constant="400" id="nyE-Na-Usx"/>
                         </constraints>
                     </view>
@@ -58,8 +58,9 @@
             <objects>
                 <viewController storyboardIdentifier="AssetInnerViewController" id="yak-lx-xOn" customClass="AssetInnerViewController" customModule="iOS_Study" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ket-1j-rFm">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="418"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="418"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="CQ3-cp-7sR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>

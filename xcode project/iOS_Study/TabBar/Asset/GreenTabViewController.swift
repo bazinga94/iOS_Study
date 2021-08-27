@@ -29,23 +29,17 @@ class GreenTabViewController: UIViewController {
 //	private var cellControllers: [CellController<UICollectionView>] = []
 	private var cellControllers: [GenericCellController<GreenTabCollectionViewCell>] = []
 	private let cellWidth: CGFloat = 200
-	private let cellSpacing: CGFloat = 20
+	private let cellSpacing: CGFloat = 10		// cell 간격
+	private let horizontalInset: CGFloat = 30	// 컬렉션뷰 좌우 간격
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		collectionView.dataSource = self
-//		collectionView.delegate = self
+		collectionView.delegate = self
 
 		let layout = UICollectionViewFlowLayout()
 		layout.scrollDirection = .horizontal
-		layout.itemSize = .init(width: collectionView.bounds.width - cellSpacing * 2.0, height: collectionView.bounds.height)
-		layout.minimumLineSpacing = cellSpacing
 		collectionView.collectionViewLayout = layout
-
-		let insetX: CGFloat = cellSpacing
-		let insetY: CGFloat = 0
-		collectionView.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)    // cell 가운데 정렬
-
 
 		factory.registerCells(on: collectionView)
 		cellControllers = factory.cellController(with: model)
@@ -66,9 +60,19 @@ extension GreenTabViewController: UICollectionViewDelegate {
 }
 
 extension GreenTabViewController: UICollectionViewDelegateFlowLayout {
-//	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//		return .init(width: cellWidth, height: collectionView.frame.height)
-//	}
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		return .init(width: collectionView.bounds.width - horizontalInset * 2.0, height: collectionView.bounds.height)
+	}
+
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+		return cellSpacing
+	}
+
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+		let insetX: CGFloat = horizontalInset
+		let insetY: CGFloat = 0
+		return .init(top: insetY, left: insetX, bottom: insetY, right: insetX)
+	}
 }
 
 class GreenTabCellFactory {
