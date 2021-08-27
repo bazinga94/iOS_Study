@@ -28,9 +28,15 @@ class GreenTabViewController: UIViewController {
 	private let factory: GreenTabCellFactory = GreenTabCellFactory()
 //	private var cellControllers: [CellController<UICollectionView>] = []
 	private var cellControllers: [GenericCellController<GreenTabCollectionViewCell>] = []
+	private let cellWidth: CGFloat = 100
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		collectionView.dataSource = self
+		collectionView.delegate = self
+		let layout = UICollectionViewFlowLayout()
+		layout.scrollDirection = .horizontal
+		collectionView.collectionViewLayout = layout
 		factory.registerCells(on: collectionView)
 		cellControllers = factory.cellController(with: model)
 	}
@@ -47,7 +53,12 @@ extension GreenTabViewController: UICollectionViewDataSource {
 }
 
 extension GreenTabViewController: UICollectionViewDelegate {
+}
 
+extension GreenTabViewController: UICollectionViewDelegateFlowLayout {
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		return .init(width: cellWidth, height: collectionView.frame.height)
+	}
 }
 
 class GreenTabCellFactory {
