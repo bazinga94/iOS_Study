@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		278DA802D2EC01B878079D8B /* Pods_iOS_Study.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A8AA75E273A35728C66193 /* Pods_iOS_Study.framework */; };
 		2B9420693290715AF76FDDF5 /* Pods_iOS_Study_iOS_StudyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AFA0207E1148D9D9563108 /* Pods_iOS_Study_iOS_StudyUITests.framework */; };
+		4360E3DC26DA83A40045249E /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360E3DB26DA83A40045249E /* CustomFlowLayout.swift */; };
 		436846BC263AE01D00967143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436846BB263AE01D00967143 /* AppDelegate.swift */; };
 		436846BE263AE01D00967143 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436846BD263AE01D00967143 /* SceneDelegate.swift */; };
 		436846C0263AE01D00967143 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436846BF263AE01D00967143 /* ViewController.swift */; };
@@ -74,6 +75,7 @@
 		0816B7B2EC34CC32D6E5BAA6 /* Pods-iOS_StudyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_StudyTests.release.xcconfig"; path = "Target Support Files/Pods-iOS_StudyTests/Pods-iOS_StudyTests.release.xcconfig"; sourceTree = "<group>"; };
 		17A8AA75E273A35728C66193 /* Pods_iOS_Study.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Study.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23624CD9B422C01ABDCBC230 /* Pods-iOS_Study.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Study.release.xcconfig"; path = "Target Support Files/Pods-iOS_Study/Pods-iOS_Study.release.xcconfig"; sourceTree = "<group>"; };
+		4360E3DB26DA83A40045249E /* CustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
 		436846B8263AE01D00967143 /* iOS_Study.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Study.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		436846BB263AE01D00967143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		436846BD263AE01D00967143 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				B2AFA81726D863B700D5ED18 /* GreenTabCollectionViewCell.swift */,
 				B2AFA81826D863B700D5ED18 /* GreenTabCollectionViewCell.xib */,
 				B2AFA81226D8611A00D5ED18 /* CellController.swift */,
+				4360E3DB26DA83A40045249E /* CustomFlowLayout.swift */,
 			);
 			path = Asset;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				B2AFA81326D8611A00D5ED18 /* CellController.swift in Sources */,
 				436846C6263AE01D00967143 /* iOS_Study.xcdatamodeld in Sources */,
 				B24B93912671F7450037D750 /* CustomLogger.swift in Sources */,
+				4360E3DC26DA83A40045249E /* CustomFlowLayout.swift in Sources */,
 				B2A5D80C2689AE5600462F70 /* CustomView.swift in Sources */,
 				B2EBA2BD26D4ACFE00A40782 /* BenefitTabViewController.swift in Sources */,
 				B2EBA2C626D4AE7500A40782 /* BaseTabBarViewController.swift in Sources */,
