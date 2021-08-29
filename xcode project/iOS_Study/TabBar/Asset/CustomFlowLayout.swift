@@ -10,7 +10,7 @@ import UIKit
 protocol FlowLayoutDelegate: class {
 }
 
-class CenterHorizontalLayout: UICollectionViewFlowLayout, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class CenterHorizontalLayout: UICollectionViewFlowLayout {
 
 	private var cellSpacing: CGFloat		// cell간 간격
 	private var horizontalInset: CGFloat	// 컬렉션뷰 좌우 inset
@@ -30,21 +30,9 @@ class CenterHorizontalLayout: UICollectionViewFlowLayout, UICollectionViewDelega
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
+}
 
-	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		return .init(width: collectionView.bounds.width - horizontalInset * 2.0, height: collectionView.bounds.height)
-	}
-
-	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-		return cellSpacing
-	}
-
-	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-		let insetX: CGFloat = horizontalInset
-		let insetY: CGFloat = 0
-		return .init(top: insetY, left: insetX, bottom: insetY, right: insetX)
-	}
-
+extension CenterHorizontalLayout: UICollectionViewDelegate {
 	func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>)
 	{
 
@@ -83,5 +71,21 @@ class CenterHorizontalLayout: UICollectionViewFlowLayout, UICollectionViewDelega
 		// 위 코드를 통해 페이징 될 좌표값을 targetContentOffset에 대입하면 된다.
 		offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
 		targetContentOffset.pointee = offset
+	}
+}
+
+extension CenterHorizontalLayout: UICollectionViewDelegateFlowLayout {
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		return .init(width: collectionView.bounds.width - horizontalInset * 2.0, height: collectionView.bounds.height)
+	}
+
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+		return cellSpacing
+	}
+
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+		let insetX: CGFloat = horizontalInset
+		let insetY: CGFloat = 0
+		return .init(top: insetY, left: insetX, bottom: insetY, right: insetX)
 	}
 }
