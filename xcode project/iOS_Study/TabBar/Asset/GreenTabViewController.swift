@@ -48,6 +48,7 @@ class GreenTabViewController: UIViewController {
 		collectionView.collectionViewLayout = layout ?? UICollectionViewFlowLayout()
 		collectionView.delegate = layout
 		collectionView.decelerationRate = .fast
+		collectionView.showsHorizontalScrollIndicator = false
 
 		factory.registerCells(on: collectionView)
 		cellControllers = factory.cellController(with: model)
