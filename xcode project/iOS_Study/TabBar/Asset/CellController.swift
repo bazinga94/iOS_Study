@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ReusableCell: class {
-	associatedtype CellHolder: ReusableCellHolder
+	associatedtype CellHolder: ReusableCellHolder where CellHolder.CellType == Self
 }
 
 extension UITableViewCell: ReusableCell {
@@ -82,18 +82,11 @@ class CellController<T: ReusableCellHolder>: CellControllerType {
 
 class GenericCellController<T: ReusableCell>: CellController<T.CellHolder> {
 
-	typealias BaseReusableCell = T.CellHolder.CellType
-
 	final override class var cellClass: AnyClass {
 		return T.self
 	}
 
-	final override func configureCell(_ cell: BaseReusableCell) {
-		let cell = cell as! T
-		configureCell(cell)
-	}
-
-	func configureCell(_ cell: T) {
+	override func configureCell(_ cell: T) {
 		// Generic 타입을 인자로 받아 override 하여 구현
 	}
 }
