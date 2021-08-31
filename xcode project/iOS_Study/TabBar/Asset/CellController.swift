@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ReusableCell: class {
-	associatedtype CellHolder: ReusableCellHolder
+	associatedtype CellHolder: ReusableCellHolder where CellHolder.CellType == Self
 }
 
 extension UITableViewCell: ReusableCell {
@@ -49,10 +49,11 @@ protocol CellControllerType {
 	func didSelectCell(itemAt indexPath: IndexPath)
 }
 
-class CellController<T: ReusableCellHolder>: CellControllerType {
+class CellController<T: ReusableCellHolder, U: ReusableCell>: CellControllerType {
 
-	class var cellClass: AnyClass {		// override 가능
-		fatalError("Must be implemented by children")
+	final class var cellClass: AnyClass {		// override 가능
+//		fatalError("Must be implemented by children")
+		return U.self
 	}
 
 	static var cellIdentifier: String {
@@ -67,11 +68,11 @@ class CellController<T: ReusableCellHolder>: CellControllerType {
 
 	func cellFromReusableCellHolder(_ reusableCellHolder: T, forIndexPath indexPath: IndexPath) -> T.CellType {
 		let cell = reusableCellHolder.dequeueReusableCell(withReuseIdentifier: type(of: self).cellIdentifier, for: indexPath)
-		configureCell(cell)
+		configureCell(cell as! U)
 		return cell
 	}
 
-	func configureCell(_ cell: T.CellType) {
+	func configureCell(_ cell: U) {
 		// 자식 클래스에서 override하여 구현
 	}
 
@@ -80,20 +81,20 @@ class CellController<T: ReusableCellHolder>: CellControllerType {
 	}
 }
 
-class GenericCellController<T: ReusableCell>: CellController<T.CellHolder> {
-
-	typealias BaseReusableCell = T.CellHolder.CellType
-
-	final override class var cellClass: AnyClass {
-		return T.self
-	}
-
-	final override func configureCell(_ cell: BaseReusableCell) {
-		let cell = cell as! T
-		configureCell(cell)
-	}
-
-	func configureCell(_ cell: T) {
-		// Generic 타입을 인자로 받아 override 하여 구현
-	}
-}
+//class GenericCellController<T: ReusableCell>: CellController<T.CellHolder> {
+//
+////	typealias BaseReusableCell = T.CellHolder.CellType
+//
+//	final override class var cellClass: AnyClass {
+//		return T.self
+//	}
+//
+//	override func configureCell(_ cell: T) {
+////		let cell = cell as! T
+////		configureCell(cell)
+//	}
+//
+////	func configureCell(_ cell: T) {
+////		// Generic 타입을 인자로 받아 override 하여 구현
+////	}
+//}

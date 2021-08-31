@@ -27,7 +27,8 @@ class GreenTabViewController: UIViewController {
 	]
 	private let factory: GreenTabCellFactory = GreenTabCellFactory()
 //	private var cellControllers: [CellController<UICollectionView>] = []
-	private var cellControllers: [GenericCellController<GreenTabCollectionViewCell>] = []
+//	private var cellControllers: [GenericCellController<GreenTabCollectionViewCell>] = []
+	private var cellControllers: [CellController<UICollectionView, GreenTabCollectionViewCell>] = []
 //	private let cellWidth: CGFloat = 200
 	private let cellSpacing: CGFloat = 10		// cell 간격
 	private let horizontalInset: CGFloat = 30	// 컬렉션뷰 좌우 간격
