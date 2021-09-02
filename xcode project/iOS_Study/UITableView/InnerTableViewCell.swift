@@ -23,6 +23,13 @@ class InnerTableViewCell: UITableViewCell {
 
 		// Configure the view for the selected state
 	}
+
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		tableView.reloadData()
+		tableView.invalidateIntrinsicContentSize()
+		tableView.contentSize = tableView.intrinsicContentSize
+	}
 }
 
 extension InnerTableViewCell: UITableViewDataSource {
@@ -31,7 +38,8 @@ extension InnerTableViewCell: UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "TodayTableViewCell", for: indexPath)
+		let cell = tableView.dequeueReusableCell(withIdentifier: "TodayTableViewCell", for: indexPath) as! TodayTableViewCell
+		cell.titleLabel.text = "\(String(indexPath.row))"
 		return cell
 	}
 }
