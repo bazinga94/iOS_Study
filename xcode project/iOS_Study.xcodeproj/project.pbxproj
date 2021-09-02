@@ -44,6 +44,8 @@
 		B2D601C226E0B66E0055A784 /* SampleTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D601C026E0B66E0055A784 /* SampleTableViewController.xib */; };
 		B2D601CB26E0B75A0055A784 /* InnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D601C926E0B75A0055A784 /* InnerTableViewCell.swift */; };
 		B2D601CC26E0B75A0055A784 /* InnerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D601CA26E0B75A0055A784 /* InnerTableViewCell.xib */; };
+		B2D601D226E0B8A50055A784 /* TodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D601D026E0B8A50055A784 /* TodayTableViewCell.swift */; };
+		B2D601D326E0B8A50055A784 /* TodayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D601D126E0B8A50055A784 /* TodayTableViewCell.xib */; };
 		B2EBA24D26CDE37E00A40782 /* SwinjectSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA24B26CDE37E00A40782 /* SwinjectSampleViewController.swift */; };
 		B2EBA24E26CDE37E00A40782 /* SwinjectSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2EBA24C26CDE37E00A40782 /* SwinjectSampleViewController.xib */; };
 		B2EBA2A126D4911400A40782 /* BottomTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBA2A026D4911400A40782 /* BottomTabBarItem.swift */; };
@@ -121,6 +123,8 @@
 		B2D601C026E0B66E0055A784 /* SampleTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleTableViewController.xib; sourceTree = "<group>"; };
 		B2D601C926E0B75A0055A784 /* InnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerTableViewCell.swift; sourceTree = "<group>"; };
 		B2D601CA26E0B75A0055A784 /* InnerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InnerTableViewCell.xib; sourceTree = "<group>"; };
+		B2D601D026E0B8A50055A784 /* TodayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTableViewCell.swift; sourceTree = "<group>"; };
+		B2D601D126E0B8A50055A784 /* TodayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayTableViewCell.xib; sourceTree = "<group>"; };
 		B2EBA24B26CDE37E00A40782 /* SwinjectSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectSampleViewController.swift; sourceTree = "<group>"; };
 		B2EBA24C26CDE37E00A40782 /* SwinjectSampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwinjectSampleViewController.xib; sourceTree = "<group>"; };
 		B2EBA2A026D4911400A40782 /* BottomTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarItem.swift; sourceTree = "<group>"; };
@@ -345,6 +349,8 @@
 				B2D601C026E0B66E0055A784 /* SampleTableViewController.xib */,
 				B2D601C926E0B75A0055A784 /* InnerTableViewCell.swift */,
 				B2D601CA26E0B75A0055A784 /* InnerTableViewCell.xib */,
+				B2D601D026E0B8A50055A784 /* TodayTableViewCell.swift */,
+				B2D601D126E0B8A50055A784 /* TodayTableViewCell.xib */,
 			);
 			path = UITableView;
 			sourceTree = "<group>";
@@ -500,6 +506,7 @@
 				B2AFA79A26D61BA400D5ED18 /* lottie-1.json in Resources */,
 				B2D601C226E0B66E0055A784 /* SampleTableViewController.xib in Resources */,
 				B2EBA2B026D4ACDC00A40782 /* BankingTabViewController.xib in Resources */,
+				B2D601D326E0B8A50055A784 /* TodayTableViewCell.xib in Resources */,
 				B2A5D8142689AE8A00462F70 /* CustomView.xib in Resources */,
 				B2D601CC26E0B75A0055A784 /* InnerTableViewCell.xib in Resources */,
 				B2AFA81A26D863B700D5ED18 /* GreenTabCollectionViewCell.xib in Resources */,
@@ -648,6 +655,7 @@
 				B24B93912671F7450037D750 /* CustomLogger.swift in Sources */,
 				4360E3DC26DA83A40045249E /* CustomFlowLayout.swift in Sources */,
 				B2A5D80C2689AE5600462F70 /* CustomView.swift in Sources */,
+				B2D601D226E0B8A50055A784 /* TodayTableViewCell.swift in Sources */,
 				B2EBA2BD26D4ACFE00A40782 /* BenefitTabViewController.swift in Sources */,
 				B2EBA2C626D4AE7500A40782 /* BaseTabBarViewController.swift in Sources */,
 				B2AFA7B026D7296F00D5ED18 /* TopTabBarItem.swift in Sources */,

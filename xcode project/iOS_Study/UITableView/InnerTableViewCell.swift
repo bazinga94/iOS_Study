@@ -9,8 +9,12 @@ import UIKit
 
 class InnerTableViewCell: UITableViewCell {
 
+	@IBOutlet weak var tableView: UITableView!
+
 	override func awakeFromNib() {
 		super.awakeFromNib()
+		tableView.register(UINib(nibName: "TodayTableViewCell", bundle: nil), forCellReuseIdentifier: "TodayTableViewCell")
+		tableView.dataSource = self
 		// Initialization code
 	}
 
@@ -18,5 +22,16 @@ class InnerTableViewCell: UITableViewCell {
 		super.setSelected(selected, animated: animated)
 
 		// Configure the view for the selected state
+	}
+}
+
+extension InnerTableViewCell: UITableViewDataSource {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 3
+	}
+
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "TodayTableViewCell", for: indexPath)
+		return cell
 	}
 }
