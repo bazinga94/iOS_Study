@@ -78,6 +78,11 @@ class ViewController: UIViewController {
 		self.navigationController?.pushViewController(destinationViewController, animated: true)
 	}
 
+	@IBAction func tableViewTest(_ sender: Any) {
+		let destinationViewController = SampleTableViewController()
+		self.navigationController?.pushViewController(destinationViewController, animated: true)
+	}
+
 	private func registerDependencies() {
 		self.container.register(WorkProtocol.self) { (_, name: String) in
 			HardWorker(name: name)

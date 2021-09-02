@@ -60,11 +60,19 @@
                                     <action selector="tabBarViewTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dQK-1F-Qks"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hnz-v0-egz">
+                                <rect key="frame" x="188.5" y="418" width="37" height="30"/>
+                                <state key="normal" title="Table"/>
+                                <connections>
+                                    <action selector="tableViewTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wjs-Be-yP1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="EmE-c2-QTL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0JC-KX-k4x"/>
+                            <constraint firstItem="Hnz-v0-egz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2hf-bW-JOJ"/>
                             <constraint firstItem="It1-Vt-lsR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="3bs-SR-sAx"/>
                             <constraint firstItem="EmE-c2-QTL" firstAttribute="top" secondItem="MKf-wP-czy" secondAttribute="bottom" constant="30" id="84E-ej-DFF"/>
                             <constraint firstItem="qkg-bp-d07" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="98Q-wm-a5W"/>
@@ -75,6 +83,7 @@
                             <constraint firstItem="It1-Vt-lsR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eD9-PC-dTF"/>
                             <constraint firstItem="MKf-wP-czy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kSZ-A8-BH4"/>
                             <constraint firstItem="MKf-wP-czy" firstAttribute="top" secondItem="Hna-Z2-Xzf" secondAttribute="bottom" constant="30" id="qTD-xf-2Hb"/>
+                            <constraint firstItem="Hnz-v0-egz" firstAttribute="top" secondItem="hxr-b6-UdO" secondAttribute="bottom" constant="30" id="vD8-5g-WOc"/>
                             <constraint firstItem="hxr-b6-UdO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vZr-Qp-MfT"/>
                         </constraints>
                     </view>
