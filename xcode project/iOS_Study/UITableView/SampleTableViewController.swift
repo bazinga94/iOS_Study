@@ -23,7 +23,7 @@ class SampleTableViewController: UIViewController {
 
 extension SampleTableViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 2
+		return 3
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -35,6 +35,25 @@ extension SampleTableViewController: UITableViewDataSource {
 }
 
 extension SampleTableViewController: UITableViewDelegate {
+
+	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+
+		cell.alpha = 0
+		cell.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 20, 0)
+
+//		UIView.animate(withDuration: 0.3, delay: 0.3 * Double(indexPath.row), options: .curveLinear) {
+//			cell.layer.transform = CATransform3DIdentity
+//			cell.alpha = 1
+//		}
+
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.3 * Double(indexPath.row)) {
+			cell.alpha = 1
+			UIView.animate(withDuration: 0.3) {
+				cell.layer.transform = CATransform3DIdentity
+			}
+		}
+	}
+
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return 300
 	}

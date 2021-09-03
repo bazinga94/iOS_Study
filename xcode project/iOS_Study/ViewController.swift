@@ -80,7 +80,7 @@ class ViewController: UIViewController {
 
 	@IBAction func tableViewTest(_ sender: Any) {
 		let destinationViewController = SampleTableViewController()
-		self.navigationController?.pushViewController(destinationViewController, animated: true)
+		self.navigationController?.pushViewController(destinationViewController, animated: false)
 	}
 
 	private func registerDependencies() {
