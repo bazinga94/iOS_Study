@@ -55,3 +55,9 @@ extension AssetInnerViewController: TopTabNavigationMenuDelegate {
 		changeTab(index: tabIndex)
 	}
 }
+
+extension AssetInnerViewController: TabBarAnimatable {
+	func animateTabBar(hidden: Bool) {
+
+	}
+}

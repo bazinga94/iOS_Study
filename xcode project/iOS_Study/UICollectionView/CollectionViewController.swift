@@ -10,7 +10,7 @@ import UIKit
 class CollectionViewController: UIViewController {
 
 	@IBOutlet weak var collectionView: UICollectionView!
-	private var items: [String] = ["A", "B", "C", "D", "E"]
+	private var items: [String] = ["A", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E", "B", "C", "D", "E"]
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -25,7 +25,17 @@ class CollectionViewController: UIViewController {
 }
 
 extension CollectionViewController: UICollectionViewDelegate {
+	func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+		cell.alpha = 0.2
+		cell.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 20, 0)
 
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.3 * Double(indexPath.row)) {
+			cell.alpha = 1
+			UIView.animate(withDuration: 0.3) {
+				cell.layer.transform = CATransform3DIdentity
+			}
+		}
+	}
 }
 
 extension CollectionViewController: UICollectionViewDataSource {
@@ -35,9 +45,9 @@ extension CollectionViewController: UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //		return items.count
 		if section == 0 {
-			return 4
+			return 40
 		} else {
-			return 5
+			return 50
 		}
 	}
 
@@ -73,7 +83,7 @@ extension CollectionViewController: UICollectionViewDelegateFlowLayout {
 	}
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		let width = (self.view.frame.width - 60) * 0.1
+		let width = (self.view.frame.width - 60) * 0.3
 		return CGSize(width: width, height: width)
 	}
 
