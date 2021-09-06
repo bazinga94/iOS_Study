@@ -26,6 +26,7 @@
 		B220977726E5924F00DA7438 /* ReusableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220977626E5924F00DA7438 /* ReusableType.swift */; };
 		B220977D26E5959600DA7438 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220977C26E5959600DA7438 /* Builder.swift */; };
 		B220979226E59E3700DA7438 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220979126E59E3700DA7438 /* UIView+Extension.swift */; };
+		B220979C26E5A83900DA7438 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220979B26E5A83900DA7438 /* Dynamic.swift */; };
 		B24B93912671F7450037D750 /* CustomLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B93902671F7450037D750 /* CustomLogger.swift */; };
 		B2A5D80C2689AE5600462F70 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A5D80B2689AE5600462F70 /* CustomView.swift */; };
 		B2A5D8142689AE8A00462F70 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A5D8132689AE8A00462F70 /* CustomView.xib */; };
@@ -108,6 +109,7 @@
 		B220977626E5924F00DA7438 /* ReusableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableType.swift; sourceTree = "<group>"; };
 		B220977C26E5959600DA7438 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		B220979126E59E3700DA7438 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		B220979B26E5A83900DA7438 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		B24B93902671F7450037D750 /* CustomLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLogger.swift; sourceTree = "<group>"; };
 		B2A5D80B2689AE5600462F70 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		B2A5D8132689AE8A00462F70 /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 		436846BA263AE01D00967143 /* iOS_Study */ = {
 			isa = PBXGroup;
 			children = (
+				B220979A26E5A82B00DA7438 /* Boxing */,
 				B220979026E59E2400DA7438 /* Extension */,
 				B2D601BE26E0B6520055A784 /* UITableView */,
 				B2AFA79526D61B8400D5ED18 /* Resource */,
@@ -340,6 +343,14 @@
 			children = (
 			);
 			path = CellController;
+			sourceTree = "<group>";
+		};
+		B220979A26E5A82B00DA7438 /* Boxing */ = {
+			isa = PBXGroup;
+			children = (
+				B220979B26E5A83900DA7438 /* Dynamic.swift */,
+			);
+			path = Boxing;
 			sourceTree = "<group>";
 		};
 		B24B938F2671F7370037D750 /* Logger */ = {
@@ -717,6 +728,7 @@
 				B2EBA24D26CDE37E00A40782 /* SwinjectSampleViewController.swift in Sources */,
 				B2AFA81326D8611A00D5ED18 /* CellController.swift in Sources */,
 				436846C6263AE01D00967143 /* iOS_Study.xcdatamodeld in Sources */,
+				B220979C26E5A83900DA7438 /* Dynamic.swift in Sources */,
 				B24B93912671F7450037D750 /* CustomLogger.swift in Sources */,
 				4360E3DC26DA83A40045249E /* CustomFlowLayout.swift in Sources */,
 				B2A5D80C2689AE5600462F70 /* CustomView.swift in Sources */,
