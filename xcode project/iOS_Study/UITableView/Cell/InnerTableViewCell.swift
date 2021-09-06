@@ -12,10 +12,17 @@ class InnerTableViewCell: UITableViewCell {
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var tableView: UITableView!
 
+	var viewModel: InnerTableViewCellViewModel = .init(items: [])
+
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		tableView.register(UINib(nibName: "TodayTableViewCell", bundle: nil), forCellReuseIdentifier: "TodayTableViewCell")
 		tableView.dataSource = self
+		viewModel.cellControllers.bind { [weak self] _ in
+			DispatchQueue.main.async {
+				self?.tableView.reloadData()
+			}
+		}
 		// Initialization code
 	}
 
@@ -35,12 +42,10 @@ class InnerTableViewCell: UITableViewCell {
 
 extension InnerTableViewCell: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 3
+		return viewModel.cellControllers.value.count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "TodayTableViewCell", for: indexPath) as! TodayTableViewCell
-		cell.titleLabel.text = "\(String(indexPath.row))"
-		return cell
+		return viewModel.cellControllers.value[indexPath.row].cellFromReusableCellHolder(tableView, forIndexPath: indexPath)
 	}
 }

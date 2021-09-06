@@ -7,24 +7,10 @@
 
 import Foundation
 
-struct SampleTableModel {
-	var firstModel: [FirstDummyModel]
-	var secondModel: [SecondDummyModel]
-}
-
-struct FirstDummyModel {
-	var title: String
-	var content: [String]
-}
-
-struct SecondDummyModel {
-	var content: [String]
-}
-
 class SampleTableViewModel {
-//	var dummyData: Dynamic<SampleTableModel> = .init(.init(firstModel: [], secondModel: []))
-	var cellControllers: Dynamic<[[TableCellController]]> = .init([])
 	private let factory = SampleTableViewFactory()
+
+	var cellControllers: Dynamic<[[TableCellController]]> = .init([])
 
 	func fetchDummyData() {
 		let sampleTableModel =

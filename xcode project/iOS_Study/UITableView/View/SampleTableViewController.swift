@@ -36,9 +36,9 @@ private extension SampleTableViewController {
 	}
 
 	func bind() {
-		viewModel.cellControllers.bind { model in
+		viewModel.cellControllers.bind { [weak self] _ in
 			DispatchQueue.main.async {
-				self.tableView.reloadData()
+				self?.tableView.reloadData()
 			}
 		}
 	}
@@ -64,19 +64,19 @@ extension SampleTableViewController: UITableViewDataSource {
 
 extension SampleTableViewController: UITableViewDelegate {
 
-	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-
-		cell.alpha = 0
-		cell.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 20, 0)
-
-		DispatchQueue.main.asyncAfter(deadline: .now() + 0.3 * Double(indexPath.row)) {
-			cell.alpha = 1
-			UIView.animate(withDuration: 0.3) {
-				cell.layer.transform = CATransform3DIdentity
-			}
-		}
-		// 이렇게 하면 문제점이 indexPath 에 따라 늦게 반응함...
-	}
+//	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//
+//		cell.alpha = 0
+//		cell.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 20, 0)
+//
+//		DispatchQueue.main.asyncAfter(deadline: .now() + 0.3 * Double(indexPath.row)) {
+//			cell.alpha = 1
+//			UIView.animate(withDuration: 0.3) {
+//				cell.layer.transform = CATransform3DIdentity
+//			}
+//		}
+//		// 이렇게 하면 문제점이 indexPath 에 따라 늦게 반응함...
+//	}
 
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return 300

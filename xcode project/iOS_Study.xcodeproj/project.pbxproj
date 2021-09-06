@@ -30,6 +30,10 @@
 		B22097A426E5A8A600DA7438 /* SampleTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22097A326E5A8A600DA7438 /* SampleTableViewModel.swift */; };
 		B22097AA26E5AF1B00DA7438 /* SampleTableViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22097A926E5AF1B00DA7438 /* SampleTableViewFactory.swift */; };
 		B22097AF26E5AFA200DA7438 /* InnerTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22097AE26E5AFA200DA7438 /* InnerTableViewCellController.swift */; };
+		B22097BF26E5D62A00DA7438 /* InnerTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22097BE26E5D62A00DA7438 /* InnerTableViewCellViewModel.swift */; };
+		B22097C426E5D67600DA7438 /* TodayTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22097C326E5D67600DA7438 /* TodayTableViewCellController.swift */; };
+		B22097C926E5D6E800DA7438 /* InnerTableViewCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22097C826E5D6E800DA7438 /* InnerTableViewCellFactory.swift */; };
+		B22097CF26E5D79600DA7438 /* SampleTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22097CE26E5D79600DA7438 /* SampleTableModel.swift */; };
 		B24B93912671F7450037D750 /* CustomLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B93902671F7450037D750 /* CustomLogger.swift */; };
 		B2A5D80C2689AE5600462F70 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A5D80B2689AE5600462F70 /* CustomView.swift */; };
 		B2A5D8142689AE8A00462F70 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A5D8132689AE8A00462F70 /* CustomView.xib */; };
@@ -116,6 +120,10 @@
 		B22097A326E5A8A600DA7438 /* SampleTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTableViewModel.swift; sourceTree = "<group>"; };
 		B22097A926E5AF1B00DA7438 /* SampleTableViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTableViewFactory.swift; sourceTree = "<group>"; };
 		B22097AE26E5AFA200DA7438 /* InnerTableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerTableViewCellController.swift; sourceTree = "<group>"; };
+		B22097BE26E5D62A00DA7438 /* InnerTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		B22097C326E5D67600DA7438 /* TodayTableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTableViewCellController.swift; sourceTree = "<group>"; };
+		B22097C826E5D6E800DA7438 /* InnerTableViewCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerTableViewCellFactory.swift; sourceTree = "<group>"; };
+		B22097CE26E5D79600DA7438 /* SampleTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTableModel.swift; sourceTree = "<group>"; };
 		B24B93902671F7450037D750 /* CustomLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLogger.swift; sourceTree = "<group>"; };
 		B2A5D80B2689AE5600462F70 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		B2A5D8132689AE8A00462F70 /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
@@ -330,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				B22097A326E5A8A600DA7438 /* SampleTableViewModel.swift */,
+				B22097BE26E5D62A00DA7438 /* InnerTableViewCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -349,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				B22097AE26E5AFA200DA7438 /* InnerTableViewCellController.swift */,
+				B22097C326E5D67600DA7438 /* TodayTableViewCellController.swift */,
 			);
 			path = CellController;
 			sourceTree = "<group>";
@@ -365,8 +375,17 @@
 			isa = PBXGroup;
 			children = (
 				B22097A926E5AF1B00DA7438 /* SampleTableViewFactory.swift */,
+				B22097C826E5D6E800DA7438 /* InnerTableViewCellFactory.swift */,
 			);
 			path = Factory;
+			sourceTree = "<group>";
+		};
+		B22097CD26E5D78300DA7438 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B22097CE26E5D79600DA7438 /* SampleTableModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B24B938F2671F7370037D750 /* Logger */ = {
@@ -439,6 +458,7 @@
 		B2D601BE26E0B6520055A784 /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
+				B22097CD26E5D78300DA7438 /* Model */,
 				B22097A826E5AF0000DA7438 /* Factory */,
 				B220979926E5A65C00DA7438 /* CellController */,
 				B220979826E5A65000DA7438 /* Cell */,
@@ -759,12 +779,16 @@
 				B220979226E59E3700DA7438 /* UIView+Extension.swift in Sources */,
 				B22097AA26E5AF1B00DA7438 /* SampleTableViewFactory.swift in Sources */,
 				B2EBA2A126D4911400A40782 /* BottomTabBarItem.swift in Sources */,
+				B22097C926E5D6E800DA7438 /* InnerTableViewCellFactory.swift in Sources */,
 				43A0BAC82697FE5D00E4A8A4 /* CollectionViewController.swift in Sources */,
 				B2B8327526A552D2009006F1 /* RxStudyViewController.swift in Sources */,
 				436846BC263AE01D00967143 /* AppDelegate.swift in Sources */,
 				B220977726E5924F00DA7438 /* ReusableType.swift in Sources */,
 				B220977D26E5959600DA7438 /* Builder.swift in Sources */,
+				B22097CF26E5D79600DA7438 /* SampleTableModel.swift in Sources */,
+				B22097C426E5D67600DA7438 /* TodayTableViewCellController.swift in Sources */,
 				B2AFA81926D863B700D5ED18 /* GreenTabCollectionViewCell.swift in Sources */,
+				B22097BF26E5D62A00DA7438 /* InnerTableViewCellViewModel.swift in Sources */,
 				43684705263AE27600967143 /* ViewLayoutTestViewController.swift in Sources */,
 				B2EBA2CE26D4B06200A40782 /* BottomTabNavigationMenu.swift in Sources */,
 				436846BE263AE01D00967143 /* SceneDelegate.swift in Sources */,
