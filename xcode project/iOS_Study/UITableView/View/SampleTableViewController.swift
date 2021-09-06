@@ -9,7 +9,6 @@ import UIKit
 
 class SampleTableViewController: UIViewController {
 
-//	@IBOutlet weak var tableView: UITableView!
 	private lazy var tableView: UITableView = UITableView()
 		.builder
 		.apply {

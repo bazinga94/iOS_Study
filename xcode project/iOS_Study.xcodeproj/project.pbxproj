@@ -308,6 +308,40 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		B220979626E5A63E00DA7438 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B2D601BF26E0B66E0055A784 /* SampleTableViewController.swift */,
+				B2D601C026E0B66E0055A784 /* SampleTableViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B220979726E5A64A00DA7438 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B220979826E5A65000DA7438 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B2D601C926E0B75A0055A784 /* InnerTableViewCell.swift */,
+				B2D601CA26E0B75A0055A784 /* InnerTableViewCell.xib */,
+				B2D601D026E0B8A50055A784 /* TodayTableViewCell.swift */,
+				B2D601D126E0B8A50055A784 /* TodayTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B220979926E5A65C00DA7438 /* CellController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CellController;
+			sourceTree = "<group>";
+		};
 		B24B938F2671F7370037D750 /* Logger */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,12 +412,10 @@
 		B2D601BE26E0B6520055A784 /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
-				B2D601BF26E0B66E0055A784 /* SampleTableViewController.swift */,
-				B2D601C026E0B66E0055A784 /* SampleTableViewController.xib */,
-				B2D601C926E0B75A0055A784 /* InnerTableViewCell.swift */,
-				B2D601CA26E0B75A0055A784 /* InnerTableViewCell.xib */,
-				B2D601D026E0B8A50055A784 /* TodayTableViewCell.swift */,
-				B2D601D126E0B8A50055A784 /* TodayTableViewCell.xib */,
+				B220979926E5A65C00DA7438 /* CellController */,
+				B220979826E5A65000DA7438 /* Cell */,
+				B220979726E5A64A00DA7438 /* ViewModel */,
+				B220979626E5A63E00DA7438 /* View */,
 			);
 			path = UITableView;
 			sourceTree = "<group>";
