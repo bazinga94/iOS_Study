@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -25,7 +24,6 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" systemColor="systemYellowColor"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="Xdu-wH-IH1" secondAttribute="bottom" constant="30" id="LHc-gr-jGz"/>
                     <constraint firstItem="Xdu-wH-IH1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="j33-or-3Ed"/>
@@ -39,9 +37,4 @@
             <point key="canvasLocation" x="184.78260869565219" y="170.42410714285714"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

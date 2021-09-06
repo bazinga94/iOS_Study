@@ -19,20 +19,29 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XbU-2P-MqM">
-                        <rect key="frame" x="0.0" y="0.0" width="476" height="140"/>
+                        <rect key="frame" x="0.0" y="31" width="476" height="109"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </tableView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMn-wW-uF3">
+                        <rect key="frame" x="20" y="8" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="XbU-2P-MqM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="2v2-3e-c3j"/>
                     <constraint firstAttribute="trailing" secondItem="XbU-2P-MqM" secondAttribute="trailing" id="7z8-1U-3x4"/>
+                    <constraint firstItem="XbU-2P-MqM" firstAttribute="top" secondItem="JMn-wW-uF3" secondAttribute="bottom" constant="2" id="e9A-B2-ZLH"/>
+                    <constraint firstItem="JMn-wW-uF3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="evj-Y2-G8n"/>
                     <constraint firstAttribute="bottom" secondItem="XbU-2P-MqM" secondAttribute="bottom" id="kgc-qZ-naC"/>
-                    <constraint firstItem="XbU-2P-MqM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="o8w-bA-cBi"/>
+                    <constraint firstItem="JMn-wW-uF3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="uFv-Lt-wzu"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="tableView" destination="XbU-2P-MqM" id="Wy8-ri-Nrb"/>
+                <outlet property="titleLabel" destination="JMn-wW-uF3" id="kfd-bi-ULt"/>
             </connections>
             <point key="canvasLocation" x="301.44927536231887" y="-19.419642857142858"/>
         </tableViewCell>

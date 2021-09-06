@@ -9,6 +9,8 @@ import UIKit
 
 class SampleTableViewController: UIViewController {
 
+	private var viewModel: SampleTableViewModel = .init()
+
 	private lazy var tableView: UITableView = UITableView()
 		.builder
 		.apply {
@@ -22,6 +24,8 @@ class SampleTableViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		addTableView()
+		bind()
+		fetch()
 	}
 }
 
@@ -30,16 +34,31 @@ private extension SampleTableViewController {
 		self.view.addSubview(tableView)
 		tableView.fitSuperView()
 	}
+
+	func bind() {
+		viewModel.cellControllers.bind { model in
+			DispatchQueue.main.async {
+				self.tableView.reloadData()
+			}
+		}
+	}
+
+	func fetch() {
+		viewModel.fetchDummyData()
+	}
 }
 
 extension SampleTableViewController: UITableViewDataSource {
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return viewModel.cellControllers.value.count
+	}
+
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 3
+		return viewModel.cellControllers.value[section].count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "InnerTableViewCell", for: indexPath)
-		return cell
+		return viewModel.cellControllers.value[indexPath.section][indexPath.row].cellFromReusableCellHolder(tableView, forIndexPath: indexPath)
 	}
 }
 
