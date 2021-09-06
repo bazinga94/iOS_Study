@@ -9,14 +9,27 @@ import UIKit
 
 class SampleTableViewController: UIViewController {
 
-	@IBOutlet weak var tableView: UITableView!
+//	@IBOutlet weak var tableView: UITableView!
+	private lazy var tableView: UITableView = UITableView()
+		.builder
+		.apply {
+			$0.register(UINib(nibName: "InnerTableViewCell", bundle: nil), forCellReuseIdentifier: "InnerTableViewCell")
+			$0.dataSource = self
+			$0.delegate = self
+			$0.rowHeight = UITableView.automaticDimension
+		}
+		.build()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		tableView.register(UINib(nibName: "InnerTableViewCell", bundle: nil), forCellReuseIdentifier: "InnerTableViewCell")
-		tableView.dataSource = self
-		tableView.delegate = self
-		tableView.rowHeight = UITableView.automaticDimension
+		addTableView()
+	}
+}
+
+private extension SampleTableViewController {
+	func addTableView() {
+		self.view.addSubview(tableView)
+		tableView.fitSuperView()
 	}
 }
 
