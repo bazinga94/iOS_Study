@@ -10,7 +10,7 @@ import UIKit
 class SampleTableViewController: UIViewController {
 
 	private var viewModel: SampleTableViewModel = .init()
-
+	private var isCellAnimatedList: [IndexPath] = []
 	private lazy var tableView: UITableView = UITableView()
 		.builder
 		.apply {
@@ -64,19 +64,23 @@ extension SampleTableViewController: UITableViewDataSource {
 
 extension SampleTableViewController: UITableViewDelegate {
 
-//	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+
+//		if !isCellAnimatedList.contains(indexPath) {
+//			print(indexPath)
+//			cell.alpha = 0
+//			cell.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 20, 0)
 //
-//		cell.alpha = 0
-//		cell.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 20, 0)
-//
-//		DispatchQueue.main.asyncAfter(deadline: .now() + 0.3 * Double(indexPath.row)) {
-//			cell.alpha = 1
-//			UIView.animate(withDuration: 0.3) {
-//				cell.layer.transform = CATransform3DIdentity
+//			DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+//				cell.alpha = 1
+//				UIView.animate(withDuration: 0.3) {
+//					cell.layer.transform = CATransform3DIdentity
+//				}
 //			}
+//			isCellAnimatedList.append(indexPath)
+//			// 이렇게 하면 문제점이 indexPath 에 따라 늦게 반응함...
 //		}
-//		// 이렇게 하면 문제점이 indexPath 에 따라 늦게 반응함...
-//	}
+	}
 
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return 300
