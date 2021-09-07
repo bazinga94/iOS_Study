@@ -18,6 +18,7 @@ class InnerTableViewCell: UITableViewCell {
 		super.awakeFromNib()
 		tableView.register(UINib(nibName: "TodayTableViewCell", bundle: nil), forCellReuseIdentifier: "TodayTableViewCell")
 		tableView.dataSource = self
+		tableView.delegate = self
 		viewModel.cellControllers.bind { [weak self] _ in
 			DispatchQueue.main.async {
 				self?.tableView.reloadData()
@@ -47,5 +48,11 @@ extension InnerTableViewCell: UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		return viewModel.cellControllers.value[indexPath.row].cellFromReusableCellHolder(tableView, forIndexPath: indexPath)
+	}
+}
+
+extension InnerTableViewCell: UITableViewDelegate {
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return 40
 	}
 }

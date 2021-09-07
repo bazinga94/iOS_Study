@@ -11,12 +11,14 @@ class SampleTableViewController: UIViewController {
 
 	private var viewModel: SampleTableViewModel = .init()
 	private var isCellAnimatedList: [IndexPath] = []
+	private var initialVisibleLastIndex: Int = 2	// 또 다른 방법!, 처음 보여질 셀에 대해 미리 알려주는것... 근데 이건 화면 크기 마다 다를텐데ㅠ.. 안되겠다
 	private lazy var tableView: UITableView = UITableView()
 		.builder
 		.apply {
 			$0.register(UINib(nibName: "InnerTableViewCell", bundle: nil), forCellReuseIdentifier: "InnerTableViewCell")
 			$0.dataSource = self
 			$0.delegate = self
+			$0.estimatedRowHeight = 100000			// estimatedRowHeight를 지정하지 않으면 willDisplay가 한번에 호출된다. -> 아마 기준 높이가 없어서 그런듯?! + estimatedRowHeight에 따라 보여줄 indexPath가 정해짐
 			$0.rowHeight = UITableView.automaticDimension
 		}
 		.build()
@@ -38,6 +40,7 @@ private extension SampleTableViewController {
 	func bind() {
 		viewModel.cellControllers.bind { [weak self] _ in
 			DispatchQueue.main.async {
+				self?.isCellAnimatedList = []
 				self?.tableView.reloadData()
 			}
 		}
@@ -66,15 +69,68 @@ extension SampleTableViewController: UITableViewDelegate {
 
 	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 
+//		print(tableView.indexPathsForVisibleRows)
+//		print(indexPath)
+		if indexPath.row > initialVisibleLastIndex {
+			if isCellAnimatedList.contains(indexPath) == false { //
+				cell.alpha = 0.05
+				let transform = CATransform3DTranslate(CATransform3DIdentity, 0, 30, 0)
+				cell.layer.transform = transform
+
+//				let delay = 0.3 * Double(indexPath.row)
+				let delay = 0.3
+
+				UIView.animate(withDuration: 1, delay: delay, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+					cell.alpha = 1
+					cell.layer.transform = CATransform3DIdentity
+				})
+
+				isCellAnimatedList.append(indexPath)
+			}
+		} else {
+			if isCellAnimatedList.contains(indexPath) == false { //
+				cell.alpha = 0.05
+				let transform = CATransform3DTranslate(CATransform3DIdentity, 0, 30, 0)
+				cell.layer.transform = transform
+
+				let delay = 0.3 * Double(indexPath.row)
+//				let delay = 0.3
+
+				UIView.animate(withDuration: 1, delay: delay, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+					cell.alpha = 1
+					cell.layer.transform = CATransform3DIdentity
+				})
+
+				isCellAnimatedList.append(indexPath)
+			}
+		}
+
+//		if isCellAnimatedList.contains(indexPath) == false { //
+//			cell.alpha = 0.05
+//			let transform = CATransform3DTranslate(CATransform3DIdentity, 0, 30, 0)
+//			cell.layer.transform = transform
+//
+//			let delay = 0.3 * Double(indexPath.row)
+//			let delay = 0.3
+//
+//			UIView.animate(withDuration: 1, delay: delay, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+//				cell.alpha = 1
+//				cell.layer.transform = CATransform3DIdentity
+//			})
+//
+//			isCellAnimatedList.append(indexPath)
+//		}
+
 //		if !isCellAnimatedList.contains(indexPath) {
 //			print(indexPath)
 //			cell.alpha = 0
 //			cell.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 20, 0)
 //
-//			DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+//			DispatchQueue.main.asyncAfter(deadline: .now() + 0.3 * Double((indexPath.row))) {
 //				cell.alpha = 1
 //				UIView.animate(withDuration: 0.3) {
 //					cell.layer.transform = CATransform3DIdentity
+////					cell.alpha = 1
 //				}
 //			}
 //			isCellAnimatedList.append(indexPath)
@@ -83,6 +139,6 @@ extension SampleTableViewController: UITableViewDelegate {
 	}
 
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 300
+		return 200
 	}
 }
