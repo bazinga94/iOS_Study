@@ -11,7 +11,7 @@ class SampleTableViewController: UIViewController {
 
 	private var viewModel: SampleTableViewModel = .init()
 	private var isCellAnimatedList: [IndexPath] = []
-	private var initialVisibleLastIndex: Int = 5	// 또 다른 방법!, 처음 보여질 셀에 대해 미리 알려주는것... 근데 이건 화면 크기 마다 다를텐데ㅠ.. 안되겠다
+	private var initialVisibleLastIndex: Int = 3	// 또 다른 방법!, 처음 보여질 셀에 대해 미리 알려주는것... 근데 이건 화면 크기 마다 다를텐데ㅠ.. 안되겠다
 	private var animationStart: Bool = false
 	private lazy var tableView: UITableView = UITableView()
 		.builder
@@ -19,7 +19,8 @@ class SampleTableViewController: UIViewController {
 			$0.register(UINib(nibName: "InnerTableViewCell", bundle: nil), forCellReuseIdentifier: "InnerTableViewCell")
 			$0.dataSource = self
 			$0.delegate = self
-			$0.estimatedRowHeight = 100000			// estimatedRowHeight를 지정하지 않으면 willDisplay가 한번에 호출된다. -> 아마 기준 높이가 없어서 그런듯?! + estimatedRowHeight에 따라 보여줄 indexPath가 정해짐
+			$0.estimatedRowHeight = 0 //UITableView.automaticDimension			// estimatedRowHeight를 지정하지 않으면 willDisplay가 한번에 호출된다. -> 아마 기준 높이가 없어서 그런듯?! + estimatedRowHeight에 따라 보여줄 indexPath가 정해짐
+			// 0으로 지정하니 제대로된 값을 가져온다
 			$0.rowHeight = UITableView.automaticDimension
 		}
 		.build()
@@ -45,6 +46,8 @@ private extension SampleTableViewController {
 				self?.tableView.reloadData()
 //				self?.animationStart = true
 //				self?.initialVisibleLastIndex = self?.tableView.indexPathsForVisibleRows?.last?.row ?? 0
+//				print("@@@@@", self?.tableView.indexPathsForVisibleRows)
+				self?.initialVisibleLastIndex = self?.tableView.indexPathsForVisibleRows?.last?.row ?? 0
 			}
 		}
 	}
@@ -88,7 +91,7 @@ extension SampleTableViewController: UITableViewDelegate {
 
 				let delay = 0.3
 
-				UIView.animate(withDuration: 1, delay: delay, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+				UIView.animate(withDuration: 0.3, delay: delay, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
 					cell.alpha = 1
 					cell.layer.transform = CATransform3DIdentity
 				})
@@ -103,7 +106,7 @@ extension SampleTableViewController: UITableViewDelegate {
 
 				let delay = 0.3 * Double(indexPath.row)
 
-				UIView.animate(withDuration: 1, delay: delay, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+				UIView.animate(withDuration: 0.3, delay: delay, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
 					cell.alpha = 1
 					cell.layer.transform = CATransform3DIdentity
 				})
@@ -146,6 +149,6 @@ extension SampleTableViewController: UITableViewDelegate {
 	}
 
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 200
+		return 150
 	}
 }
