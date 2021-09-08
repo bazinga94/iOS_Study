@@ -12,7 +12,8 @@ class SampleTableViewController: UIViewController {
 	private var viewModel: SampleTableViewModel = .init()
 	private var isCellAnimatedList: [IndexPath] = []
 	private var initialVisibleLastIndex: Int = 5	// 또 다른 방법!, 처음 보여질 셀에 대해 미리 알려주는것... 근데 이건 화면 크기 마다 다를텐데ㅠ.. 안되겠다
-	private var animationStart: Bool = false
+	private var animationExecute: Bool = false
+	private var cellCount: Int = 0
 	private lazy var tableView: UITableView = UITableView()
 		.builder
 		.apply {
@@ -30,6 +31,11 @@ class SampleTableViewController: UIViewController {
 		bind()
 		fetch()
 	}
+
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		addCells(count: viewModel.cellControllers.value[0].count)
+	}
 }
 
 private extension SampleTableViewController {
@@ -38,11 +44,43 @@ private extension SampleTableViewController {
 		tableView.fitSuperView()
 	}
 
+	func addCells(count: Int) {
+		guard count > 0 else { return }
+
+		var alreadyAdded = 0
+		Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { [weak self] t in
+			guard let self = self else {
+				t.invalidate()
+				return
+			}
+
+			self.cellCount += 1
+
+			let indexPath = IndexPath(row: self.cellCount - 1, section: 0)
+			self.tableView.insertRows(at: [indexPath], with: .fade)
+
+			alreadyAdded += 1
+			if alreadyAdded == count {
+				t.invalidate()
+				self.animationExecute = true
+			}
+		}
+	}
+
 	func bind() {
 		viewModel.cellControllers.bind { [weak self] _ in
 			DispatchQueue.main.async {
 				self?.isCellAnimatedList = []
-				self?.tableView.reloadData()
+//				if let execute = self?.animationExecute, !execute {
+//					self?.tableView.performBatchUpdates({
+//						self?.tableView.insertRows(at: <#T##[IndexPath]#>, with: .automatic)
+//					}, completion: nil)
+//					guard let count = self?.viewModel.cellControllers.value.count else {
+//						return
+//					}
+//					self?.addCells(count: count)
+//				}
+//				self?.tableView.reloadData()
 //				self?.animationStart = true
 //				self?.initialVisibleLastIndex = self?.tableView.indexPathsForVisibleRows?.last?.row ?? 0
 			}
@@ -56,11 +94,11 @@ private extension SampleTableViewController {
 
 extension SampleTableViewController: UITableViewDataSource {
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return viewModel.cellControllers.value.count
+		return (animationExecute) ? viewModel.cellControllers.value.count : 1
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return viewModel.cellControllers.value[section].count
+		return (animationExecute) ? viewModel.cellControllers.value[section].count : cellCount
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,53 +118,53 @@ extension SampleTableViewController: UITableViewDelegate {
 //		print(tableView.visibleCells)
 //		print(indexPath)
 
-		if indexPath.row > initialVisibleLastIndex {
-			if isCellAnimatedList.contains(indexPath) == false { //
-				cell.alpha = 0.05
-				let transform = CATransform3DTranslate(CATransform3DIdentity, 0, 30, 0)
-				cell.layer.transform = transform
-
-				let delay = 0.3
-
-				UIView.animate(withDuration: 1, delay: delay, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-					cell.alpha = 1
-					cell.layer.transform = CATransform3DIdentity
-				})
-
-				isCellAnimatedList.append(indexPath)
-			}
-		} else {
-			if isCellAnimatedList.contains(indexPath) == false { //
-				cell.alpha = 0.05
-				let transform = CATransform3DTranslate(CATransform3DIdentity, 0, 30, 0)
-				cell.layer.transform = transform
-
-				let delay = 0.3 * Double(indexPath.row)
-
-				UIView.animate(withDuration: 1, delay: delay, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-					cell.alpha = 1
-					cell.layer.transform = CATransform3DIdentity
-				})
-
-				isCellAnimatedList.append(indexPath)
-			}
-		}
-
-//		if isCellAnimatedList.contains(indexPath) == false { //
-//			cell.alpha = 0.05
-//			let transform = CATransform3DTranslate(CATransform3DIdentity, 0, 30, 0)
-//			cell.layer.transform = transform
+//		if indexPath.row > initialVisibleLastIndex {
+//			if isCellAnimatedList.contains(indexPath) == false { //
+//				cell.alpha = 0.05
+//				let transform = CATransform3DTranslate(CATransform3DIdentity, 0, 30, 0)
+//				cell.layer.transform = transform
 //
-//			let delay = 0.3 * Double(indexPath.row)
-//			let delay = 0.3
+//				let delay = 0.3
 //
-//			UIView.animate(withDuration: 1, delay: delay, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-//				cell.alpha = 1
-//				cell.layer.transform = CATransform3DIdentity
-//			})
+//				UIView.animate(withDuration: 1, delay: delay, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+//					cell.alpha = 1
+//					cell.layer.transform = CATransform3DIdentity
+//				})
 //
-//			isCellAnimatedList.append(indexPath)
+//				isCellAnimatedList.append(indexPath)
+//			}
+//		} else {
+//			if isCellAnimatedList.contains(indexPath) == false { //
+//				cell.alpha = 0.05
+//				let transform = CATransform3DTranslate(CATransform3DIdentity, 0, 30, 0)
+//				cell.layer.transform = transform
+//
+//				let delay = 0.3 * Double(indexPath.row)
+//
+//				UIView.animate(withDuration: 1, delay: delay, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+//					cell.alpha = 1
+//					cell.layer.transform = CATransform3DIdentity
+//				})
+//
+//				isCellAnimatedList.append(indexPath)
+//			}
 //		}
+
+		if isCellAnimatedList.contains(indexPath) == false { //
+			cell.alpha = 0.05
+			let transform = CATransform3DTranslate(CATransform3DIdentity, 0, 30, 0)
+			cell.layer.transform = transform
+
+//			let delay = 0.3 * Double(indexPath.row)
+			let delay: Double = 0
+
+			UIView.animate(withDuration: 0.3, delay: delay, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+				cell.alpha = 1
+				cell.layer.transform = CATransform3DIdentity
+			})
+
+			isCellAnimatedList.append(indexPath)
+		}
 
 //		if !isCellAnimatedList.contains(indexPath) {
 //			print(indexPath)
