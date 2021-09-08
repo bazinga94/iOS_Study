@@ -86,12 +86,12 @@ extension SampleTableViewController: UITableViewDelegate {
 		if indexPath.row > initialVisibleLastIndex {
 			if isCellAnimatedList.contains(indexPath) == false { //
 				cell.alpha = 0.05
-				let transform = CATransform3DTranslate(CATransform3DIdentity, 0, 30, 0)
+				let transform = CATransform3DTranslate(CATransform3DIdentity, 0, 20, 0)
 				cell.layer.transform = transform
 
-				let delay = 0.3
+				let delay = 0.2
 
-				UIView.animate(withDuration: 0.3, delay: delay, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+				UIView.animate(withDuration: 0.2, delay: delay, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseOut, .allowUserInteraction], animations: {
 					cell.alpha = 1
 					cell.layer.transform = CATransform3DIdentity
 				})
@@ -101,12 +101,12 @@ extension SampleTableViewController: UITableViewDelegate {
 		} else {
 			if isCellAnimatedList.contains(indexPath) == false { //
 				cell.alpha = 0.05
-				let transform = CATransform3DTranslate(CATransform3DIdentity, 0, 30, 0)
+				let transform = CATransform3DTranslate(CATransform3DIdentity, 0, 20, 0)
 				cell.layer.transform = transform
 
-				let delay = 0.3 * Double(indexPath.row)
+				let delay = 0.2 * Double(indexPath.row)
 
-				UIView.animate(withDuration: 0.3, delay: delay, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+				UIView.animate(withDuration: 0.2, delay: delay, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseOut, .allowUserInteraction], animations: {
 					cell.alpha = 1
 					cell.layer.transform = CATransform3DIdentity
 				})
