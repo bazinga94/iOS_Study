@@ -18,13 +18,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdu-wH-IH1">
-                        <rect key="frame" x="20" y="10" width="42" height="75"/>
+                        <rect key="frame" x="20" y="10" width="41.5" height="75"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xdu-wH-IH1" secondAttribute="trailing" constant="20" id="1md-RF-ErD"/>
                     <constraint firstAttribute="bottom" secondItem="Xdu-wH-IH1" secondAttribute="bottom" constant="10" id="LHc-gr-jGz"/>
                     <constraint firstItem="Xdu-wH-IH1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="j33-or-3Ed"/>
                     <constraint firstItem="Xdu-wH-IH1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="uWz-ab-S7W"/>
