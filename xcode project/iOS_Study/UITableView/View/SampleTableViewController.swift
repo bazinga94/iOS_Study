@@ -13,10 +13,11 @@ class SampleTableViewController: UIViewController {
 	private var isCellAnimatedList: [IndexPath] = []
 	private var initialVisibleLastIndex: Int = 3	// 또 다른 방법!, 처음 보여질 셀에 대해 미리 알려주는것... 근데 이건 화면 크기 마다 다를텐데ㅠ.. 안되겠다
 	private var animationStart: Bool = false
+	private var factory = SampleTableViewFactory()
 	private lazy var tableView: UITableView = UITableView()
 		.builder
 		.apply {
-			$0.register(UINib(nibName: "InnerTableViewCell", bundle: nil), forCellReuseIdentifier: "InnerTableViewCell")
+//			$0.register(UINib(nibName: "InnerTableViewCell", bundle: nil), forCellReuseIdentifier: "InnerTableViewCell")
 			$0.dataSource = self
 			$0.delegate = self
 			$0.estimatedRowHeight = 0 //UITableView.automaticDimension			// estimatedRowHeight를 지정하지 않으면 willDisplay가 한번에 호출된다. -> 아마 기준 높이가 없어서 그런듯?! + estimatedRowHeight에 따라 보여줄 indexPath가 정해짐
@@ -37,6 +38,7 @@ private extension SampleTableViewController {
 	func addTableView() {
 		self.view.addSubview(tableView)
 		tableView.fitSuperView()
+		factory.registerCells(on: tableView)
 	}
 
 	func bind() {

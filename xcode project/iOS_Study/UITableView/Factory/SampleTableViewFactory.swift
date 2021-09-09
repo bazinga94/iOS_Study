@@ -10,6 +10,7 @@ import UIKit
 class SampleTableViewFactory {
 	func registerCells(on tableView: UITableView) {
 		FirstInnerTableViewCellController.registerCell(on: tableView)
+		InnerCollectionViewCellController.registerCell(on: tableView)
 	}
 
 	func cellControllers(items: SampleTableModel) -> [[TableCellController]] {
@@ -19,8 +20,9 @@ class SampleTableViewFactory {
 		let second = items.secondModel.map {
 			SecondInnerTableViewCellController(item: $0)
 		}
+		let menu = InnerCollectionViewCellController(item: items.menuModel)
 
-		return [first, second]
+		return [[menu], first, second]
 //		return [first]
 	}
 }

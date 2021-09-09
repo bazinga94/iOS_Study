@@ -34,6 +34,13 @@
 		B22097C426E5D67600DA7438 /* TodayTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22097C326E5D67600DA7438 /* TodayTableViewCellController.swift */; };
 		B22097C926E5D6E800DA7438 /* InnerTableViewCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22097C826E5D6E800DA7438 /* InnerTableViewCellFactory.swift */; };
 		B22097CF26E5D79600DA7438 /* SampleTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22097CE26E5D79600DA7438 /* SampleTableModel.swift */; };
+		B220980326E9BFEE00DA7438 /* InnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220980126E9BFEE00DA7438 /* InnerCollectionViewCell.swift */; };
+		B220980426E9BFEE00DA7438 /* InnerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B220980226E9BFEE00DA7438 /* InnerCollectionViewCell.xib */; };
+		B220980926E9C02800DA7438 /* InnerCollectionViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220980826E9C02700DA7438 /* InnerCollectionViewCellController.swift */; };
+		B220980F26E9C17B00DA7438 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220980D26E9C17B00DA7438 /* MenuCollectionViewCell.swift */; };
+		B220981026E9C17B00DA7438 /* MenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B220980E26E9C17B00DA7438 /* MenuCollectionViewCell.xib */; };
+		B220981526E9C2FD00DA7438 /* InnerCollectionViewCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220981426E9C2FD00DA7438 /* InnerCollectionViewCellFactory.swift */; };
+		B220981A26E9C35A00DA7438 /* MenuCollectionViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220981926E9C35A00DA7438 /* MenuCollectionViewCellController.swift */; };
 		B24B93912671F7450037D750 /* CustomLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B93902671F7450037D750 /* CustomLogger.swift */; };
 		B2A5D80C2689AE5600462F70 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A5D80B2689AE5600462F70 /* CustomView.swift */; };
 		B2A5D8142689AE8A00462F70 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A5D8132689AE8A00462F70 /* CustomView.xib */; };
@@ -124,6 +131,13 @@
 		B22097C326E5D67600DA7438 /* TodayTableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTableViewCellController.swift; sourceTree = "<group>"; };
 		B22097C826E5D6E800DA7438 /* InnerTableViewCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerTableViewCellFactory.swift; sourceTree = "<group>"; };
 		B22097CE26E5D79600DA7438 /* SampleTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTableModel.swift; sourceTree = "<group>"; };
+		B220980126E9BFEE00DA7438 /* InnerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerCollectionViewCell.swift; sourceTree = "<group>"; };
+		B220980226E9BFEE00DA7438 /* InnerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InnerCollectionViewCell.xib; sourceTree = "<group>"; };
+		B220980826E9C02700DA7438 /* InnerCollectionViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerCollectionViewCellController.swift; sourceTree = "<group>"; };
+		B220980D26E9C17B00DA7438 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		B220980E26E9C17B00DA7438 /* MenuCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCollectionViewCell.xib; sourceTree = "<group>"; };
+		B220981426E9C2FD00DA7438 /* InnerCollectionViewCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerCollectionViewCellFactory.swift; sourceTree = "<group>"; };
+		B220981926E9C35A00DA7438 /* MenuCollectionViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCellController.swift; sourceTree = "<group>"; };
 		B24B93902671F7450037D750 /* CustomLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLogger.swift; sourceTree = "<group>"; };
 		B2A5D80B2689AE5600462F70 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		B2A5D8132689AE8A00462F70 /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
@@ -350,6 +364,10 @@
 				B2D601CA26E0B75A0055A784 /* InnerTableViewCell.xib */,
 				B2D601D026E0B8A50055A784 /* TodayTableViewCell.swift */,
 				B2D601D126E0B8A50055A784 /* TodayTableViewCell.xib */,
+				B220980126E9BFEE00DA7438 /* InnerCollectionViewCell.swift */,
+				B220980226E9BFEE00DA7438 /* InnerCollectionViewCell.xib */,
+				B220980D26E9C17B00DA7438 /* MenuCollectionViewCell.swift */,
+				B220980E26E9C17B00DA7438 /* MenuCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -359,6 +377,8 @@
 			children = (
 				B22097AE26E5AFA200DA7438 /* InnerTableViewCellController.swift */,
 				B22097C326E5D67600DA7438 /* TodayTableViewCellController.swift */,
+				B220980826E9C02700DA7438 /* InnerCollectionViewCellController.swift */,
+				B220981926E9C35A00DA7438 /* MenuCollectionViewCellController.swift */,
 			);
 			path = CellController;
 			sourceTree = "<group>";
@@ -376,6 +396,7 @@
 			children = (
 				B22097A926E5AF1B00DA7438 /* SampleTableViewFactory.swift */,
 				B22097C826E5D6E800DA7438 /* InnerTableViewCellFactory.swift */,
+				B220981426E9C2FD00DA7438 /* InnerCollectionViewCellFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -617,8 +638,10 @@
 				436846CB263AE02100967143 /* LaunchScreen.storyboard in Resources */,
 				43A0BAC92697FE5D00E4A8A4 /* CollectionViewController.xib in Resources */,
 				B2AFA79A26D61BA400D5ED18 /* lottie-1.json in Resources */,
+				B220981026E9C17B00DA7438 /* MenuCollectionViewCell.xib in Resources */,
 				B2D601C226E0B66E0055A784 /* SampleTableViewController.xib in Resources */,
 				B2EBA2B026D4ACDC00A40782 /* BankingTabViewController.xib in Resources */,
+				B220980426E9BFEE00DA7438 /* InnerCollectionViewCell.xib in Resources */,
 				B2D601D326E0B8A50055A784 /* TodayTableViewCell.xib in Resources */,
 				B2A5D8142689AE8A00462F70 /* CustomView.xib in Resources */,
 				B2D601CC26E0B75A0055A784 /* InnerTableViewCell.xib in Resources */,
@@ -756,6 +779,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2EBA2AF26D4ACDC00A40782 /* BankingTabViewController.swift in Sources */,
+				B220980926E9C02800DA7438 /* InnerCollectionViewCellController.swift in Sources */,
 				B2EBA2D726D5DBB800A40782 /* FloatingButton.swift in Sources */,
 				B2EBA2B626D4ACED00A40782 /* AssetTabViewController.swift in Sources */,
 				436846C0263AE01D00967143 /* ViewController.swift in Sources */,
@@ -763,12 +787,15 @@
 				B2AFA7D126D75C1200D5ED18 /* TopTabNavigationMenu.swift in Sources */,
 				B2AFA80326D77D0500D5ED18 /* GreenTabViewController.swift in Sources */,
 				B2EBA24D26CDE37E00A40782 /* SwinjectSampleViewController.swift in Sources */,
+				B220981A26E9C35A00DA7438 /* MenuCollectionViewCellController.swift in Sources */,
+				B220980326E9BFEE00DA7438 /* InnerCollectionViewCell.swift in Sources */,
 				B2AFA81326D8611A00D5ED18 /* CellController.swift in Sources */,
 				436846C6263AE01D00967143 /* iOS_Study.xcdatamodeld in Sources */,
 				B220979C26E5A83900DA7438 /* Dynamic.swift in Sources */,
 				B22097A426E5A8A600DA7438 /* SampleTableViewModel.swift in Sources */,
 				B24B93912671F7450037D750 /* CustomLogger.swift in Sources */,
 				4360E3DC26DA83A40045249E /* CustomFlowLayout.swift in Sources */,
+				B220980F26E9C17B00DA7438 /* MenuCollectionViewCell.swift in Sources */,
 				B2A5D80C2689AE5600462F70 /* CustomView.swift in Sources */,
 				B2D601D226E0B8A50055A784 /* TodayTableViewCell.swift in Sources */,
 				B2EBA2BD26D4ACFE00A40782 /* BenefitTabViewController.swift in Sources */,
@@ -790,6 +817,7 @@
 				B2AFA81926D863B700D5ED18 /* GreenTabCollectionViewCell.swift in Sources */,
 				B22097BF26E5D62A00DA7438 /* InnerTableViewCellViewModel.swift in Sources */,
 				43684705263AE27600967143 /* ViewLayoutTestViewController.swift in Sources */,
+				B220981526E9C2FD00DA7438 /* InnerCollectionViewCellFactory.swift in Sources */,
 				B2EBA2CE26D4B06200A40782 /* BottomTabNavigationMenu.swift in Sources */,
 				436846BE263AE01D00967143 /* SceneDelegate.swift in Sources */,
 				B2AFA7CC26D759E400D5ED18 /* AssetInnerViewController.swift in Sources */,

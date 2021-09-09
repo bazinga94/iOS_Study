@@ -10,6 +10,7 @@ import Foundation
 struct SampleTableModel {
 	var firstModel: [FirstDummyModel]
 	var secondModel: [SecondDummyModel]
+	var menuModel: [String]
 }
 
 struct FirstDummyModel {
