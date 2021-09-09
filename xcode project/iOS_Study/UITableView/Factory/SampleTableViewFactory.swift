@@ -20,7 +20,7 @@ class SampleTableViewFactory {
 			SecondInnerTableViewCellController(item: $0)
 		}
 
-//		return [first, second]
-		return [first]
+		return [first, second]
+//		return [first]
 	}
 }

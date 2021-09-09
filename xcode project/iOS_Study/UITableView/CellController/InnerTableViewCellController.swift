@@ -17,8 +17,9 @@ class FirstInnerTableViewCellController: GenericCellController<InnerTableViewCel
 	override func configureCell(_ cell: InnerTableViewCell) {
 		cell.titleLabel.text = item.title
 		cell.backgroundColor = .yellow
-		cell.viewModel = InnerTableViewCellViewModel(items: item.content)
-		cell.viewModel.fetch()
+		cell.cellControllers = InnerTableViewCellFactory().cellControllers(item: item.content)
+//		cell.viewModel = InnerTableViewCellViewModel(items: item.content)
+//		cell.viewModel.fetch()
 	}
 }
 
@@ -32,7 +33,8 @@ class SecondInnerTableViewCellController: GenericCellController<InnerTableViewCe
 	override func configureCell(_ cell: InnerTableViewCell) {
 		cell.titleLabel.text = "하드코딩~"
 		cell.backgroundColor = .orange
-		cell.viewModel = InnerTableViewCellViewModel(items: item.content)
-		cell.viewModel.fetch()
+		cell.cellControllers = InnerTableViewCellFactory().cellControllers(item: item.content)
+//		cell.viewModel = InnerTableViewCellViewModel(items: item.content)
+//		cell.viewModel.fetch()
 	}
 }

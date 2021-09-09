@@ -12,7 +12,8 @@ class InnerTableViewCell: UITableViewCell {
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var tableView: UITableView!
 
-	var viewModel: InnerTableViewCellViewModel = .init(items: [])
+//	var viewModel: InnerTableViewCellViewModel = .init(items: [])
+	var cellControllers: [TableCellController] = []
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
@@ -20,11 +21,11 @@ class InnerTableViewCell: UITableViewCell {
 		tableView.dataSource = self
 		tableView.delegate = self
 		tableView.estimatedRowHeight = 0
-		viewModel.cellControllers.bind { [weak self] _ in
-			DispatchQueue.main.async {
-				self?.tableView.reloadData()
-			}
-		}
+//		viewModel.cellControllers.bind { [weak self] _ in
+//			DispatchQueue.main.async {
+//				self?.tableView.reloadData()
+//			}
+//		}
 		// Initialization code
 	}
 
@@ -36,17 +37,19 @@ class InnerTableViewCell: UITableViewCell {
 
 	override func prepareForReuse() {
 		super.prepareForReuse()
-		self.viewModel.cellControllers.listener = nil	// 필요한가?
+//		self.viewModel.cellControllers.listener = nil	// 필요한가?
 	}
 }
 
 extension InnerTableViewCell: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return viewModel.cellControllers.value.count
+//		return viewModel.cellControllers.value.count
+		return cellControllers.count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		return viewModel.cellControllers.value[indexPath.row].cellFromReusableCellHolder(tableView, forIndexPath: indexPath)
+//		return viewModel.cellControllers.value[indexPath.row].cellFromReusableCellHolder(tableView, forIndexPath: indexPath)
+		return cellControllers[indexPath.row].cellFromReusableCellHolder(tableView, forIndexPath: indexPath)
 	}
 }
 
