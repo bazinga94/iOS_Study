@@ -21,7 +21,8 @@ class SampleTableViewController: UIViewController {
 //			$0.register(UINib(nibName: "InnerTableViewCell", bundle: nil), forCellReuseIdentifier: "InnerTableViewCell")
 			$0.dataSource = self
 			$0.delegate = self
-			$0.estimatedRowHeight = 0 //UITableView.automaticDimension			// estimatedRowHeight를 지정하지 않으면 willDisplay가 한번에 호출된다. -> 아마 기준 높이가 없어서 그런듯?! + estimatedRowHeight에 따라 보여줄 indexPath가 정해짐
+			$0.estimatedRowHeight = 132		// 0으로 두면 resizable tableview 구현이 어렵다
+//			$0.estimatedRowHeight = 0 //UITableView.automaticDimension			// estimatedRowHeight를 지정하지 않으면 willDisplay가 한번에 호출된다. -> 아마 기준 높이가 없어서 그런듯?! + estimatedRowHeight에 따라 보여줄 indexPath가 정해짐
 			// 0으로 지정하니 제대로된 값을 가져온다
 			$0.rowHeight = UITableView.automaticDimension
 		}
@@ -110,7 +111,8 @@ extension SampleTableViewController: UITableViewDelegate {
 		}
 	}
 
-	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 150
-	}
+//	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+////		return 250
+//		return UITableView.automaticDimension
+//	}
 }

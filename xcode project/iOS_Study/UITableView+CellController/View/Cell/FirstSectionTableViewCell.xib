@@ -18,12 +18,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="476" height="140"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XbU-2P-MqM">
-                        <rect key="frame" x="0.0" y="31" width="476" height="109"/>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XbU-2P-MqM" customClass="FittedTableView" customModule="iOS_Study" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="30.5" width="476" height="109.5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </tableView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMn-wW-uF3">
-                        <rect key="frame" x="20" y="8" width="42" height="21"/>
+                        <rect key="frame" x="20" y="8" width="42" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="tableView" destination="XbU-2P-MqM" id="Wy8-ri-Nrb"/>
+                <outlet property="tableView" destination="XbU-2P-MqM" id="E4N-lB-qcJ"/>
                 <outlet property="titleLabel" destination="JMn-wW-uF3" id="kfd-bi-ULt"/>
             </connections>
             <point key="canvasLocation" x="301.44927536231887" y="-19.419642857142858"/>
