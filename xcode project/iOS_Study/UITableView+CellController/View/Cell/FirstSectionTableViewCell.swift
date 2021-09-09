@@ -12,11 +12,13 @@ class FirstSectionTableViewCell: UITableViewCell {
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var tableView: UITableView!
 
+	private let factory = FirstSectionTableViewCellFactory()
 	var cellControllers: [TableCellController] = []
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
-		tableView.register(UINib(nibName: "TodayTableViewCell", bundle: nil), forCellReuseIdentifier: "TodayTableViewCell")
+//		tableView.register(UINib(nibName: "TodayTableViewCell", bundle: nil), forCellReuseIdentifier: "TodayTableViewCell")
+		factory.registerCells(on: tableView)
 		tableView.dataSource = self
 		tableView.delegate = self
 		tableView.estimatedRowHeight = 0

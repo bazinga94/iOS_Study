@@ -15,6 +15,6 @@ class SecondSectionTableViewCellController: GenericCellController<SecondSectionT
 	}
 
 	override func configureCell(_ cell: SecondSectionTableViewCell) {
-		cell.cellController = SecondSectionTableViewCellFactory().cellControllers(items: item)
+		cell.cellControllers = SecondSectionTableViewCellFactory().cellControllers(items: item)
 	}
 }

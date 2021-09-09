@@ -17,11 +17,9 @@ class SampleTableViewFactory {
 		let first = items.firstModel.map {
 			FirstSectionTableViewCellController(item: $0)
 		}
-//		let second = items.secondModel.map {
-//			SecondInnerTableViewCellController(item: $0)
-//		}
 		let menu = SecondSectionTableViewCellController(item: items.menuModel)
 
-		return [first, [menu]]
+		return [[menu], first]
+//		return [first, [menu]]
 	}
 }

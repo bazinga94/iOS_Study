@@ -14,6 +14,7 @@ class SampleTableViewController: UIViewController {
 	private var initialVisibleLastIndex: Int = 0	// 또 다른 방법!, 처음 보여질 셀에 대해 미리 알려주는것... 근데 이건 화면 크기 마다 다를텐데ㅠ.. 안되겠다
 	private var animationStart: Bool = false
 	private var factory = SampleTableViewFactory()
+	private var cellControllers: [[TableCellController]] = [[]]
 	private lazy var tableView: UITableView = UITableView()
 		.builder
 		.apply {
@@ -42,11 +43,13 @@ private extension SampleTableViewController {
 	}
 
 	func bind() {
-		viewModel.cellControllers.bind { [weak self] _ in
+		viewModel.sampleTableModel.bind { [weak self] model in
+			guard let self = self else { return }
 			DispatchQueue.main.async {
-				self?.isCellAnimatedList = []
-				self?.tableView.reloadData()
-				self?.initialVisibleLastIndex = self?.tableView.indexPathsForVisibleRows?.last?.row ?? 0
+				self.isCellAnimatedList = []
+				self.cellControllers = self.factory.cellControllers(items: model)
+				self.tableView.reloadData()
+				self.initialVisibleLastIndex = self.tableView.indexPathsForVisibleRows?.last?.row ?? 0
 			}
 		}
 	}
@@ -58,15 +61,15 @@ private extension SampleTableViewController {
 
 extension SampleTableViewController: UITableViewDataSource {
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return viewModel.cellControllers.value.count
+		return cellControllers.count
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return viewModel.cellControllers.value[section].count
+		return cellControllers[section].count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		return viewModel.cellControllers.value[indexPath.section][indexPath.row].cellFromReusableCellHolder(tableView, forIndexPath: indexPath)
+		return cellControllers[indexPath.section][indexPath.row].cellFromReusableCellHolder(tableView, forIndexPath: indexPath)
 	}
 }
 

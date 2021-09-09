@@ -11,8 +11,8 @@ class SecondSectionTableViewCell: UITableViewCell {
 
 	@IBOutlet weak var collectionView: UICollectionView!
 
-	let factory = SecondSectionTableViewCellFactory()
-	var cellController: [CollectionCellController] = []
+	private let factory = SecondSectionTableViewCellFactory()
+	var cellControllers: [CollectionCellController] = []
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
@@ -29,10 +29,10 @@ class SecondSectionTableViewCell: UITableViewCell {
 
 extension SecondSectionTableViewCell: UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return cellController.count
+		return cellControllers.count
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		return cellController[indexPath.row].cellFromReusableCellHolder(collectionView, forIndexPath: indexPath)
+		return cellControllers[indexPath.row].cellFromReusableCellHolder(collectionView, forIndexPath: indexPath)
 	}
 }

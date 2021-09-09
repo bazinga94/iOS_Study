@@ -10,10 +10,10 @@ import Foundation
 class SampleTableViewModel {
 	private let factory = SampleTableViewFactory()
 
-	var cellControllers: Dynamic<[[TableCellController]]> = .init([])
+	var sampleTableModel: Dynamic<SampleTableModel> = .init(SampleTableModel(firstModel: [], menuModel: []))
 
 	func fetchDummyData() {
-		let sampleTableModel =
+		sampleTableModel.value =
 			SampleTableModel.init(firstModel: [
 				FirstDummyModel(title: "1", content: ["1-1", "1-2", "1-3"]),
 				FirstDummyModel(title: "2", content: ["2-1", "2-2", "2-3"]),
@@ -37,7 +37,5 @@ class SampleTableViewModel {
 //				SecondDummyModel(content: ["무", "야", "호"]),
 //				SecondDummyModel(content: ["~", "!"])
 			], menuModel: ["입출금", "적금", "예금", "대출", "카드", "펀드", "퇴직연금", "외환", "신탁", "보험", "ISA", "골드/실버", "사업자", "선물하기", "기타"])
-
-		cellControllers.value = factory.cellControllers(items: sampleTableModel)
 	}
 }
