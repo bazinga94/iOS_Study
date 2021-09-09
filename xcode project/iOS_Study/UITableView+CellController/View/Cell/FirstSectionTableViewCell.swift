@@ -1,5 +1,5 @@
 //
-//  InnerTableViewCell.swift
+//  FirstSectionTableViewCell.swift
 //  iOS_Study
 //
 //  Created by Jongho Lee on 2021/09/02.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InnerTableViewCell: UITableViewCell {
+class FirstSectionTableViewCell: UITableViewCell {
 
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var tableView: UITableView!
@@ -31,7 +31,7 @@ class InnerTableViewCell: UITableViewCell {
 	}
 }
 
-extension InnerTableViewCell: UITableViewDataSource {
+extension FirstSectionTableViewCell: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return cellControllers.count
 	}
@@ -41,7 +41,7 @@ extension InnerTableViewCell: UITableViewDataSource {
 	}
 }
 
-extension InnerTableViewCell: UITableViewDelegate {
+extension FirstSectionTableViewCell: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return 40
 	}

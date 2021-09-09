@@ -1,5 +1,5 @@
 //
-//  InnerCollectionViewCell.swift
+//  SecondSectionTableViewCell.swift
 //  iOS_Study
 //
 //  Created by Jongho Lee on 2021/09/09.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-class InnerCollectionViewCell: UITableViewCell {
+class SecondSectionTableViewCell: UITableViewCell {
 
 	@IBOutlet weak var collectionView: UICollectionView!
 
-	let factory = InnerCollectionViewCellFactory()
+	let factory = SecondSectionTableViewCellFactory()
 	var cellController: [CollectionCellController] = []
 
 	override func awakeFromNib() {
@@ -27,7 +27,7 @@ class InnerCollectionViewCell: UITableViewCell {
 	}
 }
 
-extension InnerCollectionViewCell: UICollectionViewDataSource {
+extension SecondSectionTableViewCell: UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return cellController.count
 	}

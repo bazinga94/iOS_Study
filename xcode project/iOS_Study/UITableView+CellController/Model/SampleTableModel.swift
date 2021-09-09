@@ -9,7 +9,7 @@ import Foundation
 
 struct SampleTableModel {
 	var firstModel: [FirstDummyModel]
-	var secondModel: [SecondDummyModel]
+//	var secondModel: [SecondDummyModel]
 	var menuModel: [String]
 }
 
@@ -18,6 +18,6 @@ struct FirstDummyModel {
 	var content: [String]
 }
 
-struct SecondDummyModel {
-	var content: [String]
-}
+//struct SecondDummyModel {
+//	var content: [String]
+//}
