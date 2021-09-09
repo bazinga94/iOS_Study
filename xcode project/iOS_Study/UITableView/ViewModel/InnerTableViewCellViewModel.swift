@@ -5,7 +5,7 @@
 //  Created by Jongho Lee on 2021/09/06.
 //
 
-import UIKit
+import Foundation
 
 class InnerTableViewCellViewModel {
 
