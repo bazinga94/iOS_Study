@@ -11,21 +11,24 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MenuCollectionViewCell" id="gTV-IL-0wX" customClass="MenuCollectionViewCell" customModule="iOS_Study" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="110" height="104"/>
+            <rect key="frame" x="0.0" y="0.0" width="85" height="121"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="110" height="104"/>
+                <rect key="frame" x="0.0" y="0.0" width="85" height="121"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vso-pc-tl9">
-                        <rect key="frame" x="0.0" y="0.0" width="110" height="104"/>
+                        <rect key="frame" x="0.0" y="0.0" width="85" height="121"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJv-YW-NoG">
-                                <rect key="frame" x="0.0" y="0.0" width="110" height="71"/>
+                                <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uJv-YW-NoG" secondAttribute="height" multiplier="1:1" id="TU4-Ib-pIp"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQG-yA-cv1">
-                                <rect key="frame" x="34" y="83" width="42" height="21"/>
+                                <rect key="frame" x="21.5" y="97" width="42" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,11 +52,12 @@
                 <constraint firstAttribute="trailing" secondItem="Vso-pc-tl9" secondAttribute="trailing" id="ve8-rQ-2a4"/>
                 <constraint firstAttribute="bottom" secondItem="Vso-pc-tl9" secondAttribute="bottom" id="wCQ-Qr-QVz"/>
             </constraints>
-            <size key="customSize" width="110" height="104"/>
+            <size key="customSize" width="85" height="121"/>
             <connections>
+                <outlet property="roundView" destination="uJv-YW-NoG" id="3le-qU-X4X"/>
                 <outlet property="titleLabel" destination="zQG-yA-cv1" id="lSz-27-yOv"/>
             </connections>
-            <point key="canvasLocation" x="178.2608695652174" y="158.70535714285714"/>
+            <point key="canvasLocation" x="160.1449275362319" y="164.39732142857142"/>
         </collectionViewCell>
     </objects>
     <resources>

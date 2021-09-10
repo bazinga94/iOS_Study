@@ -10,13 +10,13 @@ import UIKit
 class SecondSectionTableViewCell: UITableViewCell {
 
 	enum Constant {
-		static let inset: CGFloat = 10
-		static let minimumLineSpacing: CGFloat = 10
+		static let inset: CGFloat = 20
+		static let minimumLineSpacing: CGFloat = 20
 		static let minimumInteritemSpacing: CGFloat = 10
 		static let cellsPerRow = 5
 	}
 
-	@IBOutlet weak var collectionView: UICollectionView!
+	@IBOutlet weak var collectionView: FittedCollectionView!
 
 	private let factory = SecondSectionTableViewCellFactory()
 	var cellControllers: [CollectionCellController] = []
@@ -27,6 +27,11 @@ class SecondSectionTableViewCell: UITableViewCell {
 		collectionView.dataSource = self
 		collectionView.delegate = self
 		// Initialization code
+	}
+
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		collectionView.reloadData()
 	}
 
 	override func setSelected(_ selected: Bool, animated: Bool) {
@@ -61,6 +66,6 @@ extension SecondSectionTableViewCell: UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		let marginsAndInsets = Constant.inset * 2 + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + Constant.minimumInteritemSpacing * CGFloat(Constant.cellsPerRow - 1)
 		let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(Constant.cellsPerRow)).rounded(.down)
-		return CGSize(width: itemWidth, height: itemWidth)
+		return CGSize(width: itemWidth, height: itemWidth + 30)
 	}
 }
