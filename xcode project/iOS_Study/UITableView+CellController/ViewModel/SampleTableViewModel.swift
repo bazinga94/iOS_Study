@@ -8,7 +8,6 @@
 import Foundation
 
 class SampleTableViewModel {
-	private let factory = SampleTableViewFactory()
 
 	var sampleTableModel: Dynamic<SampleTableModel> = .init(SampleTableModel(firstModel: [], menuModel: []))
 

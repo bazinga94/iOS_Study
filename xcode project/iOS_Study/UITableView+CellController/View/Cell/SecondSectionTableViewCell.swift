@@ -18,20 +18,47 @@ class SecondSectionTableViewCell: UITableViewCell {
 
 	@IBOutlet weak var collectionView: FittedCollectionView!
 
-	private let factory = SecondSectionTableViewCellFactory()
+	@IBAction func footerButtonAction(_ sender: Any) {
+		let indexPaths = [0, 1, 2, 3, 4].map { IndexPath(row: $0, section: 0) }
+
+		collectionView.performBatchUpdates({
+			if isExpanded {
+				viewModel?.deleteMenuData()
+				collectionView.deleteItems(at: indexPaths)
+				isExpanded = false
+			} else {
+				viewModel?.fetchAllMenuData()
+				collectionView.insertItems(at: indexPaths)
+				isExpanded = true
+			}
+		}, completion: nil)
+	}
+
+	var viewModel: SecondSectionTableViewModel?
+	var factory = SecondSectionTableViewCellFactory()
 	var cellControllers: [CollectionCellController] = []
+	var isExpanded: Bool = true
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		factory.registerCells(on: collectionView)
 		collectionView.dataSource = self
 		collectionView.delegate = self
+//		viewModel?.sampleCollectionModel.bind(listener: { [weak self] menuList in
+//			guard let self = self else { return }
+//			self.cellControllers = self.factory.cellControllers(items: menuList)
+//		})
 		// Initialization code
 	}
 
 	override func layoutSubviews() {
 		super.layoutSubviews()
+		viewModel?.fetchAllMenuData()
 		collectionView.reloadData()
+		viewModel?.sampleCollectionModel.bind(listener: { [weak self] menuList in
+			guard let self = self else { return }
+			self.cellControllers = self.factory.cellControllers(items: menuList)
+		})
 	}
 
 	override func setSelected(_ selected: Bool, animated: Bool) {

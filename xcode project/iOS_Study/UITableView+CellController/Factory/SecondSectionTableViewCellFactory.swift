@@ -8,6 +8,12 @@
 import UIKit
 
 class SecondSectionTableViewCellFactory {
+//	private var items: [String]
+//
+//	init(items: [String]) {
+//		self.items = items
+//	}
+
 	func registerCells(on collectionView: UICollectionView) {
 		MenuCollectionViewCellController.registerCell(on: collectionView)
 	}
@@ -15,4 +21,12 @@ class SecondSectionTableViewCellFactory {
 	func cellControllers(items: [String]) -> [CollectionCellController] {
 		return items.map { MenuCollectionViewCellController(item: $0) }
 	}
+
+//	func deleteCellControllers() -> [CollectionCellController] {
+//		return self.items[0..<5].map { MenuCollectionViewCellController(item: $0) }
+//	}
+//
+//	func originalCellControllers() -> [CollectionCellController] {
+//		return self.items.map { MenuCollectionViewCellController(item: $0) }
+//	}
 }
