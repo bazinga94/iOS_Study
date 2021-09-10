@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,42 +11,49 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MenuCollectionViewCell" id="gTV-IL-0wX" customClass="MenuCollectionViewCell" customModule="iOS_Study" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="70" height="64"/>
+            <rect key="frame" x="0.0" y="0.0" width="110" height="104"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="70" height="64"/>
+                <rect key="frame" x="0.0" y="0.0" width="110" height="104"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vso-pc-tl9">
-                        <rect key="frame" x="0.0" y="0.0" width="70" height="64"/>
+                        <rect key="frame" x="0.0" y="0.0" width="110" height="104"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJv-YW-NoG">
+                                <rect key="frame" x="0.0" y="0.0" width="110" height="71"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQG-yA-cv1">
-                                <rect key="frame" x="14" y="21.5" width="42" height="21"/>
+                                <rect key="frame" x="34" y="83" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="zQG-yA-cv1" firstAttribute="centerX" secondItem="Vso-pc-tl9" secondAttribute="centerX" id="7XL-20-oMF"/>
-                            <constraint firstItem="zQG-yA-cv1" firstAttribute="centerY" secondItem="Vso-pc-tl9" secondAttribute="centerY" id="Ucb-cd-eW5"/>
+                            <constraint firstAttribute="bottom" secondItem="zQG-yA-cv1" secondAttribute="bottom" id="1j8-sC-TvN"/>
+                            <constraint firstItem="zQG-yA-cv1" firstAttribute="top" secondItem="uJv-YW-NoG" secondAttribute="bottom" constant="12" id="4oe-pp-CQO"/>
+                            <constraint firstAttribute="trailing" secondItem="uJv-YW-NoG" secondAttribute="trailing" id="Mw5-lb-YFo"/>
+                            <constraint firstItem="zQG-yA-cv1" firstAttribute="centerX" secondItem="Vso-pc-tl9" secondAttribute="centerX" id="Ymc-02-TwF"/>
+                            <constraint firstItem="uJv-YW-NoG" firstAttribute="top" secondItem="Vso-pc-tl9" secondAttribute="top" id="aK2-a8-tF9"/>
+                            <constraint firstItem="uJv-YW-NoG" firstAttribute="leading" secondItem="Vso-pc-tl9" secondAttribute="leading" id="yxA-bB-gcy"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Vso-pc-tl9" secondAttribute="trailing" id="I6k-eP-FkV"/>
-                <constraint firstItem="Vso-pc-tl9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="TOl-sm-IqB"/>
-                <constraint firstItem="Vso-pc-tl9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gnw-q3-WjH"/>
-                <constraint firstAttribute="bottom" secondItem="Vso-pc-tl9" secondAttribute="bottom" id="loi-FU-Wnj"/>
+                <constraint firstItem="Vso-pc-tl9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ISX-ca-UU3"/>
+                <constraint firstItem="Vso-pc-tl9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="UNG-11-226"/>
+                <constraint firstAttribute="trailing" secondItem="Vso-pc-tl9" secondAttribute="trailing" id="ve8-rQ-2a4"/>
+                <constraint firstAttribute="bottom" secondItem="Vso-pc-tl9" secondAttribute="bottom" id="wCQ-Qr-QVz"/>
             </constraints>
-            <size key="customSize" width="70" height="64"/>
+            <size key="customSize" width="110" height="104"/>
             <connections>
                 <outlet property="titleLabel" destination="zQG-yA-cv1" id="lSz-27-yOv"/>
             </connections>
-            <point key="canvasLocation" x="149.27536231884059" y="146.65178571428569"/>
+            <point key="canvasLocation" x="178.2608695652174" y="158.70535714285714"/>
         </collectionViewCell>
     </objects>
     <resources>
