@@ -13,13 +13,14 @@ class SampleTableViewFactory {
 		SecondSectionTableViewCellController.registerCell(on: tableView)
 	}
 
-	func cellControllers(items: SampleTableModel) -> [[TableCellController]] {
-		let first = items.firstModel.map {
+	func cellControllers(items: SampleTableModel) -> [TableCellController] {
+		var first: [TableCellController] = items.firstModel.map {
 			FirstSectionTableViewCellController(item: $0)
 		}
 		let menu = SecondSectionTableViewCellController(item: items.menuModel)
 
-		return [[menu], first]
+		first.insert(menu, at: 0)
+		return first
 //		return [first, [menu]]
 	}
 }
