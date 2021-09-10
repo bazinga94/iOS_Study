@@ -36,6 +36,9 @@ class CellController<T: ReusableCellHolder>: CellControllerType {
 
 	func cellFromReusableCellHolder(_ reusableCellHolder: T, forIndexPath indexPath: IndexPath) -> T.CellType {
 		let cell = reusableCellHolder.dequeueReusableCell(withReuseIdentifier: type(of: self).cellIdentifier, for: indexPath)
+//		if let cellTemp = cell as? SecondSectionTableViewCell {
+//			cellTemp.delegate = 
+//		}
 		configureCell(cell)
 		return cell
 	}

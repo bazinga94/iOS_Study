@@ -9,6 +9,8 @@ import UIKit
 
 class SecondSectionTableViewCell: UITableViewCell {
 
+	weak var delegate: SecondSectionTableViewCellDelegate?
+
 	enum Constant {
 		static let inset: CGFloat = 20
 		static let minimumLineSpacing: CGFloat = 20
@@ -26,10 +28,12 @@ class SecondSectionTableViewCell: UITableViewCell {
 				viewModel?.deleteMenuData()
 				collectionView.deleteItems(at: indexPaths)
 				isExpanded = false
+				self.delegate?.reload()
 			} else {
 				viewModel?.fetchAllMenuData()
 				collectionView.insertItems(at: indexPaths)
 				isExpanded = true
+				self.delegate?.reload()
 			}
 		}, completion: nil)
 	}

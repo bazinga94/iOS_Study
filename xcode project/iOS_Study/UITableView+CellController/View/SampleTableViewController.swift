@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol SecondSectionTableViewCellDelegate: class {
+	func reload()		// 부모뷰 reload 시켜야함~ 어떻게 delegate를 cell에 넘겨주지?
+}
+
 class SampleTableViewController: UIViewController {
 
 	private var viewModel: SampleTableViewModel = .init()
@@ -48,7 +52,7 @@ private extension SampleTableViewController {
 			guard let self = self else { return }
 			DispatchQueue.main.async {
 				self.isCellAnimatedList = []
-				self.cellControllers = self.factory.cellControllers(items: model)
+				self.cellControllers = self.factory.cellControllers(items: model, delegate: self)
 				self.tableView.reloadData()
 				self.initialVisibleLastIndex = self.tableView.indexPathsForVisibleRows?.last?.row ?? 0
 			}
@@ -115,4 +119,10 @@ extension SampleTableViewController: UITableViewDelegate {
 ////		return 250
 //		return UITableView.automaticDimension
 //	}
+}
+
+extension SampleTableViewController: SecondSectionTableViewCellDelegate {
+	func reload() {
+		tableView.reloadData()
+	}
 }
