@@ -16,7 +16,7 @@ class BaseCollectionViewCellFactory {
 	}
 
 	func makeCellControllers(by items: BaseCollectionModel) -> [CollectionCellController] {
-
-		return []
+		let cellController = items.expandableCellModel.map { ExpandableCollectionViewCellController(item: $0) }
+		return cellController
 	}
 }

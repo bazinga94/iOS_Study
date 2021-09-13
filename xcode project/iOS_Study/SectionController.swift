@@ -92,12 +92,32 @@ class GenericSectionController<T: SectionViewType>: SectionController<T.SectionH
 	}
 }
 
-protocol CollectionViewSectionItem {
-	associatedtype CellType: CollectionCellController
-	associatedtype SectionType: SectionController<UICollectionView>
+//protocol SectionItem {
+//	associatedtype CellType: CollectionCellController
+//	associatedtype SectionType: SectionController<UICollectionView>
+//
+//	var header: SectionController<SectionType.SectionHolder> { get }
+//	var rows: [CellController<CellType.ViewType>] { get }
+//	var footer: SectionController<SectionType.SectionHolder> { get }
+//}
+//
+//struct CollectionViewSectionItems<T: SectionViewHolder>: SectionItem {
+//	var header: SectionController<T>?
+//	var rows: [CellController<T>]
+//	var footer: SectionController<T>?
+//}
 
-	var header: SectionController<SectionType.SectionHolder> { get }
-	var rows: [CellController<CellType.ViewType>] { get }
-	var footer: SectionController<SectionType.SectionHolder> { get }
+protocol SectionItem {
+	var collectionHeader: SectionController<UICollectionView>? { get }
+	var tableHeader: SectionController<UITableView>? { get }
+	var collectionRows: [CellController<UICollectionView>] { get }
+	var tableRows: [CellController<UITableView>] { get }
+	var collectionFooter: SectionController<UICollectionView>? { get }
+	var tableFooter: SectionController<UITableView>? { get }
 }
 
+protocol CollectionViewItem {
+	var header: SectionController<UICollectionView>? { get }
+	var items: [SectionItem] { get }
+	var footer: SectionController<UICollectionView>? { get }
+}

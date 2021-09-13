@@ -12,6 +12,7 @@ class BaseCollectionViewController: UIViewController {
 	@IBOutlet weak var collectionView: UICollectionView!
 
 	private var factory = BaseCollectionViewCellFactory()
+	private var viewItems: CollectionViewItem?
 	var viewModel: BaseCollectionViewModel = BaseCollectionViewModel()
 
 	override func viewDidLoad() {
@@ -23,11 +24,11 @@ class BaseCollectionViewController: UIViewController {
 
 extension BaseCollectionViewController: UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		<#code#>
+		return viewItems?.items[section]
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		<#code#>
+		return viewItems[indexPath.section].items[indexPath.row]
 	}
 }
 
@@ -47,8 +48,8 @@ private extension BaseCollectionViewController {
 	}
 
 	func bindCollectionView() {
-		viewModel.baseCollectionModel.bind { model in
-			factory.makeCellControllers(by: <#T##<<error type>>#>)
+		viewModel.baseCollectionModel.bind { [weak self] model in
+			?? = self?.factory.makeCellControllers(by: model)
 		}
 	}
 }

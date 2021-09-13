@@ -8,10 +8,10 @@
 import Foundation
 
 struct BaseCollectionModel {
-	var expandableCellModel: ExpandableCellModel?
-	var gridCellModel: GridCellModel?
-	var horizontalModel: HorizontalModel?
-	var tileCellModel: TileCellModel?
+	var expandableCellModel: [ExpandableCellModel]
+	var gridCellModel: [GridCellModel]
+	var horizontalModel: [HorizontalModel]
+	var tileCellModel: [TileCellModel]
 }
 
 struct ExpandableCellModel {
@@ -43,28 +43,28 @@ struct TileCellModel {
 
 
 class BaseCollectionViewModel {
-	var baseCollectionModel: Dynamic<BaseCollectionModel> = .init(BaseCollectionModel())
+	var baseCollectionModel: Dynamic<BaseCollectionModel> = .init(BaseCollectionModel(expandableCellModel: [], gridCellModel: [], horizontalModel: [], tileCellModel: []))
 
 	func fetch() {
 		baseCollectionModel.value = BaseCollectionModel(
-			expandableCellModel: ExpandableCellModel(
+			expandableCellModel: [ExpandableCellModel(
 				headerTitle: "Expandable",
 				list: ["1", "2", "3", "4"]
-			),
-			gridCellModel: GridCellModel(
+			)],
+			gridCellModel: [GridCellModel(
 				headerTitle: "Gird",
 				list: ["1", "2", "3", "4", "5"]
-			),
-			horizontalModel: HorizontalModel(
+			)],
+			horizontalModel: [HorizontalModel(
 				list: [HorizontalModel.CellModel(title: "a", content: "aa"),
 					   HorizontalModel.CellModel(title: "b", content: "bb")
 					   ]
-			),
-			tileCellModel: TileCellModel(
+			)],
+			tileCellModel: [TileCellModel(
 				list: [TileCellModel.CellModel(title: "A", content: "AA"),
 					   TileCellModel.CellModel(title: "B", content: "BB")
 				]
-			)
+			)]
 		)
 	}
 }
