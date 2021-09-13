@@ -471,6 +471,7 @@
 		B220985626EEED2E00DA7438 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B22098B526EF3E0D00DA7438 /* Header */,
 				B220986126EEEECC00DA7438 /* Cell */,
 				B220984F26EEED2A00DA7438 /* BaseCollectionViewController.swift */,
 				B220985026EEED2A00DA7438 /* BaseCollectionViewController.xib */,
@@ -501,7 +502,6 @@
 		B220986126EEEECC00DA7438 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				B22098B526EF3E0D00DA7438 /* Header */,
 				B220986226EEEEDB00DA7438 /* Expandable */,
 				B220986D26EEEF0700DA7438 /* Grid */,
 				B220986E26EEEF0E00DA7438 /* Horizontal */,
