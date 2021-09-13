@@ -45,6 +45,18 @@
 		B220984826EB123400DA7438 /* SecondSectionTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220984726EB123400DA7438 /* SecondSectionTableViewModel.swift */; };
 		B220985126EEED2A00DA7438 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220984F26EEED2A00DA7438 /* BaseCollectionViewController.swift */; };
 		B220985226EEED2A00DA7438 /* BaseCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B220985026EEED2A00DA7438 /* BaseCollectionViewController.xib */; };
+		B220985D26EEEEB100DA7438 /* ExpandableCollectionViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220985C26EEEEB100DA7438 /* ExpandableCollectionViewCellController.swift */; };
+		B220986526EEEEF600DA7438 /* ExpandableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220986326EEEEF600DA7438 /* ExpandableCollectionViewCell.swift */; };
+		B220986626EEEEF600DA7438 /* ExpandableCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B220986426EEEEF600DA7438 /* ExpandableCollectionViewCell.xib */; };
+		B220987226EEEF3E00DA7438 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220987026EEEF3E00DA7438 /* GridCollectionViewCell.swift */; };
+		B220987326EEEF3E00DA7438 /* GridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B220987126EEEF3E00DA7438 /* GridCollectionViewCell.xib */; };
+		B220987C26EEEF5400DA7438 /* HorizontalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220987A26EEEF5400DA7438 /* HorizontalCollectionViewCell.swift */; };
+		B220987D26EEEF5400DA7438 /* HorizontalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B220987B26EEEF5400DA7438 /* HorizontalCollectionViewCell.xib */; };
+		B220988326EEEF6200DA7438 /* TileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220988126EEEF6200DA7438 /* TileCollectionViewCell.swift */; };
+		B220988426EEEF6200DA7438 /* TileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B220988226EEEF6200DA7438 /* TileCollectionViewCell.xib */; };
+		B220988926EEEFA000DA7438 /* GridCollectionViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220988826EEEFA000DA7438 /* GridCollectionViewCellController.swift */; };
+		B220988E26EEEFB600DA7438 /* HorizontalCollectionViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220988D26EEEFB600DA7438 /* HorizontalCollectionViewCellController.swift */; };
+		B220989326EEEFC300DA7438 /* TileCollectionViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220989226EEEFC300DA7438 /* TileCollectionViewCellController.swift */; };
 		B24B93912671F7450037D750 /* CustomLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B93902671F7450037D750 /* CustomLogger.swift */; };
 		B2A5D80C2689AE5600462F70 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A5D80B2689AE5600462F70 /* CustomView.swift */; };
 		B2A5D8142689AE8A00462F70 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A5D8132689AE8A00462F70 /* CustomView.xib */; };
@@ -146,6 +158,18 @@
 		B220984726EB123400DA7438 /* SecondSectionTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSectionTableViewModel.swift; sourceTree = "<group>"; };
 		B220984F26EEED2A00DA7438 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
 		B220985026EEED2A00DA7438 /* BaseCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCollectionViewController.xib; sourceTree = "<group>"; };
+		B220985C26EEEEB100DA7438 /* ExpandableCollectionViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCollectionViewCellController.swift; sourceTree = "<group>"; };
+		B220986326EEEEF600DA7438 /* ExpandableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCollectionViewCell.swift; sourceTree = "<group>"; };
+		B220986426EEEEF600DA7438 /* ExpandableCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandableCollectionViewCell.xib; sourceTree = "<group>"; };
+		B220987026EEEF3E00DA7438 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
+		B220987126EEEF3E00DA7438 /* GridCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridCollectionViewCell.xib; sourceTree = "<group>"; };
+		B220987A26EEEF5400DA7438 /* HorizontalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionViewCell.swift; sourceTree = "<group>"; };
+		B220987B26EEEF5400DA7438 /* HorizontalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalCollectionViewCell.xib; sourceTree = "<group>"; };
+		B220988126EEEF6200DA7438 /* TileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCollectionViewCell.swift; sourceTree = "<group>"; };
+		B220988226EEEF6200DA7438 /* TileCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TileCollectionViewCell.xib; sourceTree = "<group>"; };
+		B220988826EEEFA000DA7438 /* GridCollectionViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCellController.swift; sourceTree = "<group>"; };
+		B220988D26EEEFB600DA7438 /* HorizontalCollectionViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionViewCellController.swift; sourceTree = "<group>"; };
+		B220989226EEEFC300DA7438 /* TileCollectionViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCollectionViewCellController.swift; sourceTree = "<group>"; };
 		B24B93902671F7450037D750 /* CustomLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLogger.swift; sourceTree = "<group>"; };
 		B2A5D80B2689AE5600462F70 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		B2A5D8132689AE8A00462F70 /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
@@ -316,8 +340,9 @@
 		43A0BAC52697FE4000E4A8A4 /* UICollectionView+CellController */ = {
 			isa = PBXGroup;
 			children = (
-				B220985726EEED3E00DA7438 /* AnimationSample */,
 				B220985626EEED2E00DA7438 /* View */,
+				B220985B26EEEE7F00DA7438 /* CellController */,
+				B220985726EEED3E00DA7438 /* AnimationSample */,
 			);
 			path = "UICollectionView+CellController";
 			sourceTree = "<group>";
@@ -430,6 +455,7 @@
 		B220985626EEED2E00DA7438 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B220986126EEEECC00DA7438 /* Cell */,
 				B220984F26EEED2A00DA7438 /* BaseCollectionViewController.swift */,
 				B220985026EEED2A00DA7438 /* BaseCollectionViewController.xib */,
 			);
@@ -443,6 +469,64 @@
 				43A0BAC72697FE5D00E4A8A4 /* CollectionViewController.xib */,
 			);
 			path = AnimationSample;
+			sourceTree = "<group>";
+		};
+		B220985B26EEEE7F00DA7438 /* CellController */ = {
+			isa = PBXGroup;
+			children = (
+				B220985C26EEEEB100DA7438 /* ExpandableCollectionViewCellController.swift */,
+				B220988826EEEFA000DA7438 /* GridCollectionViewCellController.swift */,
+				B220988D26EEEFB600DA7438 /* HorizontalCollectionViewCellController.swift */,
+				B220989226EEEFC300DA7438 /* TileCollectionViewCellController.swift */,
+			);
+			path = CellController;
+			sourceTree = "<group>";
+		};
+		B220986126EEEECC00DA7438 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B220986226EEEEDB00DA7438 /* Expandable */,
+				B220986D26EEEF0700DA7438 /* Grid */,
+				B220986E26EEEF0E00DA7438 /* Horizontal */,
+				B220986F26EEEF1500DA7438 /* Tile */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B220986226EEEEDB00DA7438 /* Expandable */ = {
+			isa = PBXGroup;
+			children = (
+				B220986326EEEEF600DA7438 /* ExpandableCollectionViewCell.swift */,
+				B220986426EEEEF600DA7438 /* ExpandableCollectionViewCell.xib */,
+			);
+			path = Expandable;
+			sourceTree = "<group>";
+		};
+		B220986D26EEEF0700DA7438 /* Grid */ = {
+			isa = PBXGroup;
+			children = (
+				B220987026EEEF3E00DA7438 /* GridCollectionViewCell.swift */,
+				B220987126EEEF3E00DA7438 /* GridCollectionViewCell.xib */,
+			);
+			path = Grid;
+			sourceTree = "<group>";
+		};
+		B220986E26EEEF0E00DA7438 /* Horizontal */ = {
+			isa = PBXGroup;
+			children = (
+				B220987A26EEEF5400DA7438 /* HorizontalCollectionViewCell.swift */,
+				B220987B26EEEF5400DA7438 /* HorizontalCollectionViewCell.xib */,
+			);
+			path = Horizontal;
+			sourceTree = "<group>";
+		};
+		B220986F26EEEF1500DA7438 /* Tile */ = {
+			isa = PBXGroup;
+			children = (
+				B220988126EEEF6200DA7438 /* TileCollectionViewCell.swift */,
+				B220988226EEEF6200DA7438 /* TileCollectionViewCell.xib */,
+			);
+			path = Tile;
 			sourceTree = "<group>";
 		};
 		B24B938F2671F7370037D750 /* Logger */ = {
@@ -685,8 +769,12 @@
 				B2AFA81A26D863B700D5ED18 /* GreenTabCollectionViewCell.xib in Resources */,
 				B2AFA7C126D753DB00D5ED18 /* TabBar.storyboard in Resources */,
 				436846C8263AE02100967143 /* Assets.xcassets in Resources */,
+				B220988426EEEF6200DA7438 /* TileCollectionViewCell.xib in Resources */,
 				B2AFA79B26D61BA400D5ED18 /* lottie-2.json in Resources */,
+				B220987326EEEF3E00DA7438 /* GridCollectionViewCell.xib in Resources */,
+				B220987D26EEEF5400DA7438 /* HorizontalCollectionViewCell.xib in Resources */,
 				B2B8327626A552D2009006F1 /* RxStudyViewController.xib in Resources */,
+				B220986626EEEEF600DA7438 /* ExpandableCollectionViewCell.xib in Resources */,
 				436846C3263AE01D00967143 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -815,14 +903,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B220988326EEEF6200DA7438 /* TileCollectionViewCell.swift in Sources */,
 				B2EBA2AF26D4ACDC00A40782 /* BankingTabViewController.swift in Sources */,
 				B220980926E9C02800DA7438 /* SecondSectionTableViewCellController.swift in Sources */,
 				B2EBA2D726D5DBB800A40782 /* FloatingButton.swift in Sources */,
 				B2EBA2B626D4ACED00A40782 /* AssetTabViewController.swift in Sources */,
+				B220987226EEEF3E00DA7438 /* GridCollectionViewCell.swift in Sources */,
 				436846C0263AE01D00967143 /* ViewController.swift in Sources */,
 				B2D601CB26E0B75A0055A784 /* FirstSectionTableViewCell.swift in Sources */,
 				B2AFA7D126D75C1200D5ED18 /* TopTabNavigationMenu.swift in Sources */,
 				B2AFA80326D77D0500D5ED18 /* GreenTabViewController.swift in Sources */,
+				B220989326EEEFC300DA7438 /* TileCollectionViewCellController.swift in Sources */,
 				B220984326EADD8C00DA7438 /* FittedCollectionView.swift in Sources */,
 				B2EBA24D26CDE37E00A40782 /* SwinjectSampleViewController.swift in Sources */,
 				B220981A26E9C35A00DA7438 /* MenuCollectionViewCellController.swift in Sources */,
@@ -839,6 +930,7 @@
 				B220984826EB123400DA7438 /* SecondSectionTableViewModel.swift in Sources */,
 				B2EBA2BD26D4ACFE00A40782 /* BenefitTabViewController.swift in Sources */,
 				B2EBA2C626D4AE7500A40782 /* BaseTabBarViewController.swift in Sources */,
+				B220986526EEEEF600DA7438 /* ExpandableCollectionViewCell.swift in Sources */,
 				B22097AF26E5AFA200DA7438 /* FirstSectionTableViewCellController.swift in Sources */,
 				B2AFA7B026D7296F00D5ED18 /* TopTabBarItem.swift in Sources */,
 				B2D601C126E0B66E0055A784 /* SampleTableViewController.swift in Sources */,
@@ -850,12 +942,16 @@
 				B220983E26E9D94A00DA7438 /* FittedTableView.swift in Sources */,
 				B2B8327526A552D2009006F1 /* RxStudyViewController.swift in Sources */,
 				436846BC263AE01D00967143 /* AppDelegate.swift in Sources */,
+				B220988926EEEFA000DA7438 /* GridCollectionViewCellController.swift in Sources */,
 				B220977726E5924F00DA7438 /* ReusableType.swift in Sources */,
 				B220977D26E5959600DA7438 /* Builder.swift in Sources */,
+				B220985D26EEEEB100DA7438 /* ExpandableCollectionViewCellController.swift in Sources */,
+				B220987C26EEEF5400DA7438 /* HorizontalCollectionViewCell.swift in Sources */,
 				B220985126EEED2A00DA7438 /* BaseCollectionViewController.swift in Sources */,
 				B22097CF26E5D79600DA7438 /* SampleTableModel.swift in Sources */,
 				B22097C426E5D67600DA7438 /* TodayTableViewCellController.swift in Sources */,
 				B2AFA81926D863B700D5ED18 /* GreenTabCollectionViewCell.swift in Sources */,
+				B220988E26EEEFB600DA7438 /* HorizontalCollectionViewCellController.swift in Sources */,
 				43684705263AE27600967143 /* ViewLayoutTestViewController.swift in Sources */,
 				B220981526E9C2FD00DA7438 /* SecondSectionTableViewCellFactory.swift in Sources */,
 				B2EBA2CE26D4B06200A40782 /* BottomTabNavigationMenu.swift in Sources */,
