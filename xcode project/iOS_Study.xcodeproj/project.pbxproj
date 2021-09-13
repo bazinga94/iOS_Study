@@ -61,8 +61,8 @@
 		B22098A226EEF18400DA7438 /* BaseCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22098A126EEF18400DA7438 /* BaseCollectionViewModel.swift */; };
 		B22098A826EF1F0100DA7438 /* SectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22098A726EF1F0100DA7438 /* SectionController.swift */; };
 		B22098AE26EF3CB200DA7438 /* BaseCollectionViewHeaderSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22098AD26EF3CB200DA7438 /* BaseCollectionViewHeaderSectionController.swift */; };
-		B22098B826EF3E3700DA7438 /* BaseHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22098B626EF3E3700DA7438 /* BaseHeaderCollectionReusableView.swift */; };
-		B22098B926EF3E3700DA7438 /* BaseCollectionViewHeaderSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22098B726EF3E3700DA7438 /* BaseCollectionViewHeaderSection.xib */; };
+		B22098CB26EF48F800DA7438 /* BaseCollectionViewHeaderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22098C926EF48F800DA7438 /* BaseCollectionViewHeaderSection.swift */; };
+		B22098CC26EF48F800DA7438 /* BaseCollectionViewHeaderSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22098CA26EF48F800DA7438 /* BaseCollectionViewHeaderSection.xib */; };
 		B24B93912671F7450037D750 /* CustomLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B93902671F7450037D750 /* CustomLogger.swift */; };
 		B2A5D80C2689AE5600462F70 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A5D80B2689AE5600462F70 /* CustomView.swift */; };
 		B2A5D8142689AE8A00462F70 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A5D8132689AE8A00462F70 /* CustomView.xib */; };
@@ -180,8 +180,8 @@
 		B22098A126EEF18400DA7438 /* BaseCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewModel.swift; sourceTree = "<group>"; };
 		B22098A726EF1F0100DA7438 /* SectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionController.swift; sourceTree = "<group>"; };
 		B22098AD26EF3CB200DA7438 /* BaseCollectionViewHeaderSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewHeaderSectionController.swift; sourceTree = "<group>"; };
-		B22098B626EF3E3700DA7438 /* BaseHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
-		B22098B726EF3E3700DA7438 /* BaseCollectionViewHeaderSection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCollectionViewHeaderSection.xib; sourceTree = "<group>"; };
+		B22098C926EF48F800DA7438 /* BaseCollectionViewHeaderSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewHeaderSection.swift; sourceTree = "<group>"; };
+		B22098CA26EF48F800DA7438 /* BaseCollectionViewHeaderSection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCollectionViewHeaderSection.xib; sourceTree = "<group>"; };
 		B24B93902671F7450037D750 /* CustomLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLogger.swift; sourceTree = "<group>"; };
 		B2A5D80B2689AE5600462F70 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		B2A5D8132689AE8A00462F70 /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
@@ -581,8 +581,8 @@
 		B22098B526EF3E0D00DA7438 /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				B22098B626EF3E3700DA7438 /* BaseHeaderCollectionReusableView.swift */,
-				B22098B726EF3E3700DA7438 /* BaseCollectionViewHeaderSection.xib */,
+				B22098C926EF48F800DA7438 /* BaseCollectionViewHeaderSection.swift */,
+				B22098CA26EF48F800DA7438 /* BaseCollectionViewHeaderSection.xib */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -816,10 +816,10 @@
 				436846CB263AE02100967143 /* LaunchScreen.storyboard in Resources */,
 				B220985226EEED2A00DA7438 /* BaseCollectionViewController.xib in Resources */,
 				43A0BAC92697FE5D00E4A8A4 /* CollectionViewController.xib in Resources */,
-				B22098B926EF3E3700DA7438 /* BaseCollectionViewHeaderSection.xib in Resources */,
 				B2AFA79A26D61BA400D5ED18 /* lottie-1.json in Resources */,
 				B220981026E9C17B00DA7438 /* MenuCollectionViewCell.xib in Resources */,
 				B2D601C226E0B66E0055A784 /* SampleTableViewController.xib in Resources */,
+				B22098CC26EF48F800DA7438 /* BaseCollectionViewHeaderSection.xib in Resources */,
 				B2EBA2B026D4ACDC00A40782 /* BankingTabViewController.xib in Resources */,
 				B220980426E9BFEE00DA7438 /* SecondSectionTableViewCell.xib in Resources */,
 				B2D601D326E0B8A50055A784 /* TodayTableViewCell.xib in Resources */,
@@ -1016,8 +1016,8 @@
 				B2AFA81926D863B700D5ED18 /* GreenTabCollectionViewCell.swift in Sources */,
 				B220988E26EEEFB600DA7438 /* HorizontalCollectionViewCellController.swift in Sources */,
 				43684705263AE27600967143 /* ViewLayoutTestViewController.swift in Sources */,
-				B22098B826EF3E3700DA7438 /* BaseHeaderCollectionReusableView.swift in Sources */,
 				B220981526E9C2FD00DA7438 /* SecondSectionTableViewCellFactory.swift in Sources */,
+				B22098CB26EF48F800DA7438 /* BaseCollectionViewHeaderSection.swift in Sources */,
 				B2EBA2CE26D4B06200A40782 /* BottomTabNavigationMenu.swift in Sources */,
 				436846BE263AE01D00967143 /* SceneDelegate.swift in Sources */,
 				B2AFA7CC26D759E400D5ED18 /* AssetInnerViewController.swift in Sources */,

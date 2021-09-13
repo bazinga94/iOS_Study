@@ -15,5 +15,4 @@ class BaseCollectionViewHeaderSection: UICollectionReusableView {
 		super.awakeFromNib()
 		// Initialization code
 	}
-
 }

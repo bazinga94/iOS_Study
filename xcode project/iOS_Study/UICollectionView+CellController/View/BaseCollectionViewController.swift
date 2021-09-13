@@ -23,8 +23,12 @@ class BaseCollectionViewController: UIViewController {
 }
 
 extension BaseCollectionViewController: UICollectionViewDataSource {
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return sectionItems.count
+	}
+
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return sectionItems[section].collectionCellControllers.count
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -56,9 +60,11 @@ private extension BaseCollectionViewController {
 	}
 
 	func bindCollectionView() {
+		viewModel.fetch()
 		viewModel.baseCollectionModel.bind { [weak self] model in
 			guard let self = self else { return }
 			self.sectionItems = self.factory.makeCellControllers(by: model)
+			self.collectionView.reloadData()
 		}
 	}
 }

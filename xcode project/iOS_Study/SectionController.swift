@@ -16,6 +16,7 @@ protocol SectionViewHolder: class {
 	associatedtype Section: SectionViewType where Section.SectionHolder == Self
 
 	func register(_ viewClass: AnyClass?, forSupplementaryViewOfKind elementKind: String, withReuseIdentifier identifier: String)
+	func register(_ nib: UINib?, forSupplementaryViewOfKind kind: String, withReuseIdentifier identifier: String)
 	func dequeueReusableSupplementaryView(ofKind elementKind: String, withReuseIdentifier identifier: String, for indexPath: IndexPath) -> Section
 }
 
@@ -32,10 +33,15 @@ extension UITableViewHeaderFooterView: SectionViewType {
 }
 
 extension UITableView: SectionViewHolder {
+
 	typealias Section = UITableViewHeaderFooterView
 
 	func register(_ viewClass: AnyClass?, forSupplementaryViewOfKind elementKind: String, withReuseIdentifier identifier: String) {
 		register(viewClass, forHeaderFooterViewReuseIdentifier: identifier)
+	}
+
+	func register(_ nib: UINib?, forSupplementaryViewOfKind kind: String, withReuseIdentifier identifier: String) {
+		register(nib, forHeaderFooterViewReuseIdentifier: identifier)
 	}
 
 	func dequeueReusableSupplementaryView(ofKind elementKind: String, withReuseIdentifier identifier: String, for indexPath: IndexPath) -> UITableViewHeaderFooterView {
@@ -78,7 +84,11 @@ class SectionController<T: SectionViewHolder>: SectionControllerType where T: Re
 	}
 
 	static func registerSection(on sectionViewHolder: T) {
-		sectionViewHolder.register(cellClass, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: sectionIdentifier)
+		let bundle = Bundle(for: cellClass)
+		let nib = UINib(nibName: sectionIdentifier, bundle: bundle)
+		sectionViewHolder.register(nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: sectionIdentifier)
+
+//		collectionView.register(UINib(nibName: CollectionHeaderView.reuseIdentifier, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CollectionHeaderView.reuseIdentifier)
 	}
 
 	func sectionFromReusableSectionHolder(_ reusableSectionHolder: T, ofKind: String, forIndexPath indexPath: IndexPath) -> T.Section {

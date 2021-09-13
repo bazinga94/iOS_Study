@@ -11,14 +11,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="BaseCollectionViewHeaderSection" customModule="iOS_Study" customModuleProvider="target">
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BaseCollectionViewHeaderSection" id="U6b-Vx-4bR" customClass="BaseCollectionViewHeaderSection" customModule="iOS_Study" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apE-kI-RTA">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXv-78-zss">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdd-x0-AoZ">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNq-em-hkO">
                             <rect key="frame" x="20" y="14.5" width="42" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -27,22 +27,22 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="Kdd-x0-AoZ" firstAttribute="leading" secondItem="apE-kI-RTA" secondAttribute="leading" constant="20" id="OSj-1s-S4t"/>
-                        <constraint firstItem="Kdd-x0-AoZ" firstAttribute="centerY" secondItem="apE-kI-RTA" secondAttribute="centerY" id="cBV-xB-1NW"/>
+                        <constraint firstItem="LNq-em-hkO" firstAttribute="centerY" secondItem="fXv-78-zss" secondAttribute="centerY" id="Tqq-fW-NIC"/>
+                        <constraint firstItem="LNq-em-hkO" firstAttribute="leading" secondItem="fXv-78-zss" secondAttribute="leading" constant="20" id="pEA-gG-lI4"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <constraints>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="apE-kI-RTA" secondAttribute="trailing" id="1oy-aK-wjn"/>
-                <constraint firstItem="apE-kI-RTA" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="CIF-9e-zk1"/>
-                <constraint firstAttribute="bottom" secondItem="apE-kI-RTA" secondAttribute="bottom" id="Fiu-jC-ymR"/>
-                <constraint firstItem="apE-kI-RTA" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="OxX-l6-B7l"/>
+                <constraint firstItem="fXv-78-zss" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="D7x-U5-hvL"/>
+                <constraint firstItem="fXv-78-zss" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="EMZ-2j-ZnD"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="fXv-78-zss" secondAttribute="trailing" id="KlZ-9R-a9K"/>
+                <constraint firstAttribute="bottom" secondItem="fXv-78-zss" secondAttribute="bottom" id="zi9-0e-QmO"/>
             </constraints>
             <connections>
-                <outlet property="headerTitle" destination="Kdd-x0-AoZ" id="Jxv-ae-gmN"/>
+                <outlet property="headerTitle" destination="LNq-em-hkO" id="h7A-XO-z72"/>
             </connections>
-            <point key="canvasLocation" x="141" y="154"/>
+            <point key="canvasLocation" x="142" y="154"/>
         </collectionReusableView>
     </objects>
     <resources>

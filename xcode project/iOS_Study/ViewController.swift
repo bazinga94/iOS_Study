@@ -56,7 +56,8 @@ class ViewController: UIViewController {
 	}
 
 	@IBAction func collectionViewTest(_ sender: Any) {
-		let destinationViewController = CollectionViewController()
+//		let destinationViewController = CollectionViewController()
+		let destinationViewController = BaseCollectionViewController()
 		self.navigationController?.pushViewController(destinationViewController, animated: true)
 	}
 
