@@ -13,10 +13,13 @@ class BaseCollectionViewCellFactory {
 		GridCollectionViewCellController.registerCell(on: collectionView)
 		HorizontalCollectionViewCellController.registerCell(on: collectionView)
 		TileCollectionViewCellController.registerCell(on: collectionView)
+		BaseCollectionViewHeaderSectionController.registerSection(on: collectionView)
 	}
 
-	func makeCellControllers(by items: BaseCollectionModel) -> [CollectionCellController] {
+	func makeCellControllers(by items: BaseCollectionModel) -> [SectionController<UICollectionView>] {
 		let cellController = items.expandableCellModel.map { ExpandableCollectionViewCellController(item: $0) }
-		return cellController
+		let sectionController = BaseCollectionViewHeaderSectionController(item: "베이스 뷰 헤더")
+		sectionController.collectionCellControllers = cellController
+		return [sectionController]
 	}
 }

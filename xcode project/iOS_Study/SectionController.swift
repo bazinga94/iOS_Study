@@ -55,13 +55,20 @@ extension UITableView: SectionViewHolder {
 //}
 
 protocol SectionControllerType {
-	associatedtype SectionHolder: SectionViewHolder
+	associatedtype SectionHolder: SectionViewHolder, ReusableCellHolder
+
+	var tableCellControllers: [CellController<SectionHolder>] { get }
+	var collectionCellControllers: [CellController<SectionHolder>] { get }
 
 	static func registerSection(on sectionViewHolder: SectionHolder)
-	func sectionFromReusableSectionHolder(_ reusableSectionHolder: SectionHolder, ofKind: String, forIndexPath indexPath: IndexPath)
+	func sectionFromReusableSectionHolder(_ reusableSectionHolder: SectionHolder, ofKind: String, forIndexPath indexPath: IndexPath) -> SectionHolder.Section
 }
 
-class SectionController<T: SectionViewHolder>: SectionControllerType {
+class SectionController<T: SectionViewHolder>: SectionControllerType where T: ReusableCellHolder {
+
+	var tableCellControllers: [CellController<T>] = []
+	var collectionCellControllers: [CellController<T>] = []
+
 	class var cellClass: AnyClass {
 		fatalError("Must be implemented by children")
 	}
@@ -74,16 +81,17 @@ class SectionController<T: SectionViewHolder>: SectionControllerType {
 		sectionViewHolder.register(cellClass, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: sectionIdentifier)
 	}
 
-	func sectionFromReusableSectionHolder(_ reusableSectionHolder: T, ofKind: String, forIndexPath indexPath: IndexPath) {
+	func sectionFromReusableSectionHolder(_ reusableSectionHolder: T, ofKind: String, forIndexPath indexPath: IndexPath) -> T.Section {
 		let section = reusableSectionHolder.dequeueReusableSupplementaryView(ofKind: ofKind, withReuseIdentifier: type(of: self).sectionIdentifier, for: indexPath)
 		configureSection(section)
+		return section
 	}
 
 	func configureSection(_ section: T.Section) {
 	}
 }
 
-class GenericSectionController<T: SectionViewType>: SectionController<T.SectionHolder> {
+class GenericSectionController<T: SectionViewType>: SectionController<T.SectionHolder> where T.SectionHolder: ReusableCellHolder {
 	final override class var cellClass: AnyClass {
 		return T.self
 	}
@@ -107,17 +115,17 @@ class GenericSectionController<T: SectionViewType>: SectionController<T.SectionH
 //	var footer: SectionController<T>?
 //}
 
-protocol SectionItem {
-	var collectionHeader: SectionController<UICollectionView>? { get }
-	var tableHeader: SectionController<UITableView>? { get }
-	var collectionRows: [CellController<UICollectionView>] { get }
-	var tableRows: [CellController<UITableView>] { get }
-	var collectionFooter: SectionController<UICollectionView>? { get }
-	var tableFooter: SectionController<UITableView>? { get }
-}
-
-protocol CollectionViewItem {
-	var header: SectionController<UICollectionView>? { get }
-	var items: [SectionItem] { get }
-	var footer: SectionController<UICollectionView>? { get }
-}
+//protocol SectionItem {
+//	var collectionHeader: SectionController<UICollectionView>? { get }
+//	var tableHeader: SectionController<UITableView>? { get }
+//	var collectionRows: [CellController<UICollectionView>] { get }
+//	var tableRows: [CellController<UITableView>] { get }
+//	var collectionFooter: SectionController<UICollectionView>? { get }
+//	var tableFooter: SectionController<UITableView>? { get }
+//}
+//
+//protocol CollectionViewItem {
+//	var header: SectionController<UICollectionView>? { get }
+//	var items: [SectionItem] { get }
+//	var footer: SectionController<UICollectionView>? { get }
+//}
