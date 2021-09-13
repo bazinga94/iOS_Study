@@ -27,6 +27,25 @@ extension UICollectionView: SectionViewHolder {
 	typealias Section = UICollectionReusableView
 }
 
+extension UITableViewHeaderFooterView: SectionViewType {
+	typealias SectionHolder = UITableView
+}
+
+extension UITableView: SectionViewHolder {
+	typealias Section = UITableViewHeaderFooterView
+
+	func register(_ viewClass: AnyClass?, forSupplementaryViewOfKind elementKind: String, withReuseIdentifier identifier: String) {
+		register(viewClass, forHeaderFooterViewReuseIdentifier: identifier)
+	}
+
+	func dequeueReusableSupplementaryView(ofKind elementKind: String, withReuseIdentifier identifier: String, for indexPath: IndexPath) -> UITableViewHeaderFooterView {
+		guard let view = dequeueReusableHeaderFooterView(withIdentifier: identifier) else {
+			return UITableViewHeaderFooterView(reuseIdentifier: identifier)
+		}
+		return view
+	}
+}
+
 //extension UIView: SectionViewType {
 //	typealias SectionHolder = UITableView
 //}
