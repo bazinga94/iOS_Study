@@ -78,7 +78,7 @@ extension BaseCollectionViewController: UICollectionViewDelegateFlowLayout {
 //		return CGSize(width: width, height: estimatedSize.height)
 		// grid 높이를 잡을때 테이블은 전체를 생성하고 높이를 잡지만 컬렉션은 아님..
 
-		let height = sectionItems[indexPath.section].collectionCellControllers[indexPath.row].cellHeight(collectionView, itemAt: indexPath)
+		let height = sectionItems[indexPath.section].collectionCellControllers[indexPath.row].cellHeight(availableWidth: width, collectionView, itemAt: indexPath)
 		return CGSize(width: width, height: height)
 	}
 }

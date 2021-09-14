@@ -21,10 +21,10 @@ class GridCollectionViewCellController: GenericCellController<GridCollectionView
 		}
 	}
 
-	override func cellHeight(_ cellHolder: UICollectionView, itemAt indexPath: IndexPath) -> CGFloat {
+	override func cellHeight(availableWidth: CGFloat, _ cellHolder: UICollectionView, itemAt indexPath: IndexPath) -> CGFloat {
 		guard let cell = cellHolder.dequeueReusableCell(withReuseIdentifier: type(of: self).cellIdentifier, for: indexPath) as? GridCollectionViewCell else { return 0 }
 		configureCell(cell)
-		cell.frame = CGRect(x: 0, y: 0, width: 1000, height: 1000)
+		cell.frame = CGRect(x: 0, y: 0, width: availableWidth, height: 1000)
 		cell.collectionView.reloadData()
 		cell.layoutIfNeeded()
 

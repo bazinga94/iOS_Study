@@ -17,4 +17,12 @@ class GridContentsCollectionViewCellController: GenericCellController<GridConten
 	override func configureCell(_ cell: GridContentsCollectionViewCell) {
 		cell.titleLabel.text = item
 	}
+
+	override func cellWidth(availableHeight: CGFloat, _ cellHolder: UICollectionView, itemAt indexPath: IndexPath) -> CGFloat {
+		guard let cell = cellHolder.dequeueReusableCell(withReuseIdentifier: type(of: self).cellIdentifier, for: indexPath) as? GridContentsCollectionViewCell else { return 0 }
+		configureCell(cell)
+//		cell.frame = CGRect(x: 0, y: 0, width: 1000, height: availableHeight)
+		let targetSize = CGSize(width: UIView.layoutFittingCompressedSize.width, height: availableHeight)
+		return cell.contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .fittingSizeLevel, verticalFittingPriority: .required).width
+	}
 }

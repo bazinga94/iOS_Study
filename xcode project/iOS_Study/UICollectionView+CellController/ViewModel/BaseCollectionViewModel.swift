@@ -59,7 +59,7 @@ class BaseCollectionViewModel {
 			)],
 			gridCellModel: [GridCellModel(
 				headerTitle: "Gird",
-				list: ["100", "2", "30", "4000", "500", "6", "700000", "80"]
+				list: ["100", "2", "30", "4000", "500", "6", "700000", "80", "100", "2", "30", "4000", "500", "6", "700000", "80"]
 			)],
 			horizontalModel: [HorizontalModel(
 				list: [HorizontalModel.CellModel(title: "a", content: "aa"),

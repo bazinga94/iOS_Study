@@ -48,7 +48,11 @@ class CellController<T: ReusableCellHolder>: CellControllerType {
 		// 자식 클래스에서 override하여 구현
 	}
 
-	func cellHeight(_ cellHolder: UICollectionView, itemAt indexPath: IndexPath) -> CGFloat {
+	func cellHeight(availableWidth: CGFloat, _ cellHolder: UICollectionView, itemAt indexPath: IndexPath) -> CGFloat {
+		return 0
+	}
+
+	func cellWidth(availableHeight: CGFloat, _ cellHolder: UICollectionView, itemAt indexPath: IndexPath) -> CGFloat {
 		return 0
 	}
 }
@@ -63,7 +67,11 @@ class GenericCellController<T: ReusableCell>: CellController<T.CellHolder> {
 		// Generic 타입을 인자로 받아 override 하여 구현
 	}
 
-	override func cellHeight(_ cellHolder: UICollectionView, itemAt indexPath: IndexPath) -> CGFloat {
+	override func cellHeight(availableWidth: CGFloat, _ cellHolder: UICollectionView, itemAt indexPath: IndexPath) -> CGFloat {
+		return 0
+	}
+
+	override func cellWidth(availableHeight: CGFloat, _ cellHolder: UICollectionView, itemAt indexPath: IndexPath) -> CGFloat {
 		return 0
 	}
 }

@@ -27,7 +27,7 @@ class ExpandableCollectionViewCellController: GenericCellController<ExpandableCo
 		cell.sectionItems = sectionItems
 	}
 
-	override func cellHeight(_ cellHolder: UICollectionView, itemAt indexPath: IndexPath) -> CGFloat {
+	override func cellHeight(availableWidth: CGFloat, _ cellHolder: UICollectionView, itemAt indexPath: IndexPath) -> CGFloat {
 		guard let cell = cellHolder.dequeueReusableCell(withReuseIdentifier: type(of: self).cellIdentifier, for: indexPath) as? ExpandableCollectionViewCell else { return 0 }
 		configureCell(cell)
 		cell.tableView.reloadData()

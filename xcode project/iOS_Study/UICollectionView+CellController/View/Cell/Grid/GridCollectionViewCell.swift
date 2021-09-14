@@ -12,7 +12,7 @@ class GridCollectionViewCell: UICollectionViewCell {
 	enum Constant {
 		static let inset: CGFloat = 0
 		static let minimumLineSpacing: CGFloat = 10
-		static let minimumInteritemSpacing: CGFloat = 30
+		static let minimumInteritemSpacing: CGFloat = 20
 	}
 
 	@IBOutlet weak var collectionView: UICollectionView!
@@ -61,12 +61,14 @@ extension GridCollectionViewCell: UICollectionViewDelegateFlowLayout {
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-		let width: CGFloat = 30 //collectionView.frame.width
-		let estimatedHeight: CGFloat = 80.0
-		let dummyCell = cellControllers[indexPath.row].cellFromReusableCellHolder(collectionView, forIndexPath: indexPath)
-		dummyCell.layoutIfNeeded()
-		let estimatedSize = dummyCell.systemLayoutSizeFitting(CGSize(width: width, height: estimatedHeight))
-		return estimatedSize
+//		let width: CGFloat = 30 //collectionView.frame.width
+//		let estimatedHeight: CGFloat = 80.0
+//		let dummyCell = cellControllers[indexPath.row].cellFromReusableCellHolder(collectionView, forIndexPath: indexPath)
+//		dummyCell.layoutIfNeeded()
+//		let estimatedSize = dummyCell.systemLayoutSizeFitting(CGSize(width: width, height: estimatedHeight))
+//		return estimatedSize
 //		return CGSize(width: estimatedSize.width, height: estimatedSize.height)
+		let width = cellControllers[indexPath.row].cellWidth(availableHeight: 40, collectionView, itemAt: indexPath)
+		return CGSize(width: width, height: 40)
 	}
 }
