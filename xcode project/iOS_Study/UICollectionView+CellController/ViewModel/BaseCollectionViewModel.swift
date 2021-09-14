@@ -55,7 +55,7 @@ class BaseCollectionViewModel {
 				list: ["1", "2", "3"]
 			), ExpandableCellModel(
 				headerTitle: "Expandable",
-				list: ["1", "2"]
+				list: ["1", "2", "3", "4", "5"]
 			)],
 			gridCellModel: [GridCellModel(
 				headerTitle: "Gird",

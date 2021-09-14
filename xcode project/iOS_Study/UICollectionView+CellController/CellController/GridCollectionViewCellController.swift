@@ -5,7 +5,7 @@
 //  Created by Jongho Lee on 2021/09/13.
 //
 
-import Foundation
+import UIKit
 
 class GridCollectionViewCellController: GenericCellController<GridCollectionViewCell> {
 	private var item: [GridCellModel]
@@ -19,5 +19,15 @@ class GridCollectionViewCellController: GenericCellController<GridCollectionView
 		cell.cellControllers = item[0].list.map {
 			GridContentsCollectionViewCellController(item: $0)
 		}
+	}
+
+	override func cellHeight(_ cellHolder: UICollectionView, itemAt indexPath: IndexPath) -> CGFloat {
+		guard let cell = cellHolder.dequeueReusableCell(withReuseIdentifier: type(of: self).cellIdentifier, for: indexPath) as? GridCollectionViewCell else { return 0 }
+		configureCell(cell)
+		cell.frame = CGRect(x: 0, y: 0, width: 1000, height: 1000)
+		cell.collectionView.reloadData()
+		cell.layoutIfNeeded()
+
+		return cell.collectionView.contentSize.height
 	}
 }

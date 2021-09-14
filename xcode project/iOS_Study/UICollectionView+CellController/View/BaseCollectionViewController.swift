@@ -71,12 +71,15 @@ extension BaseCollectionViewController: UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
 		let width = view.frame.width
-		let estimatedHeight: CGFloat = 300.0
-		let dummyCell = sectionItems[indexPath.section].collectionCellControllers[indexPath.row].cellFromReusableCellHolder(collectionView, forIndexPath: indexPath)
-		dummyCell.layoutIfNeeded()
-		let estimatedSize = dummyCell.systemLayoutSizeFitting(CGSize(width: width, height: estimatedHeight))
-		return CGSize(width: width, height: estimatedSize.height)
+//		let estimatedHeight: CGFloat = 300.0
+//		let dummyCell = sectionItems[indexPath.section].collectionCellControllers[indexPath.row].cellFromReusableCellHolder(collectionView, forIndexPath: indexPath)
+//		dummyCell.layoutIfNeeded()
+//		let estimatedSize = dummyCell.systemLayoutSizeFitting(CGSize(width: width, height: estimatedHeight))
+//		return CGSize(width: width, height: estimatedSize.height)
 		// grid 높이를 잡을때 테이블은 전체를 생성하고 높이를 잡지만 컬렉션은 아님..
+
+		let height = sectionItems[indexPath.section].collectionCellControllers[indexPath.row].cellHeight(collectionView, itemAt: indexPath)
+		return CGSize(width: width, height: height)
 	}
 }
 

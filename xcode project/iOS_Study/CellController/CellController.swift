@@ -16,10 +16,10 @@ protocol CellControllerType {
 	static func registerCell(on reusableCellHolder: ViewType)
 	func cellFromReusableCellHolder(_ reusableCellHolder: ViewType, forIndexPath indexPath: IndexPath) -> ViewType.CellType
 	func didSelectCell(itemAt indexPath: IndexPath)
+//	func cellCize(itemAt indexPath: IndexPath) -> CGSize
 }
 
 class CellController<T: ReusableCellHolder>: CellControllerType {
-
 	class var cellClass: AnyClass {		// override 가능
 		fatalError("Must be implemented by children")
 	}
@@ -47,6 +47,10 @@ class CellController<T: ReusableCellHolder>: CellControllerType {
 	func didSelectCell(itemAt indexPath: IndexPath) {
 		// 자식 클래스에서 override하여 구현
 	}
+
+	func cellHeight(_ cellHolder: UICollectionView, itemAt indexPath: IndexPath) -> CGFloat {
+		return 0
+	}
 }
 
 class GenericCellController<T: ReusableCell>: CellController<T.CellHolder> {
@@ -57,5 +61,9 @@ class GenericCellController<T: ReusableCell>: CellController<T.CellHolder> {
 
 	override func configureCell(_ cell: T) {
 		// Generic 타입을 인자로 받아 override 하여 구현
+	}
+
+	override func cellHeight(_ cellHolder: UICollectionView, itemAt indexPath: IndexPath) -> CGFloat {
+		return 0
 	}
 }
