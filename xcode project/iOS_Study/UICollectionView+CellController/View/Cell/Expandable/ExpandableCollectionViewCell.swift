@@ -40,7 +40,7 @@ extension ExpandableCollectionViewCell: UITableViewDataSource {
 		return sectionItems[indexPath.section].tableCellControllers[indexPath.row].cellFromReusableCellHolder(tableView, forIndexPath: indexPath)
 	}
 
-	// Header
+	// MARK: - Header
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		return sectionItems[section].sectionFromReusableSectionHolder(tableView, ofKind: "", forIndexPath: IndexPath())	// table view에서 이렇게 쓰니까 어색하네... 고쳐야겠다
 	}

@@ -64,11 +64,11 @@
 		B22098CB26EF48F800DA7438 /* BaseCollectionViewHeaderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22098C926EF48F800DA7438 /* BaseCollectionViewHeaderSection.swift */; };
 		B22098CC26EF48F800DA7438 /* BaseCollectionViewHeaderSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22098CA26EF48F800DA7438 /* BaseCollectionViewHeaderSection.xib */; };
 		B22098E026F01FB400DA7438 /* ExpandableTableViewHeaderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22098DE26F01FB400DA7438 /* ExpandableTableViewHeaderSection.swift */; };
-		B22098E126F01FB400DA7438 /* ExpandableTableViewHeaderSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22098DF26F01FB400DA7438 /* ExpandableTableViewHeaderSection.xib */; };
 		B22098E626F0217200DA7438 /* ExpandableTableViewSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22098E526F0217200DA7438 /* ExpandableTableViewSectionController.swift */; };
 		B22098F126F0232A00DA7438 /* ExpandableTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22098F026F0232A00DA7438 /* ExpandableTableViewCellController.swift */; };
 		B22098F726F0238500DA7438 /* ExpandableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22098F526F0238500DA7438 /* ExpandableTableViewCell.swift */; };
 		B22098F826F0238500DA7438 /* ExpandableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22098F626F0238500DA7438 /* ExpandableTableViewCell.xib */; };
+		B220990026F0290A00DA7438 /* ExpandableTableViewHeaderSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22098FF26F0290A00DA7438 /* ExpandableTableViewHeaderSection.xib */; };
 		B24B93912671F7450037D750 /* CustomLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B93902671F7450037D750 /* CustomLogger.swift */; };
 		B2A5D80C2689AE5600462F70 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A5D80B2689AE5600462F70 /* CustomView.swift */; };
 		B2A5D8142689AE8A00462F70 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A5D8132689AE8A00462F70 /* CustomView.xib */; };
@@ -189,11 +189,11 @@
 		B22098C926EF48F800DA7438 /* BaseCollectionViewHeaderSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewHeaderSection.swift; sourceTree = "<group>"; };
 		B22098CA26EF48F800DA7438 /* BaseCollectionViewHeaderSection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCollectionViewHeaderSection.xib; sourceTree = "<group>"; };
 		B22098DE26F01FB400DA7438 /* ExpandableTableViewHeaderSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewHeaderSection.swift; sourceTree = "<group>"; };
-		B22098DF26F01FB400DA7438 /* ExpandableTableViewHeaderSection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandableTableViewHeaderSection.xib; sourceTree = "<group>"; };
 		B22098E526F0217200DA7438 /* ExpandableTableViewSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewSectionController.swift; sourceTree = "<group>"; };
 		B22098F026F0232A00DA7438 /* ExpandableTableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewCellController.swift; sourceTree = "<group>"; };
 		B22098F526F0238500DA7438 /* ExpandableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewCell.swift; sourceTree = "<group>"; };
 		B22098F626F0238500DA7438 /* ExpandableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandableTableViewCell.xib; sourceTree = "<group>"; };
+		B22098FF26F0290A00DA7438 /* ExpandableTableViewHeaderSection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandableTableViewHeaderSection.xib; sourceTree = "<group>"; };
 		B24B93902671F7450037D750 /* CustomLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLogger.swift; sourceTree = "<group>"; };
 		B2A5D80B2689AE5600462F70 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		B2A5D8132689AE8A00462F70 /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
@@ -600,7 +600,7 @@
 				B22098C926EF48F800DA7438 /* BaseCollectionViewHeaderSection.swift */,
 				B22098CA26EF48F800DA7438 /* BaseCollectionViewHeaderSection.xib */,
 				B22098DE26F01FB400DA7438 /* ExpandableTableViewHeaderSection.swift */,
-				B22098DF26F01FB400DA7438 /* ExpandableTableViewHeaderSection.xib */,
+				B22098FF26F0290A00DA7438 /* ExpandableTableViewHeaderSection.xib */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -841,11 +841,11 @@
 				B2EBA2B026D4ACDC00A40782 /* BankingTabViewController.xib in Resources */,
 				B220980426E9BFEE00DA7438 /* SecondSectionTableViewCell.xib in Resources */,
 				B2D601D326E0B8A50055A784 /* TodayTableViewCell.xib in Resources */,
-				B22098E126F01FB400DA7438 /* ExpandableTableViewHeaderSection.xib in Resources */,
 				B2A5D8142689AE8A00462F70 /* CustomView.xib in Resources */,
 				B2D601CC26E0B75A0055A784 /* FirstSectionTableViewCell.xib in Resources */,
 				B2AFA81A26D863B700D5ED18 /* GreenTabCollectionViewCell.xib in Resources */,
 				B2AFA7C126D753DB00D5ED18 /* TabBar.storyboard in Resources */,
+				B220990026F0290A00DA7438 /* ExpandableTableViewHeaderSection.xib in Resources */,
 				436846C8263AE02100967143 /* Assets.xcassets in Resources */,
 				B220988426EEEF6200DA7438 /* TileCollectionViewCell.xib in Resources */,
 				B2AFA79B26D61BA400D5ED18 /* lottie-2.json in Resources */,

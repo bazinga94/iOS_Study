@@ -50,6 +50,12 @@ class BaseCollectionViewModel {
 			expandableCellModel: [ExpandableCellModel(
 				headerTitle: "Expandable",
 				list: ["1", "2", "3", "4"]
+			), ExpandableCellModel(
+				headerTitle: "Expandable",
+				list: ["1", "2", "3"]
+			), ExpandableCellModel(
+				headerTitle: "Expandable",
+				list: ["1", "2"]
 			)],
 			gridCellModel: [GridCellModel(
 				headerTitle: "Gird",

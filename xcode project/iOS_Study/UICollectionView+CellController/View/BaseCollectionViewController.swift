@@ -9,6 +9,13 @@ import UIKit
 
 class BaseCollectionViewController: UIViewController {
 
+	enum Constant {
+		static let inset: CGFloat = 0
+		static let minimumLineSpacing: CGFloat = 20
+		static let minimumInteritemSpacing: CGFloat = 10
+		static let cellsPerRow = 1
+	}
+
 	@IBOutlet weak var collectionView: UICollectionView!
 
 	private var factory = BaseCollectionViewCellFactory()
@@ -49,7 +56,23 @@ extension BaseCollectionViewController: UICollectionViewDelegate {
 }
 
 extension BaseCollectionViewController: UICollectionViewDelegateFlowLayout {
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+		return UIEdgeInsets(top: Constant.inset, left: Constant.inset, bottom: Constant.inset, right: Constant.inset)
+	}
 
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+		return Constant.minimumLineSpacing
+	}
+
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+		return Constant.minimumInteritemSpacing
+	}
+
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		let marginsAndInsets = Constant.inset * 2 + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + Constant.minimumInteritemSpacing * CGFloat(Constant.cellsPerRow - 1)
+		let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(Constant.cellsPerRow)).rounded(.down)
+		return CGSize(width: itemWidth, height: itemWidth + 30)
+	}
 }
 
 private extension BaseCollectionViewController {

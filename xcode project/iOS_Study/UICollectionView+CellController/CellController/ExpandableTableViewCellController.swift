@@ -15,6 +15,6 @@ class ExpandableTableViewCellController: GenericCellController<ExpandableTableVi
 	}
 
 	override func configureCell(_ cell: ExpandableTableViewCell) {
-
+		cell.titleLabel.text = item
 	}
 }

@@ -15,6 +15,6 @@ class ExpandableTableViewSectionController: GenericSectionController<ExpandableT
 	}
 
 	override func configureSection(_ section: ExpandableTableViewHeaderSection) {
-
+		section.contentView.backgroundColor = .blue
 	}
 }
