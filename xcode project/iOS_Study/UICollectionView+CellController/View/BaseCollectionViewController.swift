@@ -90,6 +90,7 @@ extension BaseCollectionViewController: UICollectionViewDelegateFlowLayout {
 extension BaseCollectionViewController: SectionReloadDelegate {
 	func reload(section: Int) {
 		collectionView.reloadSections(IndexSet(integer: section))
+//		collectionView.reloadData()
 	}
 }
 

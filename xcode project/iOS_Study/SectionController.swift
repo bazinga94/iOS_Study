@@ -74,6 +74,7 @@ class SectionController<T: SectionViewHolder>: SectionControllerType where T: Re
 
 	var tableCellControllers: [CellController<T>] = []
 	var collectionCellControllers: [CellController<T>] = []
+	var isExpandSection: Bool = true
 
 	class var cellClass: AnyClass {
 		fatalError("Must be implemented by children")

@@ -9,11 +9,10 @@ import UIKit
 
 class ExpandableCollectionViewCellController: GenericCellController<ExpandableCollectionViewCell> {
 	private var item: [ExpandableCellModel]
-	private var delegate: SectionReloadDelegate
+	weak var delegate: SectionReloadDelegate?
 
-	init(item: [ExpandableCellModel], delegate: SectionReloadDelegate) {
+	init(item: [ExpandableCellModel]) {
 		self.item = item
-		self.delegate = delegate
 	}
 
 	override func configureCell(_ cell: ExpandableCollectionViewCell) {
