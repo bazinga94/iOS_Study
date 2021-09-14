@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ZH-Nd-7P7">
                         <rect key="frame" x="0.0" y="0.0" width="337" height="273"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iMp-iC-fc3" customClass="FittedTableView" customModule="iOS_Study" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iMp-iC-fc3" customClass="FittedTableView" customModule="iOS_Study" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="337" height="273"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
