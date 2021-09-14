@@ -9,7 +9,7 @@ import UIKit
 
 class ExpandableCollectionViewCell: UICollectionViewCell {
 
-	@IBOutlet weak var tableView: UITableView!
+	@IBOutlet weak var tableView: FittedTableView!
 	var sectionItems: [SectionController<UITableView>] = []
 
 	override func awakeFromNib() {
@@ -24,6 +24,8 @@ private extension ExpandableCollectionViewCell {
 		ExpandableTableViewCellController.registerCell(on: tableView)
 		tableView.delegate = self
 		tableView.dataSource = self
+		tableView.rowHeight = UITableView.automaticDimension
+		tableView.estimatedRowHeight = 40
 	}
 }
 
