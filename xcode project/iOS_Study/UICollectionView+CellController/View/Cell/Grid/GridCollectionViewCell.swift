@@ -29,6 +29,10 @@ private extension GridCollectionViewCell {
 		GridContentsCollectionViewCellController.registerCell(on: collectionView)
 		collectionView.delegate = self
 		collectionView.dataSource = self
+//		let flowLayout = UICollectionViewFlowLayout()
+//		flowLayout.scrollDirection = .horizontal
+//		flowLayout.estimatedItemSize = CGSize(width: 80, height: 80)
+//		collectionView.setCollectionViewLayout(flowLayout, animated: false)
 	}
 }
 
@@ -56,16 +60,13 @@ extension GridCollectionViewCell: UICollectionViewDelegateFlowLayout {
 	}
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		//		let marginsAndInsets = Constant.inset * 2 + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + Constant.minimumInteritemSpacing * CGFloat(Constant.cellsPerRow - 1)
-		//		let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(Constant.cellsPerRow)).rounded(.down)
-		//		return CGSize(width: itemWidth, height: itemWidth + 30)
 
-		let width = collectionView.frame.width * 0.9
-		let estimatedHeight: CGFloat = 100.0
+		let width: CGFloat = 30 //collectionView.frame.width
+		let estimatedHeight: CGFloat = 80.0
 		let dummyCell = cellControllers[indexPath.row].cellFromReusableCellHolder(collectionView, forIndexPath: indexPath)
 		dummyCell.layoutIfNeeded()
-		let estimatedSize = dummyCell.systemLayoutSizeFitting(
-			CGSize(width: width, height: estimatedHeight))
-		return CGSize(width: width, height: estimatedSize.height)
+		let estimatedSize = dummyCell.systemLayoutSizeFitting(CGSize(width: width, height: estimatedHeight))
+		return estimatedSize
+//		return CGSize(width: estimatedSize.width, height: estimatedSize.height)
 	}
 }

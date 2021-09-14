@@ -22,19 +22,31 @@ class FittedCollectionView: UICollectionView {
 	//		layoutIfNeeded()
 	//		return CGSize(width: UIView.noIntrinsicMetric, height: contentSize.height)
 	//	}
-	override var intrinsicContentSize: CGSize {
-		self.layoutIfNeeded()
-		return self.contentSize
-	}
 
-	override var contentSize: CGSize {
-		didSet{
+//	override var intrinsicContentSize: CGSize {
+//		self.layoutIfNeeded()
+//		return self.contentSize
+//	}
+//
+//	override var contentSize: CGSize {
+//		didSet{
+//			self.invalidateIntrinsicContentSize()
+//		}
+//	}
+//
+//	override func reloadData() {
+//		super.reloadData()
+//		self.invalidateIntrinsicContentSize()
+//	}
+
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		if !__CGSizeEqualToSize(bounds.size, self.intrinsicContentSize) {
 			self.invalidateIntrinsicContentSize()
 		}
 	}
 
-	override func reloadData() {
-		super.reloadData()
-		self.invalidateIntrinsicContentSize()
+	override var intrinsicContentSize: CGSize {
+		return contentSize
 	}
 }

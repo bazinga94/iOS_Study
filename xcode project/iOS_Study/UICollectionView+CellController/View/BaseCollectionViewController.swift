@@ -69,16 +69,12 @@ extension BaseCollectionViewController: UICollectionViewDelegateFlowLayout {
 	}
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//		let marginsAndInsets = Constant.inset * 2 + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + Constant.minimumInteritemSpacing * CGFloat(Constant.cellsPerRow - 1)
-//		let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(Constant.cellsPerRow)).rounded(.down)
-//		return CGSize(width: itemWidth, height: itemWidth + 30)
 
-		let width = view.frame.width * 0.9
+		let width = view.frame.width
 		let estimatedHeight: CGFloat = 300.0
 		let dummyCell = sectionItems[indexPath.section].collectionCellControllers[indexPath.row].cellFromReusableCellHolder(collectionView, forIndexPath: indexPath)
 		dummyCell.layoutIfNeeded()
-		let estimatedSize = dummyCell.systemLayoutSizeFitting(
-			CGSize(width: width, height: estimatedHeight))
+		let estimatedSize = dummyCell.systemLayoutSizeFitting(CGSize(width: width, height: estimatedHeight))
 		return CGSize(width: width, height: estimatedSize.height)
 	}
 }
