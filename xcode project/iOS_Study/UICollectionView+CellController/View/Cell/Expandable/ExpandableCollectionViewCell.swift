@@ -12,6 +12,8 @@ class ExpandableCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var tableView: UITableView!
 	var sectionItems: [SectionController<UITableView>] = []
 
+	var isExpanded = true
+
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		configureTableView()
@@ -35,6 +37,9 @@ extension ExpandableCollectionViewCell: UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		if section == 0, !isExpanded {
+			return 0
+		}
 		return sectionItems[section].tableCellControllers.count
 	}
 
@@ -44,7 +49,33 @@ extension ExpandableCollectionViewCell: UITableViewDataSource {
 
 	// MARK: - Header
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-		return sectionItems[section].sectionFromReusableSectionHolder(tableView, ofKind: "", forIndexPath: IndexPath())	// table view에서 이렇게 쓰니까 어색하네... 고쳐야겠다
+		let sectionView = sectionItems[section].sectionFromReusableSectionHolder(tableView, ofKind: "", forIndexPath: IndexPath())	// table view에서 이렇게 쓰니까 어색하네... 고쳐야겠다
+		if let sectionView = sectionView as? ExpandableTableViewHeaderSection {
+			sectionView.sectionButton.addTarget(self, action: #selector(hideSection(button:)), for: .touchUpInside)
+		}
+		return sectionView
+	}
+
+	@objc func hideSection(button: UIButton) {
+		let section = 0 // 내 계좌 목록 section
+		var indexPaths = [IndexPath]()
+
+		for row in 0..<sectionItems[section].tableCellControllers.count {
+			let indexPath = IndexPath(row: row, section: section)
+			indexPaths.append(indexPath)
+		}
+//		var isExpanded = true
+
+		tableView.performBatchUpdates({
+			if isExpanded {
+				tableView.deleteRows(at: indexPaths, with: .fade)
+			} else {
+				tableView.insertRows(at: indexPaths, with: .fade)
+			}
+			isExpanded = !isExpanded
+		}, completion: { _ in
+			
+		})
 	}
 
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
