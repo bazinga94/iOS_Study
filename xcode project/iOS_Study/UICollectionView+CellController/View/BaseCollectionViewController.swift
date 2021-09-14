@@ -76,6 +76,7 @@ extension BaseCollectionViewController: UICollectionViewDelegateFlowLayout {
 		dummyCell.layoutIfNeeded()
 		let estimatedSize = dummyCell.systemLayoutSizeFitting(CGSize(width: width, height: estimatedHeight))
 		return CGSize(width: width, height: estimatedSize.height)
+		// grid 높이를 잡을때 테이블은 전체를 생성하고 높이를 잡지만 컬렉션은 아님..
 	}
 }
 

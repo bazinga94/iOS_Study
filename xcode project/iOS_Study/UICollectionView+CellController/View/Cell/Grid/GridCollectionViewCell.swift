@@ -12,7 +12,7 @@ class GridCollectionViewCell: UICollectionViewCell {
 	enum Constant {
 		static let inset: CGFloat = 0
 		static let minimumLineSpacing: CGFloat = 10
-		static let minimumInteritemSpacing: CGFloat = 5
+		static let minimumInteritemSpacing: CGFloat = 30
 	}
 
 	@IBOutlet weak var collectionView: UICollectionView!

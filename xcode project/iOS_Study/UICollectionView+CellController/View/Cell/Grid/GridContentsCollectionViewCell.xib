@@ -28,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
                             <constraint firstItem="DGL-dv-gwa" firstAttribute="top" secondItem="yzf-5C-t12" secondAttribute="top" constant="3" id="4Fu-Bf-4Ya"/>
                             <constraint firstAttribute="trailing" secondItem="DGL-dv-gwa" secondAttribute="trailing" constant="5" id="Sdl-0h-0W1"/>
@@ -53,8 +53,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
