@@ -17,9 +17,11 @@ class BaseCollectionViewCellFactory {
 	}
 
 	func makeCellControllers(by items: BaseCollectionModel) -> [SectionController<UICollectionView>] {
-		let cellController = items.expandableCellModel.map { ExpandableCollectionViewCellController(item: $0) }
+//		let cellController = items.expandableCellModel.map { ExpandableCollectionViewCellController(item: $0)
+//		}
+		let cellControllers = ExpandableCollectionViewCellController(item: items.expandableCellModel)
 		let sectionController = BaseCollectionViewHeaderSectionController(item: "베이스 뷰 헤더")
-		sectionController.collectionCellControllers = cellController
+		sectionController.collectionCellControllers = [cellControllers]
 		return [sectionController]
 	}
 }

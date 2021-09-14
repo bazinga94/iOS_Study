@@ -63,6 +63,12 @@
 		B22098AE26EF3CB200DA7438 /* BaseCollectionViewHeaderSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22098AD26EF3CB200DA7438 /* BaseCollectionViewHeaderSectionController.swift */; };
 		B22098CB26EF48F800DA7438 /* BaseCollectionViewHeaderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22098C926EF48F800DA7438 /* BaseCollectionViewHeaderSection.swift */; };
 		B22098CC26EF48F800DA7438 /* BaseCollectionViewHeaderSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22098CA26EF48F800DA7438 /* BaseCollectionViewHeaderSection.xib */; };
+		B22098E026F01FB400DA7438 /* ExpandableTableViewHeaderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22098DE26F01FB400DA7438 /* ExpandableTableViewHeaderSection.swift */; };
+		B22098E126F01FB400DA7438 /* ExpandableTableViewHeaderSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22098DF26F01FB400DA7438 /* ExpandableTableViewHeaderSection.xib */; };
+		B22098E626F0217200DA7438 /* ExpandableTableViewSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22098E526F0217200DA7438 /* ExpandableTableViewSectionController.swift */; };
+		B22098F126F0232A00DA7438 /* ExpandableTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22098F026F0232A00DA7438 /* ExpandableTableViewCellController.swift */; };
+		B22098F726F0238500DA7438 /* ExpandableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22098F526F0238500DA7438 /* ExpandableTableViewCell.swift */; };
+		B22098F826F0238500DA7438 /* ExpandableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22098F626F0238500DA7438 /* ExpandableTableViewCell.xib */; };
 		B24B93912671F7450037D750 /* CustomLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B93902671F7450037D750 /* CustomLogger.swift */; };
 		B2A5D80C2689AE5600462F70 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A5D80B2689AE5600462F70 /* CustomView.swift */; };
 		B2A5D8142689AE8A00462F70 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A5D8132689AE8A00462F70 /* CustomView.xib */; };
@@ -182,6 +188,12 @@
 		B22098AD26EF3CB200DA7438 /* BaseCollectionViewHeaderSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewHeaderSectionController.swift; sourceTree = "<group>"; };
 		B22098C926EF48F800DA7438 /* BaseCollectionViewHeaderSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewHeaderSection.swift; sourceTree = "<group>"; };
 		B22098CA26EF48F800DA7438 /* BaseCollectionViewHeaderSection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCollectionViewHeaderSection.xib; sourceTree = "<group>"; };
+		B22098DE26F01FB400DA7438 /* ExpandableTableViewHeaderSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewHeaderSection.swift; sourceTree = "<group>"; };
+		B22098DF26F01FB400DA7438 /* ExpandableTableViewHeaderSection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandableTableViewHeaderSection.xib; sourceTree = "<group>"; };
+		B22098E526F0217200DA7438 /* ExpandableTableViewSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewSectionController.swift; sourceTree = "<group>"; };
+		B22098F026F0232A00DA7438 /* ExpandableTableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewCellController.swift; sourceTree = "<group>"; };
+		B22098F526F0238500DA7438 /* ExpandableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewCell.swift; sourceTree = "<group>"; };
+		B22098F626F0238500DA7438 /* ExpandableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandableTableViewCell.xib; sourceTree = "<group>"; };
 		B24B93902671F7450037D750 /* CustomLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLogger.swift; sourceTree = "<group>"; };
 		B2A5D80B2689AE5600462F70 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		B2A5D8132689AE8A00462F70 /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
@@ -495,6 +507,7 @@
 				B220988826EEEFA000DA7438 /* GridCollectionViewCellController.swift */,
 				B220988D26EEEFB600DA7438 /* HorizontalCollectionViewCellController.swift */,
 				B220989226EEEFC300DA7438 /* TileCollectionViewCellController.swift */,
+				B22098F026F0232A00DA7438 /* ExpandableTableViewCellController.swift */,
 			);
 			path = CellController;
 			sourceTree = "<group>";
@@ -515,6 +528,8 @@
 			children = (
 				B220986326EEEEF600DA7438 /* ExpandableCollectionViewCell.swift */,
 				B220986426EEEEF600DA7438 /* ExpandableCollectionViewCell.xib */,
+				B22098F526F0238500DA7438 /* ExpandableTableViewCell.swift */,
+				B22098F626F0238500DA7438 /* ExpandableTableViewCell.xib */,
 			);
 			path = Expandable;
 			sourceTree = "<group>";
@@ -574,6 +589,7 @@
 			isa = PBXGroup;
 			children = (
 				B22098AD26EF3CB200DA7438 /* BaseCollectionViewHeaderSectionController.swift */,
+				B22098E526F0217200DA7438 /* ExpandableTableViewSectionController.swift */,
 			);
 			path = SectionController;
 			sourceTree = "<group>";
@@ -583,6 +599,8 @@
 			children = (
 				B22098C926EF48F800DA7438 /* BaseCollectionViewHeaderSection.swift */,
 				B22098CA26EF48F800DA7438 /* BaseCollectionViewHeaderSection.xib */,
+				B22098DE26F01FB400DA7438 /* ExpandableTableViewHeaderSection.swift */,
+				B22098DF26F01FB400DA7438 /* ExpandableTableViewHeaderSection.xib */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -823,6 +841,7 @@
 				B2EBA2B026D4ACDC00A40782 /* BankingTabViewController.xib in Resources */,
 				B220980426E9BFEE00DA7438 /* SecondSectionTableViewCell.xib in Resources */,
 				B2D601D326E0B8A50055A784 /* TodayTableViewCell.xib in Resources */,
+				B22098E126F01FB400DA7438 /* ExpandableTableViewHeaderSection.xib in Resources */,
 				B2A5D8142689AE8A00462F70 /* CustomView.xib in Resources */,
 				B2D601CC26E0B75A0055A784 /* FirstSectionTableViewCell.xib in Resources */,
 				B2AFA81A26D863B700D5ED18 /* GreenTabCollectionViewCell.xib in Resources */,
@@ -831,6 +850,7 @@
 				B220988426EEEF6200DA7438 /* TileCollectionViewCell.xib in Resources */,
 				B2AFA79B26D61BA400D5ED18 /* lottie-2.json in Resources */,
 				B220987326EEEF3E00DA7438 /* GridCollectionViewCell.xib in Resources */,
+				B22098F826F0238500DA7438 /* ExpandableTableViewCell.xib in Resources */,
 				B220987D26EEEF5400DA7438 /* HorizontalCollectionViewCell.xib in Resources */,
 				B2B8327626A552D2009006F1 /* RxStudyViewController.xib in Resources */,
 				B220986626EEEEF600DA7438 /* ExpandableCollectionViewCell.xib in Resources */,
@@ -964,6 +984,7 @@
 			files = (
 				B220988326EEEF6200DA7438 /* TileCollectionViewCell.swift in Sources */,
 				B2EBA2AF26D4ACDC00A40782 /* BankingTabViewController.swift in Sources */,
+				B22098F726F0238500DA7438 /* ExpandableTableViewCell.swift in Sources */,
 				B220980926E9C02800DA7438 /* SecondSectionTableViewCellController.swift in Sources */,
 				B22098A226EEF18400DA7438 /* BaseCollectionViewModel.swift in Sources */,
 				B2EBA2D726D5DBB800A40782 /* FloatingButton.swift in Sources */,
@@ -979,6 +1000,7 @@
 				B220981A26E9C35A00DA7438 /* MenuCollectionViewCellController.swift in Sources */,
 				B220980326E9BFEE00DA7438 /* SecondSectionTableViewCell.swift in Sources */,
 				B2AFA81326D8611A00D5ED18 /* CellController.swift in Sources */,
+				B22098F126F0232A00DA7438 /* ExpandableTableViewCellController.swift in Sources */,
 				B220989926EEF05300DA7438 /* BaseCollectionViewCellFactory.swift in Sources */,
 				436846C6263AE01D00967143 /* iOS_Study.xcdatamodeld in Sources */,
 				B220979C26E5A83900DA7438 /* Dynamic.swift in Sources */,
@@ -988,8 +1010,10 @@
 				4360E3DC26DA83A40045249E /* CustomFlowLayout.swift in Sources */,
 				B220980F26E9C17B00DA7438 /* MenuCollectionViewCell.swift in Sources */,
 				B2A5D80C2689AE5600462F70 /* CustomView.swift in Sources */,
+				B22098E026F01FB400DA7438 /* ExpandableTableViewHeaderSection.swift in Sources */,
 				B2D601D226E0B8A50055A784 /* TodayTableViewCell.swift in Sources */,
 				B220984826EB123400DA7438 /* SecondSectionTableViewModel.swift in Sources */,
+				B22098E626F0217200DA7438 /* ExpandableTableViewSectionController.swift in Sources */,
 				B2EBA2BD26D4ACFE00A40782 /* BenefitTabViewController.swift in Sources */,
 				B2EBA2C626D4AE7500A40782 /* BaseTabBarViewController.swift in Sources */,
 				B220986526EEEEF600DA7438 /* ExpandableCollectionViewCell.swift in Sources */,
