@@ -9,7 +9,7 @@ import UIKit
 
 class ExpandableCollectionViewCell: UICollectionViewCell {
 
-	@IBOutlet weak var tableView: FittedTableView!
+	@IBOutlet weak var tableView: UITableView!
 	var sectionItems: [SectionController<UITableView>] = []
 
 	override func awakeFromNib() {
