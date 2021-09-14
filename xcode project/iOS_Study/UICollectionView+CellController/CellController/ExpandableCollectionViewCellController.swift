@@ -9,9 +9,11 @@ import UIKit
 
 class ExpandableCollectionViewCellController: GenericCellController<ExpandableCollectionViewCell> {
 	private var item: [ExpandableCellModel]
+	private var delegate: SectionReloadDelegate
 
-	init(item: [ExpandableCellModel]) {
+	init(item: [ExpandableCellModel], delegate: SectionReloadDelegate) {
 		self.item = item
+		self.delegate = delegate
 	}
 
 	override func configureCell(_ cell: ExpandableCollectionViewCell) {
@@ -23,7 +25,7 @@ class ExpandableCollectionViewCellController: GenericCellController<ExpandableCo
 			sectionController.tableCellControllers = cellControllers
 			sectionItems.append(sectionController)
 		}
-
+		cell.delegate = delegate
 		cell.sectionItems = sectionItems
 	}
 

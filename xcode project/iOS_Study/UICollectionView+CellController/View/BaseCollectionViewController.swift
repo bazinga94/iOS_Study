@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol SectionReloadDelegate: class {
+	func reload(section: Int)
+}
+
 class BaseCollectionViewController: UIViewController {
 
 	enum Constant {
@@ -83,6 +87,12 @@ extension BaseCollectionViewController: UICollectionViewDelegateFlowLayout {
 	}
 }
 
+extension BaseCollectionViewController: SectionReloadDelegate {
+	func reload(section: Int) {
+		collectionView.reloadSections(IndexSet(integer: section))
+	}
+}
+
 private extension BaseCollectionViewController {
 	func configureCollectionView() {
 		collectionView.delegate = self
@@ -94,7 +104,7 @@ private extension BaseCollectionViewController {
 		viewModel.fetch()
 		viewModel.baseCollectionModel.bind { [weak self] model in
 			guard let self = self else { return }
-			self.sectionItems = self.factory.makeCellControllers(by: model)
+			self.sectionItems = self.factory.makeCellControllers(by: model, delegate: self)
 			self.collectionView.reloadData()
 		}
 	}

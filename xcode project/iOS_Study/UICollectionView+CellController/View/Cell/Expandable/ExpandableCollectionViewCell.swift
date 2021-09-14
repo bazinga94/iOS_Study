@@ -11,6 +11,7 @@ class ExpandableCollectionViewCell: UICollectionViewCell {
 
 	@IBOutlet weak var tableView: UITableView!
 	var sectionItems: [SectionController<UITableView>] = []
+	weak var delegate: SectionReloadDelegate?
 
 	var isExpanded = true
 
@@ -73,8 +74,9 @@ extension ExpandableCollectionViewCell: UITableViewDataSource {
 				tableView.insertRows(at: indexPaths, with: .fade)
 			}
 			isExpanded = !isExpanded
+			self.delegate?.reload(section: 0)
 		}, completion: { _ in
-			
+//			self.delegate?.reload(section: 0)
 		})
 	}
 
