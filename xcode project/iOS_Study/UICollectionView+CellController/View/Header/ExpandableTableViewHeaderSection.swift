@@ -9,6 +9,8 @@ import UIKit
 
 class ExpandableTableViewHeaderSection: UITableViewHeaderFooterView {
 
+	@IBOutlet weak var sectionButton: UIButton!
+
 	override func awakeFromNib() {
 		super.awakeFromNib()
 	}
