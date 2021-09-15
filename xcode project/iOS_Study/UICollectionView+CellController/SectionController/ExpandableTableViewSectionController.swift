@@ -7,14 +7,13 @@
 
 import UIKit
 
-protocol ExpandableTableViewSectionDelegate: class {
-	func sectionTap()
-}
+//protocol ExpandableTableViewSectionDelegate: class {
+//	func sectionTap()
+//}
 
 class ExpandableTableViewSectionController: GenericSectionController<ExpandableTableViewHeaderSection> {
 	private var item: String
 	private var isExpanded: Bool = true
-	weak var delegate: ExpandableTableViewSectionDelegate?
 
 	init(item: String) {
 		self.item = item
@@ -24,11 +23,11 @@ class ExpandableTableViewSectionController: GenericSectionController<ExpandableT
 		let backgroundView = UIView(frame: section.bounds)
 		backgroundView.backgroundColor = .blue
 		section.backgroundView = backgroundView
-//		section.sectionButton.addTarget(nil, action: #selector(hideSection(button:)), for: .touchUpInside)
 	}
-
-//	@objc func hideSection(button: UIButton) {
-//		isExpanded = !isExpanded
-//		delegate?.sectionTap()
-//	}
 }
+
+//extension ExpandableTableViewSectionController: ExpandableTableViewSectionDelegate {
+//	func sectionTap() {
+//		isExpandSection = !isExpandSection
+//	}
+//}

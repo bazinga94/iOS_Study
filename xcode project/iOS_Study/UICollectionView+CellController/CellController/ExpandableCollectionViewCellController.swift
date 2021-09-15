@@ -23,6 +23,7 @@ class ExpandableCollectionViewCellController: GenericCellController<ExpandableCo
 			let sectionController = ExpandableTableViewSectionController(item: model.headerTitle)
 			sectionController.tableCellControllers = cellControllers
 			sectionItems.append(sectionController)
+//			cell.sectionDelegate = sectionController
 		}
 		cell.delegate = delegate
 		cell.sectionItems = sectionItems

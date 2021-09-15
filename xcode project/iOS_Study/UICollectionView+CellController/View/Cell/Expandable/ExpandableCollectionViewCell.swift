@@ -12,8 +12,9 @@ class ExpandableCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var tableView: UITableView!
 	var sectionItems: [SectionController<UITableView>] = []
 	weak var delegate: SectionReloadDelegate?
+//	weak var sectionDelegate: ExpandableTableViewSectionDelegate?
 
-	var isExpanded = true
+//	var isExpanded = true
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
@@ -38,10 +39,8 @@ extension ExpandableCollectionViewCell: UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if section == 0, !isExpanded {
-			return 0
-		}
-		return sectionItems[section].tableCellControllers.count
+		return sectionItems[section].isExpandSection ? sectionItems[section].tableCellControllers.count : 0
+//		return sectionItems[section].tableCellControllers.count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -53,12 +52,14 @@ extension ExpandableCollectionViewCell: UITableViewDataSource {
 		let sectionView = sectionItems[section].sectionFromReusableSectionHolder(tableView, ofKind: "", forIndexPath: IndexPath())	// table view에서 이렇게 쓰니까 어색하네... 고쳐야겠다
 		if let sectionView = sectionView as? ExpandableTableViewHeaderSection {
 			sectionView.sectionButton.addTarget(self, action: #selector(hideSection(button:)), for: .touchUpInside)
+			sectionView.sectionButton.tag = section
 		}
 		return sectionView
 	}
 
 	@objc func hideSection(button: UIButton) {
-		let section = 0 // 내 계좌 목록 section
+//		let section = 0 // 내 계좌 목록 section
+		let section = button.tag
 		var indexPaths = [IndexPath]()
 
 		for row in 0..<sectionItems[section].tableCellControllers.count {
@@ -68,15 +69,17 @@ extension ExpandableCollectionViewCell: UITableViewDataSource {
 //		var isExpanded = true
 
 		tableView.performBatchUpdates({
-			if isExpanded {
+			if sectionItems[section].isExpandSection {
 				tableView.deleteRows(at: indexPaths, with: .fade)
 			} else {
 				tableView.insertRows(at: indexPaths, with: .fade)
 			}
-			isExpanded = !isExpanded
-			self.delegate?.reload(section: 0)
-		}, completion: { _ in
+//			isExpanded = !isExpanded
+			sectionItems[section].isExpandSection = !sectionItems[section].isExpandSection
 //			self.delegate?.reload(section: 0)
+
+		}, completion: { _ in
+			self.delegate?.reload(section: 0)
 		})
 	}
 
