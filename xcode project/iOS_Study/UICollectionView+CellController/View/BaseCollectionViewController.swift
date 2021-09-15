@@ -15,7 +15,7 @@ class BaseCollectionViewController: UIViewController {
 
 	enum Constant {
 		static let inset: CGFloat = 0
-		static let minimumLineSpacing: CGFloat = 20
+		static let minimumLineSpacing: CGFloat = 0
 		static let minimumInteritemSpacing: CGFloat = 10
 		static let cellsPerRow = 1
 	}
@@ -74,7 +74,7 @@ extension BaseCollectionViewController: UICollectionViewDelegateFlowLayout {
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-		let width = view.frame.width
+//		let width = view.frame.width
 //		let estimatedHeight: CGFloat = 300.0
 //		let dummyCell = sectionItems[indexPath.section].collectionCellControllers[indexPath.row].cellFromReusableCellHolder(collectionView, forIndexPath: indexPath)
 //		dummyCell.layoutIfNeeded()
@@ -82,7 +82,9 @@ extension BaseCollectionViewController: UICollectionViewDelegateFlowLayout {
 //		return CGSize(width: width, height: estimatedSize.height)
 		// grid 높이를 잡을때 테이블은 전체를 생성하고 높이를 잡지만 컬렉션은 아님..
 
-		let height = sectionItems[indexPath.section].collectionCellControllers[indexPath.row].cellHeight(availableWidth: width, collectionView, itemAt: indexPath)
+		let width = sectionItems[indexPath.section].collectionCellControllers[indexPath.row].cellWidth(availableHeight: 1000, collectionView, itemAt: indexPath)
+
+		let height = sectionItems[indexPath.section].collectionCellControllers[indexPath.row].cellHeight(availableWidth: 1000, collectionView, itemAt: indexPath)
 		return CGSize(width: width, height: height)
 	}
 }
