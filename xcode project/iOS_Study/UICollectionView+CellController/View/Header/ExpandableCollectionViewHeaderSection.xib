@@ -24,9 +24,16 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujb-3H-3Mw">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" systemColor="systemTealColor"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ujb-3H-3Mw" secondAttribute="trailing" id="7eP-wr-ple"/>
+                        <constraint firstItem="ujb-3H-3Mw" firstAttribute="top" secondItem="C09-he-5X8" secondAttribute="top" id="Iz8-Ti-k2T"/>
+                        <constraint firstItem="ujb-3H-3Mw" firstAttribute="leading" secondItem="C09-he-5X8" secondAttribute="leading" id="QyC-vt-vQ3"/>
+                        <constraint firstAttribute="bottom" secondItem="ujb-3H-3Mw" secondAttribute="bottom" id="Ub9-aW-RTH"/>
                         <constraint firstItem="Olm-l5-aPN" firstAttribute="centerY" secondItem="C09-he-5X8" secondAttribute="centerY" id="ZFK-P6-t0h"/>
                         <constraint firstItem="Olm-l5-aPN" firstAttribute="centerX" secondItem="C09-he-5X8" secondAttribute="centerX" id="qLt-4N-G9h"/>
                     </constraints>
@@ -40,14 +47,15 @@
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="C09-he-5X8" secondAttribute="trailing" id="zCE-6h-Wq5"/>
             </constraints>
             <connections>
+                <outlet property="headerButton" destination="ujb-3H-3Mw" id="SAB-Xc-bRg"/>
                 <outlet property="titleLabel" destination="Olm-l5-aPN" id="FW2-eE-JHW"/>
             </connections>
-            <point key="canvasLocation" x="141" y="138"/>
+            <point key="canvasLocation" x="140.57971014492756" y="137.94642857142856"/>
         </collectionReusableView>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

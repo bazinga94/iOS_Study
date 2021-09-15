@@ -10,7 +10,8 @@ import UIKit
 class ExpandableCollectionViewHeaderSection: UICollectionReusableView {
 
 	@IBOutlet weak var titleLabel: UILabel!
-
+	@IBOutlet weak var headerButton: UIButton!
+	
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		// Initialization code

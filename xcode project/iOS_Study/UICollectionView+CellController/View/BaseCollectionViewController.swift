@@ -51,7 +51,35 @@ extension BaseCollectionViewController: UICollectionViewDelegate {
 	// MARK: - Header
 	func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
-		return sectionItems[indexPath.section].sectionFromReusableSectionHolder(collectionView, ofKind: UICollectionView.elementKindSectionHeader, forIndexPath: indexPath)
+		let sectionView = sectionItems[indexPath.section].sectionFromReusableSectionHolder(collectionView, ofKind: UICollectionView.elementKindSectionHeader, forIndexPath: indexPath)
+		if let sectionView = sectionView as? ExpandableCollectionViewHeaderSection {
+			sectionView.headerButton.addTarget(self, action: #selector(hideSection(button:)), for: .touchUpInside)
+			sectionView.headerButton.tag = indexPath.section
+		}
+		return sectionView
+	}
+
+	@objc func hideSection(button: UIButton) {
+		let section = button.tag
+		var indexPaths = [IndexPath]()
+
+		for row in 0..<sectionItems[section].collectionCellControllers.count {
+			let indexPath = IndexPath(row: row, section: section)
+			indexPaths.append(indexPath)
+		}
+
+		collectionView.performBatchUpdates({
+			if sectionItems[section].isExpandSection {
+				collectionView.deleteItems(at: indexPaths)
+			} else {
+				collectionView.insertItems(at: indexPaths)
+			}
+			sectionItems[section].isExpandSection = !sectionItems[section].isExpandSection
+
+		}, completion: { _ in
+//			self.delegate?.reload(section: 0)
+			self.collectionView.reloadItems(at: self.collectionView.indexPathsForVisibleItems)
+		})
 	}
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
