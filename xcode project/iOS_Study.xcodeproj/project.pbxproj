@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		278DA802D2EC01B878079D8B /* Pods_iOS_Study.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A8AA75E273A35728C66193 /* Pods_iOS_Study.framework */; };
 		2B9420693290715AF76FDDF5 /* Pods_iOS_Study_iOS_StudyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AFA0207E1148D9D9563108 /* Pods_iOS_Study_iOS_StudyUITests.framework */; };
+		431F4FF126F4DA4D00F1F36F /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431F4FF026F4DA4D00F1F36F /* ConfigurableCell.swift */; };
+		431F4FF926F4DA8900F1F36F /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431F4FF826F4DA8900F1F36F /* CellConfigurator.swift */; };
+		431F4FFE26F4DE7F00F1F36F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431F4FFD26F4DE7F00F1F36F /* ProfileViewModel.swift */; };
+		431F500326F4E27100F1F36F /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431F500226F4E27100F1F36F /* ProfileTableViewController.swift */; };
 		4360E3DC26DA83A40045249E /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360E3DB26DA83A40045249E /* CustomFlowLayout.swift */; };
 		436846BC263AE01D00967143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436846BB263AE01D00967143 /* AppDelegate.swift */; };
 		436846BE263AE01D00967143 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436846BD263AE01D00967143 /* SceneDelegate.swift */; };
@@ -139,6 +143,10 @@
 		0816B7B2EC34CC32D6E5BAA6 /* Pods-iOS_StudyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_StudyTests.release.xcconfig"; path = "Target Support Files/Pods-iOS_StudyTests/Pods-iOS_StudyTests.release.xcconfig"; sourceTree = "<group>"; };
 		17A8AA75E273A35728C66193 /* Pods_iOS_Study.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Study.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23624CD9B422C01ABDCBC230 /* Pods-iOS_Study.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Study.release.xcconfig"; path = "Target Support Files/Pods-iOS_Study/Pods-iOS_Study.release.xcconfig"; sourceTree = "<group>"; };
+		431F4FF026F4DA4D00F1F36F /* ConfigurableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
+		431F4FF826F4DA8900F1F36F /* CellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
+		431F4FFD26F4DE7F00F1F36F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		431F500226F4E27100F1F36F /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		4360E3DB26DA83A40045249E /* CustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
 		436846B8263AE01D00967143 /* iOS_Study.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Study.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		436846BB263AE01D00967143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -308,6 +316,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		431F4FEF26F4DA0E00F1F36F /* MultipleCell */ = {
+			isa = PBXGroup;
+			children = (
+				431F4FF026F4DA4D00F1F36F /* ConfigurableCell.swift */,
+				431F4FF826F4DA8900F1F36F /* CellConfigurator.swift */,
+				431F4FFD26F4DE7F00F1F36F /* ProfileViewModel.swift */,
+				431F500226F4E27100F1F36F /* ProfileTableViewController.swift */,
+			);
+			path = MultipleCell;
+			sourceTree = "<group>";
+		};
 		436846AF263AE01D00967143 = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +352,7 @@
 		436846BA263AE01D00967143 /* iOS_Study */ = {
 			isa = PBXGroup;
 			children = (
+				431F4FEF26F4DA0E00F1F36F /* MultipleCell */,
 				B220979A26E5A82B00DA7438 /* Boxing */,
 				B220979026E59E2400DA7438 /* Extension */,
 				B2D601BE26E0B6520055A784 /* UITableView+CellController */,
@@ -1056,6 +1076,7 @@
 			files = (
 				B220990C26F0534C00DA7438 /* GridContentsCollectionViewCellController.swift in Sources */,
 				B220988326EEEF6200DA7438 /* TileCollectionViewCell.swift in Sources */,
+				431F4FF926F4DA8900F1F36F /* CellConfigurator.swift in Sources */,
 				B2EBA2AF26D4ACDC00A40782 /* BankingTabViewController.swift in Sources */,
 				B22098F726F0238500DA7438 /* ExpandableTableViewCell.swift in Sources */,
 				B220980926E9C02800DA7438 /* SecondSectionTableViewCellController.swift in Sources */,
@@ -1079,6 +1100,7 @@
 				436846C6263AE01D00967143 /* iOS_Study.xcdatamodeld in Sources */,
 				B220979C26E5A83900DA7438 /* Dynamic.swift in Sources */,
 				B22098A826EF1F0100DA7438 /* SectionController.swift in Sources */,
+				431F4FFE26F4DE7F00F1F36F /* ProfileViewModel.swift in Sources */,
 				B220993026F17C7200DA7438 /* ExpandableNewCollectionViewCellController.swift in Sources */,
 				B22097A426E5A8A600DA7438 /* SampleTableViewModel.swift in Sources */,
 				B24B93912671F7450037D750 /* CustomLogger.swift in Sources */,
@@ -1103,6 +1125,7 @@
 				B220979226E59E3700DA7438 /* UIView+Extension.swift in Sources */,
 				B22097AA26E5AF1B00DA7438 /* SampleTableViewFactory.swift in Sources */,
 				B2EBA2A126D4911400A40782 /* BottomTabBarItem.swift in Sources */,
+				431F500326F4E27100F1F36F /* ProfileTableViewController.swift in Sources */,
 				B22097C926E5D6E800DA7438 /* FirstSectionTableViewCellFactory.swift in Sources */,
 				43A0BAC82697FE5D00E4A8A4 /* CollectionViewController.swift in Sources */,
 				B220983E26E9D94A00DA7438 /* FittedTableView.swift in Sources */,
@@ -1120,6 +1143,7 @@
 				B220988E26EEEFB600DA7438 /* HorizontalCollectionViewCellController.swift in Sources */,
 				43684705263AE27600967143 /* ViewLayoutTestViewController.swift in Sources */,
 				B220981526E9C2FD00DA7438 /* SecondSectionTableViewCellFactory.swift in Sources */,
+				431F4FF126F4DA4D00F1F36F /* ConfigurableCell.swift in Sources */,
 				B22098CB26EF48F800DA7438 /* BaseCollectionViewHeaderSection.swift in Sources */,
 				B2EBA2CE26D4B06200A40782 /* BottomTabNavigationMenu.swift in Sources */,
 				B220993C26F1839E00DA7438 /* GridCollectionViewHeaderSectionController.swift in Sources */,
