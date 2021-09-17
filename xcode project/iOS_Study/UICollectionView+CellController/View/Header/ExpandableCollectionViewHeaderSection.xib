@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExpandableCollectionViewHeaderSection" id="U6b-Vx-4bR" customClass="ExpandableCollectionViewHeaderSection" customModule="iOS_Study" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C09-he-5X8">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olm-l5-aPN">
+                            <rect key="frame" x="139" y="14.5" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujb-3H-3Mw">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ujb-3H-3Mw" secondAttribute="trailing" id="7eP-wr-ple"/>
+                        <constraint firstItem="ujb-3H-3Mw" firstAttribute="top" secondItem="C09-he-5X8" secondAttribute="top" id="Iz8-Ti-k2T"/>
+                        <constraint firstItem="ujb-3H-3Mw" firstAttribute="leading" secondItem="C09-he-5X8" secondAttribute="leading" id="QyC-vt-vQ3"/>
+                        <constraint firstAttribute="bottom" secondItem="ujb-3H-3Mw" secondAttribute="bottom" id="Ub9-aW-RTH"/>
+                        <constraint firstItem="Olm-l5-aPN" firstAttribute="centerY" secondItem="C09-he-5X8" secondAttribute="centerY" id="ZFK-P6-t0h"/>
+                        <constraint firstItem="Olm-l5-aPN" firstAttribute="centerX" secondItem="C09-he-5X8" secondAttribute="centerX" id="qLt-4N-G9h"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <constraints>
+                <constraint firstItem="C09-he-5X8" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="qg9-1m-No6"/>
+                <constraint firstItem="C09-he-5X8" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="wD8-sf-YSM"/>
+                <constraint firstAttribute="bottom" secondItem="C09-he-5X8" secondAttribute="bottom" id="xOZ-J0-PkF"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="C09-he-5X8" secondAttribute="trailing" id="zCE-6h-Wq5"/>
+            </constraints>
+            <connections>
+                <outlet property="headerButton" destination="ujb-3H-3Mw" id="SAB-Xc-bRg"/>
+                <outlet property="titleLabel" destination="Olm-l5-aPN" id="FW2-eE-JHW"/>
+            </connections>
+            <point key="canvasLocation" x="140.57971014492756" y="137.94642857142856"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
