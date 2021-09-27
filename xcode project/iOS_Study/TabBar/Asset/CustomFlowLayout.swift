@@ -89,3 +89,90 @@ extension CenterHorizontalLayout: UICollectionViewDelegateFlowLayout {
 		return .init(top: insetY, left: insetX, bottom: insetY, right: insetX)
 	}
 }
+
+@objc protocol CenterAlignCollectionViewDelegate: class {
+	@objc optional func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+	@objc optional func scrollViewEndDragging(offset: CGPoint, index: CGFloat)
+	@objc optional func scrollViewDidScroll(progress: CGFloat)
+}
+
+class CenterAlignFlowLayout: UICollectionViewFlowLayout {
+
+	private var cellSpacing: CGFloat        // cell간 간격
+	private var horizontalInset: CGFloat    // 컬렉션뷰 좌우 inset
+	private var isOneStepPaging: Bool        // 한번에 한 페이지 이동 여부
+	private var currentIndex: CGFloat = 0
+	weak var delegate: CenterAlignCollectionViewDelegate?
+
+	init(cellSpacing: CGFloat, horizontalInset: CGFloat, isOneStepPaging: Bool) {
+		self.cellSpacing = cellSpacing
+		self.horizontalInset = horizontalInset
+		self.isOneStepPaging = isOneStepPaging
+		super.init()
+		self.scrollDirection = .horizontal
+	}
+
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+}
+
+extension CenterAlignFlowLayout: UICollectionViewDelegate {
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		delegate?.collectionView?(collectionView, didSelectItemAt: indexPath)
+	}
+
+	func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+
+		guard let collectionView = collectionView else { return }
+		let cellWidth = collectionView.bounds.width - horizontalInset * 2.0
+		let cellWidthIncludingSpacing = cellWidth + cellSpacing
+
+		var offset = targetContentOffset.pointee    // x좌표가 얼마나 이동했는지
+		let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
+		var roundedIndex = round(index)     // 이동한 x좌표 값과 item의 크기를 비교하여 몇 페이징이 될 것인지 값 설정
+
+		if scrollView.contentOffset.x > targetContentOffset.pointee.x { // 스크롤 방향을 확인하여 페이징 인덱스 확인
+			roundedIndex = floor(index)
+		} else if scrollView.contentOffset.x < targetContentOffset.pointee.x {
+			roundedIndex = ceil(index)
+		} else {
+			roundedIndex = round(index)
+		}
+
+		if isOneStepPaging {    // 한 페이지씩 페이징
+			if currentIndex > roundedIndex {
+				currentIndex -= 1
+				roundedIndex = currentIndex
+			} else if currentIndex < roundedIndex {
+				currentIndex += 1
+				roundedIndex = currentIndex
+			}
+		}
+
+		offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
+		targetContentOffset.pointee = offset        // 페이징 될 좌표값을 targetContentOffset에 대입
+
+		delegate?.scrollViewEndDragging?(offset: offset, index: roundedIndex)
+	}
+
+	func scrollViewDidScroll(_ scrollView: UIScrollView) {
+		delegate?.scrollViewDidScroll?(progress: scrollView.contentOffset.x / (scrollView.contentSize.width - horizontalInset * 2.0))
+	}
+}
+
+extension CenterAlignFlowLayout: UICollectionViewDelegateFlowLayout {
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		return .init(width: collectionView.bounds.width - horizontalInset * 2.0, height: collectionView.bounds.height)
+	}
+
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+		return cellSpacing
+	}
+
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+		let insetX: CGFloat = horizontalInset
+		let insetY: CGFloat = 0
+		return .init(top: insetY, left: insetX, bottom: insetY, right: insetX)
+	}
+}
