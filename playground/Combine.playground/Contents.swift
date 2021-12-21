@@ -1,6 +1,8 @@
 import UIKit
 import Combine
 
+// 참조: https://zeddios.tistory.com/925
+
 // MARK: -------------- Publisher --------------
 
 class ClubHouseHandsUp: Publisher {
@@ -74,6 +76,12 @@ class SampleSubscriber: Subscriber {
 let sampleJustPublisher = ["Hey~", "lady"].publisher
 //sampleJustPublisher.subscribe(SampleSubscriber())
 sampleJustPublisher.print().subscribe(SampleSubscriber())	// 사이에 print() 메소드를 포함시키면 로그로 확인 가능~
+
+// MARK: -------------- Subject --------------
+
+
+
+
 
 // MARK: -------------- Class Future --------------
 
