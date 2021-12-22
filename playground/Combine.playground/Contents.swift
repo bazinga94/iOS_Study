@@ -4,6 +4,7 @@ import Combine
 // 참조: https://zeddios.tistory.com/925
 
 // MARK: -------------- Publisher --------------
+print("-------------- Publisher --------------")
 
 class ClubHouseHandsUp: Publisher {
 	typealias Output = String
@@ -38,6 +39,7 @@ let handsupPublisher = ClubHouseHandsUp()
 // 3. assign(to: on:)
 
 // MARK: -------------- Subscribe --------------
+print("-------------- Subscribe --------------")
 
 class SampleSubscriber: Subscriber {
 	typealias Input = String
@@ -78,8 +80,10 @@ let sampleJustPublisher = ["Hey~", "lady"].publisher
 //sampleJustPublisher.print().subscribe(SampleSubscriber())	// 사이에 print() 메소드를 포함시키면 로그로 확인 가능~
 
 // MARK: -------------- Subject --------------
+print("-------------- Subject --------------")
 
 // 1. CurrentValueSubject
+// 가장 최근에 publish된 element의 버퍼를 유지, 초기값 지정 필요
 let currentValueSubject = CurrentValueSubject<String, Never>("Current value first")
 let subscriber1 = currentValueSubject.sink(
 	receiveValue: { print($0) }
@@ -89,6 +93,7 @@ currentValueSubject.send("Current value third")
 
 
 // 2. PassthroughSubject
+// 가장 최근에 publish된 element의 초기값 또는 버퍼가 없음, subscribers가 없거나 현재 demand가 0이면 value를 삭제(drop)함
 let passthroughSubject = PassthroughSubject<String, Never>()
 let subscriber2 = passthroughSubject.sink(
 	receiveValue: { print($0) }
@@ -121,6 +126,12 @@ passthroughSubjectWithError.send("Ian")
 passthroughSubjectWithError.send(completion: .failure(.unknown))
 //passthroughSubjectWithError.send(completion: .finished)
 passthroughSubjectWithError.send("끝나서 출력 안됨")
+
+// MARK: -------------- Scheduler --------------
+print("-------------- Scheduler --------------")
+
+
+
 
 // MARK: -------------- Class Future --------------
 
