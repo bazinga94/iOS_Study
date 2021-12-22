@@ -75,11 +75,52 @@ class SampleSubscriber: Subscriber {
 //let sampleJustPublisher = Just("Hey~")
 let sampleJustPublisher = ["Hey~", "lady"].publisher
 //sampleJustPublisher.subscribe(SampleSubscriber())
-sampleJustPublisher.print().subscribe(SampleSubscriber())	// 사이에 print() 메소드를 포함시키면 로그로 확인 가능~
+//sampleJustPublisher.print().subscribe(SampleSubscriber())	// 사이에 print() 메소드를 포함시키면 로그로 확인 가능~
 
 // MARK: -------------- Subject --------------
 
+// 1. CurrentValueSubject
+let currentValueSubject = CurrentValueSubject<String, Never>("Current value first")
+let subscriber1 = currentValueSubject.sink(
+	receiveValue: { print($0) }
+)
+currentValueSubject.value = "Current value second"
+currentValueSubject.send("Current value third")
 
+
+// 2. PassthroughSubject
+let passthroughSubject = PassthroughSubject<String, Never>()
+let subscriber2 = passthroughSubject.sink(
+	receiveValue: { print($0) }
+)
+passthroughSubject.send("Pass through first")
+passthroughSubject.send("Pass through second")
+
+// 3. PassthroughSubject with Error
+enum SampleError: Error {
+	case unknown
+}
+
+let passthroughSubjectWithError = PassthroughSubject<String, SampleError>()
+let subscriber3 = passthroughSubject.sink(
+	receiveCompletion: { (result) in
+		switch result {
+			case .finished:
+				print("finished")
+			case .failure(let error):
+				print(error.localizedDescription)
+		}
+	},
+	receiveValue: { (value) in
+		print(value)
+	}
+)
+
+passthroughSubjectWithError.send("안녕")
+passthroughSubjectWithError.send("Ian")
+//passthroughSubject.send(completion: .failure(ZeddError.unknown))
+passthroughSubjectWithError.send(completion: .finished)
+passthroughSubjectWithError.send("끝나서 출력 안됨")
 
 
 
