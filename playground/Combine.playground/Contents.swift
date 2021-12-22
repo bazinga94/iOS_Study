@@ -102,7 +102,7 @@ enum SampleError: Error {
 }
 
 let passthroughSubjectWithError = PassthroughSubject<String, SampleError>()
-let subscriber3 = passthroughSubject.sink(
+let subscriber3 = passthroughSubjectWithError.sink(
 	receiveCompletion: { (result) in
 		switch result {
 			case .finished:
@@ -118,11 +118,9 @@ let subscriber3 = passthroughSubject.sink(
 
 passthroughSubjectWithError.send("안녕")
 passthroughSubjectWithError.send("Ian")
-//passthroughSubject.send(completion: .failure(ZeddError.unknown))
-passthroughSubjectWithError.send(completion: .finished)
+passthroughSubjectWithError.send(completion: .failure(.unknown))
+//passthroughSubjectWithError.send(completion: .finished)
 passthroughSubjectWithError.send("끝나서 출력 안됨")
-
-
 
 // MARK: -------------- Class Future --------------
 
