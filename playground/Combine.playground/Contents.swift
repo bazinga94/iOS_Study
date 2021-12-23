@@ -131,33 +131,36 @@ passthroughSubjectWithError.send("끝나서 출력 안됨")
 print("-------------- Scheduler --------------")
 // closure의 실행 시기와 방법을 정의하는 프로토콜
 
-let subject = PassthroughSubject<Int, Never>()
-let token = subject.sink(
-	receiveValue: { value in
-		print(Thread.isMainThread)
-	}
-)
-subject.send(1)							// true
-DispatchQueue.global().async {
-	subject.send(2)						// false
-}
+//let subject = PassthroughSubject<Int, Never>()
+//let token = subject.sink(
+//	receiveValue: { value in
+//		print(Thread.isMainThread)
+//	}
+//)
+//subject.send(1)							// true
+//DispatchQueue.global().async {
+//	subject.send(2)						// false
+//}
 // Scheduler는 element가 생성된 스레드와 동일한 스레드를 사용.
 
 // Scheduler Switching
 
-let publisher = ["Zedd"].publisher
-publisher.map { _ in
+let publisher = ["jong", "ho"].publisher
+publisher.print().map { value in
+	print("1", value)
 	print(Thread.isMainThread)
 } // true
-.subscribe(on: DispatchQueue.global())	// upstream의 실행 컨텍스트를 변경(?)
+//.subscribe(on: DispatchQueue.global())	// upstream의 실행 컨텍스트를 변경(?)
 //.receive(on: DispatchQueue.global())	// publisher로 부터 element를 수신할 scheduler를 지정하는 역할. downstream의 실행 컨텍스트를 변경
 .map {
+	print("2", $0)
 	print(Thread.isMainThread)
 } // false
+.subscribe(on: DispatchQueue.global())
 .sink {
+	print("3", $0)
 	print(Thread.isMainThread)
 } // false
-
 
 
 // MARK: -------------- Class Future --------------
