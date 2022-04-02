@@ -23,15 +23,15 @@ class ClubHouseHandsUp: Publisher {
 
 let handsupPublisher = ClubHouseHandsUp()
 
-//_ = handsupPublisher.sink(receiveCompletion: { _ in
-//	print("completed")
-//}) {
-//	print($0)
-//}
+_ = handsupPublisher.sink(receiveCompletion: { _ in
+	print("completed")
+}) {
+	print($0)
+}
 
-//_ = handsupPublisher.sink(receiveValue: { value in
-//	print(value)
-//})
+_ = handsupPublisher.sink(receiveValue: { value in
+	print(value)
+})
 
 // Publisher를 구동하는 방법은 3가지
 // 1. sink
